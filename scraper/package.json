@@ -1,0 +1,22 @@
+{
+  "name": "uk-shopping-centre-brand-scraper",
+  "version": "1.0.0",
+  "description": "Scrapes the store directories of UK shopping centre websites and collects every brand with its details.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "setup": "npm install && npx playwright install chromium",
+    "scrape": "node scrape.js",
+    "scrape:quick": "node scrape.js --no-details",
+    "discover": "node scrape.js --discover --only-unresolved",
+    "publish-site": "node publish.js",
+    "test": "node test/run-test.mjs"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "playwright": "^1.47.0"
+  }
+}

@@ -1,0 +1,3 @@
+[{"name":"Centre A","town":"Test","localAuthority":"Test","region":"Test","website":"http://localhost:8001/","kind":"official"},
+ {"name":"Centre B","town":"Test","localAuthority":"Test","region":"Test","website":"http://localhost:8002/","kind":"official"},
+ {"name":"Centre C","town":"Test","localAuthority":"Test","region":"Test","website":"http://localhost:8003/","kind":"official"}]

@@ -1,0 +1,1634 @@
+[
+ {
+  "name": "East Midlands Designer Outlet",
+  "town": "Mansfield / South Normanton",
+  "localAuthority": "Bolsover District Council",
+  "region": "East Midlands",
+  "website": "https://www.mcarthurglen.com/en/outlets/uk/designer-outlet-east-midlands/",
+  "kind": "mcarthurglen"
+ },
+ {
+  "name": "Derbion",
+  "town": "Derby",
+  "localAuthority": "Derby City Council",
+  "region": "East Midlands",
+  "website": "https://www.derbion.com",
+  "kind": "official"
+ },
+ {
+  "name": "Highcross Leicester",
+  "town": "Leicester",
+  "localAuthority": "Leicester City Council",
+  "region": "East Midlands",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Rushden Lakes",
+  "town": "Rushden",
+  "localAuthority": "North Northamptonshire Council",
+  "region": "East Midlands",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Victoria Centre",
+  "town": "Nottingham",
+  "localAuthority": "Nottingham City Council",
+  "region": "East Midlands",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Springfields Outlet Shopping & Leisure",
+  "town": "Spalding",
+  "localAuthority": "South Holland District Council",
+  "region": "East Midlands",
+  "website": "https://springfieldsshopping.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Grosvenor Shopping Centre",
+  "town": "Northampton",
+  "localAuthority": "West Northamptonshire Council",
+  "region": "East Midlands",
+  "website": "https://grosvenorshoppingnorthampton.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Weston Favell Shopping Centre",
+  "town": "Northampton",
+  "localAuthority": "West Northamptonshire Council",
+  "region": "East Midlands",
+  "website": "https://westonfavell.com",
+  "kind": "official"
+ },
+ {
+  "name": "Eastgate Shopping Centre",
+  "town": "Basildon",
+  "localAuthority": "Basildon Borough Council",
+  "region": "East of England",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Harpur Centre",
+  "town": "Bedford",
+  "localAuthority": "Bedford Borough Council",
+  "region": "East of England",
+  "website": "https://harpurcentre.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Braintree Village",
+  "town": "Braintree",
+  "localAuthority": "Braintree District Council",
+  "region": "East of England",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Grand Arcade",
+  "town": "Cambridge",
+  "localAuthority": "Cambridge City Council",
+  "region": "East of England",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Grafton",
+  "town": "Cambridge",
+  "localAuthority": "Cambridge City Council",
+  "region": "East of England",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Meadows Shopping Centre",
+  "town": "Chelmsford",
+  "localAuthority": "Chelmsford City Council",
+  "region": "East of England",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Marlowes Shopping Centre",
+  "town": "Hemel Hempstead",
+  "localAuthority": "Dacorum Borough Council",
+  "region": "East of England",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Harvey Centre",
+  "town": "Harlow",
+  "localAuthority": "Harlow District Council",
+  "region": "East of England",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Buttermarket Shopping Centre",
+  "town": "Ipswich",
+  "localAuthority": "Ipswich Borough Council",
+  "region": "East of England",
+  "website": "https://www.buttermarketipswich.com",
+  "kind": "official"
+ },
+ {
+  "name": "The Mall Luton",
+  "town": "Luton",
+  "localAuthority": "Luton Borough Council",
+  "region": "East of England",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Castle Quarter",
+  "town": "Norwich",
+  "localAuthority": "Norwich City Council",
+  "region": "East of England",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Chantry Place",
+  "town": "Norwich",
+  "localAuthority": "Norwich City Council",
+  "region": "East of England",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Mall Norwich",
+  "town": "Norwich",
+  "localAuthority": "Norwich City Council",
+  "region": "East of England",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Queensgate Shopping Centre",
+  "town": "Peterborough",
+  "localAuthority": "Peterborough City Council",
+  "region": "East of England",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Serpentine Green",
+  "town": "Peterborough",
+  "localAuthority": "Peterborough City Council",
+  "region": "East of England",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Royals Shopping Centre",
+  "town": "Southend-on-Sea",
+  "localAuthority": "Southend-on-Sea City Council",
+  "region": "East of England",
+  "website": "https://royalsshoppingcentre.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Victoria Shopping Centre",
+  "town": "Southend-on-Sea",
+  "localAuthority": "Southend-on-Sea City Council",
+  "region": "East of England",
+  "website": "https://victoriacentre.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "The Maltings",
+  "town": "St Albans",
+  "localAuthority": "St Albans City and District Council",
+  "region": "East of England",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Lakeside Shopping Centre",
+  "town": "Thurrock",
+  "localAuthority": "Thurrock Council",
+  "region": "East of England",
+  "website": "https://lakeside-shopping.com",
+  "kind": "official"
+ },
+ {
+  "name": "Atria Watford",
+  "town": "Watford",
+  "localAuthority": "Watford Borough Council",
+  "region": "East of England",
+  "website": "https://atriawatford.com",
+  "kind": "official"
+ },
+ {
+  "name": "The Galleria",
+  "town": "Hatfield",
+  "localAuthority": "Welwyn Hatfield Borough Council",
+  "region": "East of England",
+  "website": "https://www.visitbritain.com/en/things-to-do/out-town-shopping",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Howard Centre",
+  "town": "Welwyn Garden City",
+  "localAuthority": "Welwyn Hatfield Borough Council",
+  "region": "East of England",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Brent Cross Shopping Centre",
+  "town": "London",
+  "localAuthority": "London Borough of Barnet",
+  "region": "Greater London",
+  "website": "https://www.brentcross.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "The Spires",
+  "town": "Barnet",
+  "localAuthority": "London Borough of Barnet",
+  "region": "Greater London",
+  "website": "https://thespiresbarnet.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Bexleyheath Shopping Centre (Broadway)",
+  "town": "Bexleyheath",
+  "localAuthority": "Bexley London Borough Council",
+  "region": "Greater London",
+  "website": "https://broadwayshoppingcentre.com",
+  "kind": "official"
+ },
+ {
+  "name": "Centrale Shopping Centre",
+  "town": "Croydon",
+  "localAuthority": "London Borough of Croydon",
+  "region": "Greater London",
+  "website": "https://www.centraleandwhitgift.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Edmonton Green Shopping Centre",
+  "town": "London",
+  "localAuthority": "London Borough of Enfield",
+  "region": "Greater London",
+  "website": "https://edmontongreencentre.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "St George's Shopping Centre",
+  "town": "Harrow",
+  "localAuthority": "London Borough of Harrow",
+  "region": "Greater London",
+  "website": "https://stgeorges-harrow.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "N1 Shopping Centre (Angel Central)",
+  "town": "London",
+  "localAuthority": "Islington London Borough Council",
+  "region": "Greater London",
+  "website": "https://angelcentral.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Lewisham Shopping Centre",
+  "town": "London",
+  "localAuthority": "Lewisham London Borough Council",
+  "region": "Greater London",
+  "website": "https://lewishamshopping.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "The Glades",
+  "town": "Bromley",
+  "localAuthority": "London Borough of Bromley",
+  "region": "Greater London",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Whitgift Centre",
+  "town": "Croydon",
+  "localAuthority": "London Borough of Croydon",
+  "region": "Greater London",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Kingsland Shopping Centre",
+  "town": "Dalston",
+  "localAuthority": "London Borough of Hackney",
+  "region": "Greater London",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Kings Mall",
+  "town": "Hammersmith",
+  "localAuthority": "London Borough of Hammersmith and Fulham",
+  "region": "Greater London",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "West 12 Shopping Centre",
+  "town": "Shepherd's Bush",
+  "localAuthority": "London Borough of Hammersmith and Fulham",
+  "region": "Greater London",
+  "website": "https://www.knightfrank.co.uk/research/reports/retail-investment-update-2278/contentassets/retail-investment-update-h1-2024-11347.pdf",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Westfield London",
+  "town": "London",
+  "localAuthority": "London Borough of Hammersmith and Fulham",
+  "region": "Greater London",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Mall Wood Green",
+  "town": "Wood Green",
+  "localAuthority": "London Borough of Haringey",
+  "region": "Greater London",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Liberty",
+  "town": "Romford",
+  "localAuthority": "London Borough of Havering",
+  "region": "Greater London",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Chimes",
+  "town": "Uxbridge",
+  "localAuthority": "London Borough of Hillingdon",
+  "region": "Greater London",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Stratford Centre",
+  "town": "Stratford",
+  "localAuthority": "London Borough of Newham",
+  "region": "Greater London",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Westfield Stratford City",
+  "town": "London",
+  "localAuthority": "London Borough of Newham",
+  "region": "Greater London",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Surrey Quays Shopping Centre",
+  "town": "London",
+  "localAuthority": "London Borough of Southwark",
+  "region": "Greater London",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Mall Walthamstow",
+  "town": "Walthamstow",
+  "localAuthority": "London Borough of Waltham Forest",
+  "region": "Greater London",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Exchange Ilford",
+  "town": "Ilford",
+  "localAuthority": "Redbridge London Borough Council",
+  "region": "Greater London",
+  "website": "https://exchangeilford.com",
+  "kind": "official"
+ },
+ {
+  "name": "The Bentall Centre",
+  "town": "Kingston upon Thames",
+  "localAuthority": "Royal Borough of Kingston upon Thames",
+  "region": "Greater London",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Wandsworth Southside",
+  "town": "London",
+  "localAuthority": "London Borough of Wandsworth",
+  "region": "Greater London",
+  "website": "https://southside-shopping.com",
+  "kind": "official"
+ },
+ {
+  "name": "Dalton Park Outlet",
+  "town": "Murton",
+  "localAuthority": "Durham County Council",
+  "region": "North East",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Metrocentre",
+  "town": "Gateshead",
+  "localAuthority": "Gateshead Council",
+  "region": "North East",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Middleton Grange",
+  "town": "Hartlepool",
+  "localAuthority": "Hartlepool Borough Council",
+  "region": "North East",
+  "website": "https://middletongrangeshoppingcentre.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Cleveland Centre",
+  "town": "Middlesbrough",
+  "localAuthority": "Middlesbrough Council",
+  "region": "North East",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Hillstreet Shopping Centre",
+  "town": "Middlesbrough",
+  "localAuthority": "Middlesbrough Council",
+  "region": "North East",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Eldon Square",
+  "town": "Newcastle",
+  "localAuthority": "Newcastle City Council",
+  "region": "North East",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Teesside Park",
+  "town": "Stockton-on-Tees",
+  "localAuthority": "Stockton-on-Tees Borough Council",
+  "region": "North East",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Bridges",
+  "town": "Sunderland",
+  "localAuthority": "Sunderland City Council",
+  "region": "North East",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Galleries",
+  "town": "Washington",
+  "localAuthority": "Sunderland City Council",
+  "region": "North East",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Mall Blackburn",
+  "town": "Blackburn",
+  "localAuthority": "Blackburn with Darwen Borough Council",
+  "region": "North West",
+  "website": "https://www.malls.com/location/europe/united-kingdom/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Charter Walk Shopping Centre",
+  "town": "Burnley",
+  "localAuthority": "Burnley Borough Council",
+  "region": "North West",
+  "website": "https://charterwalk.com",
+  "kind": "official"
+ },
+ {
+  "name": "The Rock",
+  "town": "Bury",
+  "localAuthority": "Bury Council",
+  "region": "North West",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Cheshire Oaks Designer Outlet",
+  "town": "Ellesmere Port",
+  "localAuthority": "Cheshire West and Chester Council",
+  "region": "North West",
+  "website": "https://www.mcarthurglen.com/en/outlets/",
+  "kind": "mcarthurglen-generic"
+ },
+ {
+  "name": "Runcorn Shopping City / Halton Lea",
+  "town": "Runcorn",
+  "localAuthority": "Halton Borough Council",
+  "region": "North West",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Liverpool ONE",
+  "town": "Liverpool",
+  "localAuthority": "Liverpool City Council",
+  "region": "North West",
+  "website": "https://www.landsec.com/en/media-insights/press-releases/landsec-acquires-92-stake-liverpool-one-shopping-centre",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Manchester Arndale",
+  "town": "Manchester",
+  "localAuthority": "Manchester City Council",
+  "region": "North West",
+  "website": "https://www.malls.com/location/europe/united-kingdom/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Spindles Town Square",
+  "town": "Oldham",
+  "localAuthority": "Oldham Metropolitan Borough Council",
+  "region": "North West",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Middleton Shopping Centre",
+  "town": "Middleton",
+  "localAuthority": "Rochdale Metropolitan Borough Council",
+  "region": "North West",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Rochdale Exchange",
+  "town": "Rochdale",
+  "localAuthority": "Rochdale Metropolitan Borough Council",
+  "region": "North West",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Salford Shopping Centre",
+  "town": "Salford",
+  "localAuthority": "Salford City Council",
+  "region": "North West",
+  "website": "https://www.shopping-centers.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Trafford Centre",
+  "town": "Manchester",
+  "localAuthority": "Trafford Council",
+  "region": "North West",
+  "website": "https://traffordcentre.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Golden Square",
+  "town": "Warrington",
+  "localAuthority": "Warrington Borough Council",
+  "region": "North West",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Golden Square Shopping Centre",
+  "town": "Warrington",
+  "localAuthority": "Warrington Borough Council",
+  "region": "North West",
+  "website": "https://goldensquare.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Affinity Lancashire",
+  "town": "Fleetwood",
+  "localAuthority": "Wyre Council",
+  "region": "North West",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Ashford Designer Outlet",
+  "town": "Ashford",
+  "localAuthority": "Ashford Borough Council",
+  "region": "South East",
+  "website": "https://www.mcarthurglen.com/en/outlets/",
+  "kind": "mcarthurglen-generic"
+ },
+ {
+  "name": "Festival Place",
+  "town": "Basingstoke",
+  "localAuthority": "Basingstoke and Deane Borough Council",
+  "region": "South East",
+  "website": "https://www.savills.co.uk/research_articles/229130/387975-0",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Lexicon",
+  "town": "Bracknell",
+  "localAuthority": "Bracknell Forest Council",
+  "region": "South East",
+  "website": "https://www.savills.co.uk/research_articles/229130/387975-0",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Churchill Square",
+  "town": "Brighton",
+  "localAuthority": "Brighton and Hove City Council",
+  "region": "South East",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Eden Shopping Centre",
+  "town": "High Wycombe",
+  "localAuthority": "Buckinghamshire Council",
+  "region": "South East",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Friars Square",
+  "town": "Aylesbury",
+  "localAuthority": "Buckinghamshire Council",
+  "region": "South East",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Bicester Village",
+  "town": "Bicester",
+  "localAuthority": "Cherwell District Council",
+  "region": "South East",
+  "website": "https://www.visitbritain.com/en/things-to-do/out-town-shopping",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Castle Quay",
+  "town": "Banbury",
+  "localAuthority": "Cherwell District Council",
+  "region": "South East",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "County Mall",
+  "town": "Crawley",
+  "localAuthority": "Crawley Borough Council",
+  "region": "South East",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Bluewater Shopping Centre",
+  "town": "Greenhithe",
+  "localAuthority": "Dartford Borough Council",
+  "region": "South East",
+  "website": "https://bluewater.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "The Beacon",
+  "town": "Eastbourne",
+  "localAuthority": "Eastbourne Borough Council",
+  "region": "South East",
+  "website": "https://thebeaconeastbourne.com",
+  "kind": "official"
+ },
+ {
+  "name": "The Swan Centre",
+  "town": "Eastleigh",
+  "localAuthority": "Eastleigh Borough Council",
+  "region": "South East",
+  "website": "https://swanshoppingcentre.com",
+  "kind": "official"
+ },
+ {
+  "name": "The Ashley Centre",
+  "town": "Epsom",
+  "localAuthority": "Epsom and Ewell Borough Council",
+  "region": "South East",
+  "website": "https://theashleycentre.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Whiteley Shopping Centre",
+  "town": "Whiteley",
+  "localAuthority": "Fareham Borough Council",
+  "region": "South East",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Fremlin Walk",
+  "town": "Maidstone",
+  "localAuthority": "Maidstone Borough Council",
+  "region": "South East",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Mall Maidstone",
+  "town": "Maidstone",
+  "localAuthority": "Maidstone Borough Council",
+  "region": "South East",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Hempstead Valley Shopping Centre",
+  "town": "Gillingham",
+  "localAuthority": "Medway Council",
+  "region": "South East",
+  "website": "https://www.shopbam.co.uk/retail-parks/south-east",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Centre:MK",
+  "town": "Milton Keynes",
+  "localAuthority": "Milton Keynes City Council",
+  "region": "South East",
+  "website": "https://www.costar.com/article/913673015/royal-london-completes-major-milton-keynes-mall-stake-acquisition",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Cascades Shopping Centre",
+  "town": "Portsmouth",
+  "localAuthority": "Portsmouth City Council",
+  "region": "South East",
+  "website": "https://cascades-shopping.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Gunwharf Quays",
+  "town": "Portsmouth",
+  "localAuthority": "Portsmouth City Council",
+  "region": "South East",
+  "website": "https://www.landsec.com/en/retail/retail-overview",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Oracle",
+  "town": "Reading",
+  "localAuthority": "Reading Borough Council",
+  "region": "South East",
+  "website": "https://www.savills.co.uk/research_articles/229130/387975-0",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Windsor Royal Shopping",
+  "town": "Windsor",
+  "localAuthority": "Royal Borough of Windsor and Maidenhead",
+  "region": "South East",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Marlands",
+  "town": "Southampton",
+  "localAuthority": "Southampton City Council",
+  "region": "South East",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Westquay",
+  "town": "Southampton",
+  "localAuthority": "Southampton City Council",
+  "region": "South East",
+  "website": "https://www.savills.com/research_articles/255800/373231-0",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Mall Camberley",
+  "town": "Camberley",
+  "localAuthority": "Surrey Heath Borough Council",
+  "region": "South East",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Chantry Centre",
+  "town": "Andover",
+  "localAuthority": "Test Valley Borough Council",
+  "region": "South East",
+  "website": "https://thechantrycentre.com",
+  "kind": "official"
+ },
+ {
+  "name": "Westwood Cross",
+  "town": "Broadstairs",
+  "localAuthority": "Thanet District Council",
+  "region": "South East",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Royal Victoria Place",
+  "town": "Tunbridge Wells",
+  "localAuthority": "Tunbridge Wells Borough Council",
+  "region": "South East",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Brooks",
+  "town": "Winchester",
+  "localAuthority": "Winchester City Council",
+  "region": "South East",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Woking Shopping (Peacocks & Wolsey Place)",
+  "town": "Woking",
+  "localAuthority": "Woking Borough Council",
+  "region": "South East",
+  "website": "https://voking-shopping.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Wolsey Place",
+  "town": "Woking",
+  "localAuthority": "Woking Borough Council",
+  "region": "South East",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "SouthGate Bath",
+  "town": "Bath",
+  "localAuthority": "Bath and North East Somerset Council",
+  "region": "South West",
+  "website": "https://southgatebath.com",
+  "kind": "official"
+ },
+ {
+  "name": "The Sovereign Centre",
+  "town": "Boscombe / Bournemouth",
+  "localAuthority": "Bournemouth, Christchurch and Poole Council",
+  "region": "South West",
+  "website": "https://sovereignshoppingcentre.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Cabot Circus",
+  "town": "Bristol",
+  "localAuthority": "Bristol City Council",
+  "region": "South West",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Regent Arcade",
+  "town": "Cheltenham",
+  "localAuthority": "Cheltenham Borough Council",
+  "region": "South West",
+  "website": "https://www.regentarcade.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Gloucester Quays",
+  "town": "Gloucester",
+  "localAuthority": "Gloucester City Council",
+  "region": "South West",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Eastgate Shopping Centre Gloucester",
+  "town": "Gloucester",
+  "localAuthority": "Gloucester City Council",
+  "region": "South West",
+  "website": "https://eastgateshoppingcentre.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Green Lanes Shopping Centre",
+  "town": "Barnstaple",
+  "localAuthority": "North Devon Council",
+  "region": "South West",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Sovereign",
+  "town": "Weston-super-Mare",
+  "localAuthority": "North Somerset Council",
+  "region": "South West",
+  "website": "https://sovereign-shopping-centre.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Drake Circus",
+  "town": "Plymouth",
+  "localAuthority": "Plymouth City Council",
+  "region": "South West",
+  "website": "https://www.drakecircus.com",
+  "kind": "official"
+ },
+ {
+  "name": "Clarks Village",
+  "town": "Street",
+  "localAuthority": "Somerset Council",
+  "region": "South West",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Mall at Cribbs Causeway",
+  "town": "Bristol",
+  "localAuthority": "South Gloucestershire Council",
+  "region": "South West",
+  "website": "https://www.savills.com/research_articles/255800/373231-0",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Swindon Designer Outlet",
+  "town": "Swindon",
+  "localAuthority": "Swindon Borough Council",
+  "region": "South West",
+  "website": "https://www.mcarthurglen.com/en/outlets/uk/designer-outlet-swindon/",
+  "kind": "mcarthurglen"
+ },
+ {
+  "name": "Affinity Devon",
+  "town": "Bideford",
+  "localAuthority": "Torridge District Council",
+  "region": "South West",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Bullring & Grand Central",
+  "town": "Birmingham",
+  "localAuthority": "Birmingham City Council",
+  "region": "West Midlands",
+  "website": "https://www.savills.co.uk/research_articles/229130/387975-0",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Gracechurch Shopping Centre",
+  "town": "Sutton Coldfield",
+  "localAuthority": "Birmingham City Council",
+  "region": "West Midlands",
+  "website": "https://gracechurchshopping.com",
+  "kind": "official"
+ },
+ {
+  "name": "Mander Centre",
+  "town": "Wolverhampton",
+  "localAuthority": "City of Wolverhampton Council",
+  "region": "West Midlands",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Wulfrun Centre",
+  "town": "Wolverhampton",
+  "localAuthority": "City of Wolverhampton Council",
+  "region": "West Midlands",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Cornbow Shopping Centre",
+  "town": "Halesowen",
+  "localAuthority": "Dudley Metropolitan Borough Council",
+  "region": "West Midlands",
+  "website": "https://cornbow.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Merry Hill",
+  "town": "Brierley Hill",
+  "localAuthority": "Dudley Metropolitan Borough Council",
+  "region": "West Midlands",
+  "website": "https://www.malls.com/location/europe/united-kingdom/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Three Spires Shopping Centre",
+  "town": "Lichfield",
+  "localAuthority": "Lichfield District Council",
+  "region": "West Midlands",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Ropewalk Shopping Centre",
+  "town": "Nuneaton",
+  "localAuthority": "Nuneaton and Bedworth Borough Council",
+  "region": "West Midlands",
+  "website": "https://ropewalknuneaton.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Kingfisher Shopping Centre",
+  "town": "Redditch",
+  "localAuthority": "Redditch Borough Council",
+  "region": "West Midlands",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Swan Centre Rugby",
+  "town": "Rugby",
+  "localAuthority": "Rugby Borough Council",
+  "region": "West Midlands",
+  "website": "https://rugbyswan-centre.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Touchwood",
+  "town": "Solihull",
+  "localAuthority": "Solihull Metropolitan Borough Council",
+  "region": "West Midlands",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Potteries Centre",
+  "town": "Stoke-on-Trent",
+  "localAuthority": "Stoke-on-Trent City Council",
+  "region": "West Midlands",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Ankerside Shopping Centre",
+  "town": "Tamworth",
+  "localAuthority": "Tamworth Borough Council",
+  "region": "West Midlands",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Telford Centre",
+  "town": "Telford",
+  "localAuthority": "Telford and Wrekin Council",
+  "region": "West Midlands",
+  "website": "https://telfordcentre.com",
+  "kind": "official"
+ },
+ {
+  "name": "Worcester Crowngate",
+  "town": "Worcester",
+  "localAuthority": "Worcester City Council",
+  "region": "West Midlands",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Alhambra Shopping Centre",
+  "town": "Barnsley",
+  "localAuthority": "Barnsley Metropolitan Borough Council",
+  "region": "Yorkshire and the Humber",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Airedale Shopping Centre",
+  "town": "Keighley",
+  "localAuthority": "Bradford Metropolitan District Council",
+  "region": "Yorkshire and the Humber",
+  "website": "https://airedalecentre.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Broadway Bradford",
+  "town": "Bradford",
+  "localAuthority": "Bradford Metropolitan District Council",
+  "region": "Yorkshire and the Humber",
+  "website": "https://www.malls.com/location/europe/united-kingdom/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Piece Hall",
+  "town": "Halifax",
+  "localAuthority": "Calderdale Metropolitan Borough Council",
+  "region": "Yorkshire and the Humber",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Woolshops Shopping Centre",
+  "town": "Halifax",
+  "localAuthority": "Calderdale Metropolitan Borough Council",
+  "region": "Yorkshire and the Humber",
+  "website": "https://woolshopshalifax.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Frenchgate Shopping Centre",
+  "town": "Doncaster",
+  "localAuthority": "City of Doncaster Council",
+  "region": "Yorkshire and the Humber",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "York Designer Outlet",
+  "town": "York",
+  "localAuthority": "City of York Council",
+  "region": "Yorkshire and the Humber",
+  "website": "https://www.mcarthurglen.com/en/outlets/",
+  "kind": "mcarthurglen-generic"
+ },
+ {
+  "name": "Crossgates Shopping Centre",
+  "town": "Leeds",
+  "localAuthority": "Leeds City Council",
+  "region": "Yorkshire and the Humber",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Trinity Leeds",
+  "town": "Leeds",
+  "localAuthority": "Leeds City Council",
+  "region": "Yorkshire and the Humber",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Victoria Leeds",
+  "town": "Leeds",
+  "localAuthority": "Leeds City Council",
+  "region": "Yorkshire and the Humber",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "White Rose Shopping Centre",
+  "town": "Leeds",
+  "localAuthority": "Leeds City Council",
+  "region": "Yorkshire and the Humber",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Freshney Place",
+  "town": "Grimsby",
+  "localAuthority": "North East Lincolnshire Council",
+  "region": "Yorkshire and the Humber",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Crystal Peaks Shopping Mall",
+  "town": "Sheffield",
+  "localAuthority": "Sheffield City Council",
+  "region": "Yorkshire and the Humber",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Meadowhall",
+  "town": "Sheffield",
+  "localAuthority": "Sheffield City Council",
+  "region": "Yorkshire and the Humber",
+  "website": "https://www.meadowhall.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Bon Accord & St Nicholas Centres",
+  "town": "Aberdeen",
+  "localAuthority": "Aberdeen City Council",
+  "region": "Scotland",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Bon Accord Centre",
+  "town": "Aberdeen",
+  "localAuthority": "Aberdeen City Council",
+  "region": "Scotland",
+  "website": "https://www.bonaccordaberdeen.com",
+  "kind": "official"
+ },
+ {
+  "name": "Trinity Centre Aberdeen",
+  "town": "Aberdeen",
+  "localAuthority": "Aberdeen City Council",
+  "region": "Scotland",
+  "website": "https://trinityaberdeen.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Union Square",
+  "town": "Aberdeen",
+  "localAuthority": "Aberdeen City Council",
+  "region": "Scotland",
+  "website": "https://www.knightfrank.co.uk/research/reports/retail-investment-update-2278/contentassets/retail-investment-update-h1-2024-11347.pdf",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Ocean Terminal",
+  "town": "Edinburgh",
+  "localAuthority": "City of Edinburgh Council",
+  "region": "Scotland",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "St James Quarter",
+  "town": "Edinburgh",
+  "localAuthority": "City of Edinburgh Council",
+  "region": "Scotland",
+  "website": "https://www.savills.co.uk/research_articles/229130/387975-0",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Gyle Shopping Centre",
+  "town": "Edinburgh",
+  "localAuthority": "City of Edinburgh Council",
+  "region": "Scotland",
+  "website": "https://www.gyleshopping.com",
+  "kind": "official"
+ },
+ {
+  "name": "Gretna Gateway Outlet Village",
+  "town": "Gretna",
+  "localAuthority": "Dumfries and Galloway Council",
+  "region": "Scotland",
+  "website": "https://www.gretnagateway.com",
+  "kind": "official"
+ },
+ {
+  "name": "Overgate Shopping Centre",
+  "town": "Dundee",
+  "localAuthority": "Dundee City Council",
+  "region": "Scotland",
+  "website": "https://www.overgate.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Wellgate Centre",
+  "town": "Dundee",
+  "localAuthority": "Dundee City Council",
+  "region": "Scotland",
+  "website": "https://wellgate-centre.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Kingsgate Shopping Centre",
+  "town": "Dunfermline",
+  "localAuthority": "Fife Council",
+  "region": "Scotland",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Buchanan Galleries",
+  "town": "Glasgow",
+  "localAuthority": "Glasgow City Council",
+  "region": "Scotland",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Princes Square",
+  "town": "Glasgow",
+  "localAuthority": "Glasgow City Council",
+  "region": "Scotland",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Silverburn",
+  "town": "Glasgow",
+  "localAuthority": "Glasgow City Council",
+  "region": "Scotland",
+  "website": "https://www.shopsilverburn.com",
+  "kind": "official"
+ },
+ {
+  "name": "St Enoch Centre",
+  "town": "Glasgow",
+  "localAuthority": "Glasgow City Council",
+  "region": "Scotland",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Forge Shopping Centre",
+  "town": "Glasgow",
+  "localAuthority": "Glasgow City Council",
+  "region": "Scotland",
+  "website": "https://forgeshopping.com",
+  "kind": "official"
+ },
+ {
+  "name": "Cumbernauld Shopping Centre",
+  "town": "Cumbernauld",
+  "localAuthority": "North Lanarkshire Council",
+  "region": "Scotland",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Braehead",
+  "town": "Renfrew",
+  "localAuthority": "Renfrewshire Council",
+  "region": "Scotland",
+  "website": "https://www.savills.co.uk/research_articles/229130/387975-0",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Ayr Central",
+  "town": "Ayr",
+  "localAuthority": "South Ayrshire Council",
+  "region": "Scotland",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "East Kilbride Shopping Centre",
+  "town": "East Kilbride",
+  "localAuthority": "South Lanarkshire Council",
+  "region": "Scotland",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Thistles",
+  "town": "Stirling",
+  "localAuthority": "Stirling Council",
+  "region": "Scotland",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Thistles Shopping Centre",
+  "town": "Stirling",
+  "localAuthority": "Stirling Council",
+  "region": "Scotland",
+  "website": "https://www.stirlingthistles.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Clyde Shopping Centre",
+  "town": "Clydebank",
+  "localAuthority": "West Dunbartonshire Council",
+  "region": "Scotland",
+  "website": "https://clydeshoppingcentre.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Almondvale Shopping Centre",
+  "town": "Livingston",
+  "localAuthority": "West Lothian Council",
+  "region": "Scotland",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Livingston Designer Outlet",
+  "town": "Livingston",
+  "localAuthority": "West Lothian Council",
+  "region": "Scotland",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "The Centre: Livingston",
+  "town": "Livingston",
+  "localAuthority": "West Lothian Council",
+  "region": "Scotland",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Bridgend Designer Outlet",
+  "town": "Bridgend",
+  "localAuthority": "Bridgend County Borough Council",
+  "region": "Wales",
+  "website": "https://www.mcarthurglen.com/en/outlets/",
+  "kind": "mcarthurglen-generic"
+ },
+ {
+  "name": "Queens Arcade",
+  "town": "Cardiff",
+  "localAuthority": "Cardiff Council",
+  "region": "Wales",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "St David's",
+  "town": "Cardiff",
+  "localAuthority": "Cardiff Council",
+  "region": "Wales",
+  "website": "https://www.savills.com/research_articles/255800/373231-0",
+  "kind": "aggregator"
+ },
+ {
+  "name": "St David's Dewi Sant",
+  "town": "Cardiff",
+  "localAuthority": "Cardiff Council",
+  "region": "Wales",
+  "website": "https://stdavidscardiff.com",
+  "kind": "official"
+ },
+ {
+  "name": "The Capitol Shopping Centre",
+  "town": "Cardiff",
+  "localAuthority": "Cardiff Council",
+  "region": "Wales",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Quadrant Shopping Centre",
+  "town": "Swansea",
+  "localAuthority": "City and County of Swansea Council",
+  "region": "Wales",
+  "website": "https://quadrantshopping.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Tweedmill Outlet",
+  "town": "St Asaph",
+  "localAuthority": "Denbighshire County Council",
+  "region": "Wales",
+  "website": "https://www.shopping-centers.co.uk/shopping-centers/",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Daniel Owen Centre",
+  "town": "Mold",
+  "localAuthority": "Flintshire County Council",
+  "region": "Wales",
+  "website": "https://www.flintshire.gov.uk",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Caldicot Shopping Centre",
+  "town": "Caldicot",
+  "localAuthority": "Monmouthshire County Council",
+  "region": "Wales",
+  "website": "https://www.monmouthshire.gov.uk",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Aberafan Centre",
+  "town": "Port Talbot",
+  "localAuthority": "Neath Port Talbot County Borough Council",
+  "region": "Wales",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Friars Walk Shopping Centre",
+  "town": "Newport",
+  "localAuthority": "Newport City Council",
+  "region": "Wales",
+  "website": "https://friarswalknewport.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Kingsway Shopping Centre",
+  "town": "Newport",
+  "localAuthority": "Newport City Council",
+  "region": "Wales",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Cwmbran Centre",
+  "town": "Cwmbran",
+  "localAuthority": "Torfaen County Borough Council",
+  "region": "Wales",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Eagles Meadow",
+  "town": "Wrexham",
+  "localAuthority": "Wrexham County Borough Council",
+  "region": "Wales",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Abbey Centre",
+  "town": "Newtownabbey",
+  "localAuthority": "Antrim and Newtownabbey Borough Council",
+  "region": "Northern Ireland",
+  "website": "https://abbeycentreshopping.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "The Junction Retail and Leisure Park",
+  "town": "Antrim",
+  "localAuthority": "Antrim and Newtownabbey Borough Council",
+  "region": "Northern Ireland",
+  "website": "https://thejunctionshopping.com",
+  "kind": "official"
+ },
+ {
+  "name": "Ards Shopping Centre",
+  "town": "Newtownards",
+  "localAuthority": "Ards and North Down Borough Council",
+  "region": "Northern Ireland",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Rushmere Shopping Centre",
+  "town": "Craigavon",
+  "localAuthority": "Armagh City, Banbridge and Craigavon Borough Council",
+  "region": "Northern Ireland",
+  "website": "https://rushmerveshopping.com",
+  "kind": "official"
+ },
+ {
+  "name": "The Boulevard",
+  "town": "Banbridge",
+  "localAuthority": "Armagh City, Banbridge and Craigavon Borough Council",
+  "region": "Northern Ireland",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "CastleCourt Shopping Centre",
+  "town": "Belfast",
+  "localAuthority": "Belfast City Council",
+  "region": "Northern Ireland",
+  "website": "https://castlecourt-uk.com",
+  "kind": "official"
+ },
+ {
+  "name": "Victoria Square",
+  "town": "Belfast",
+  "localAuthority": "Belfast City Council",
+  "region": "Northern Ireland",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Foyleside Shopping Centre",
+  "town": "Derry",
+  "localAuthority": "Derry City and Strabane District Council",
+  "region": "Northern Ireland",
+  "website": "https://foyleside.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Richmond Centre",
+  "town": "Derry",
+  "localAuthority": "Derry City and Strabane District Council",
+  "region": "Northern Ireland",
+  "website": "https://richmondcentre.co.uk",
+  "kind": "official"
+ },
+ {
+  "name": "Bow Street Mall",
+  "town": "Lisburn",
+  "localAuthority": "Lisburn and Castlereagh City Council",
+  "region": "Northern Ireland",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Fairhill Shopping Centre",
+  "town": "Ballymena",
+  "localAuthority": "Mid and East Antrim Borough Council",
+  "region": "Northern Ireland",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ },
+ {
+  "name": "Buttercrane Shopping Centre",
+  "town": "Newry",
+  "localAuthority": "Newry, Mourne and Down District Council",
+  "region": "Northern Ireland",
+  "website": "https://buttercrane.com",
+  "kind": "official"
+ },
+ {
+  "name": "The Quays",
+  "town": "Newry",
+  "localAuthority": "Newry, Mourne and Down District Council",
+  "region": "Northern Ireland",
+  "website": "https://www.ukmalls.co.uk/shopping-centres",
+  "kind": "aggregator"
+ }
+]

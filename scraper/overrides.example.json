@@ -1,0 +1,535 @@
+{
+ "_help": "Add the centre's own website as url. directoryUrl is optional: the page that lists all its stores. Use {\"skip\": true} to leave a centre out. Delete this _help line or leave it, it is ignored.",
+ "Highcross Leicester": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Rushden Lakes": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Victoria Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Eastgate Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Braintree Village": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Grand Arcade": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Grafton": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Meadows Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Marlowes Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Harvey Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Mall Luton": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Castle Quarter": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Chantry Place": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Mall Norwich": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Queensgate Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Serpentine Green": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Maltings": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Galleria": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Howard Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Glades": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Whitgift Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Kingsland Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Kings Mall": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "West 12 Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Westfield London": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Mall Wood Green": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Liberty": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Chimes": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Stratford Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Westfield Stratford City": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Surrey Quays Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Mall Walthamstow": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Bentall Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Dalton Park Outlet": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Metrocentre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Cleveland Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Hillstreet Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Eldon Square": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Teesside Park": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Bridges": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Galleries": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Mall Blackburn": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Rock": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Runcorn Shopping City / Halton Lea": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Liverpool ONE": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Manchester Arndale": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Spindles Town Square": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Middleton Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Rochdale Exchange": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Salford Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Golden Square": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Affinity Lancashire": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Festival Place": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Lexicon": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Churchill Square": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Eden Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Friars Square": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Bicester Village": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Castle Quay": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "County Mall": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Whiteley Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Fremlin Walk": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Mall Maidstone": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Hempstead Valley Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Centre:MK": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Gunwharf Quays": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Oracle": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Windsor Royal Shopping": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Marlands": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Westquay": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Mall Camberley": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Westwood Cross": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Royal Victoria Place": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Brooks": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Wolsey Place": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Cabot Circus": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Gloucester Quays": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Green Lanes Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Clarks Village": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Mall at Cribbs Causeway": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Affinity Devon": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Bullring & Grand Central": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Mander Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Wulfrun Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Merry Hill": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Three Spires Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Kingfisher Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Touchwood": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Potteries Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Ankerside Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Worcester Crowngate": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Alhambra Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Broadway Bradford": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Piece Hall": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Frenchgate Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Crossgates Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Trinity Leeds": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Victoria Leeds": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "White Rose Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Freshney Place": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Crystal Peaks Shopping Mall": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Bon Accord & St Nicholas Centres": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Union Square": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Ocean Terminal": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "St James Quarter": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Kingsgate Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Buchanan Galleries": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Princes Square": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "St Enoch Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Cumbernauld Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Braehead": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Ayr Central": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "East Kilbride Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Thistles": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Almondvale Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Livingston Designer Outlet": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Centre: Livingston": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Queens Arcade": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "St David's": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Capitol Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Tweedmill Outlet": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Daniel Owen Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Caldicot Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Aberafan Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Kingsway Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Cwmbran Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Eagles Meadow": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Ards Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Boulevard": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Victoria Square": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Bow Street Mall": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "Fairhill Shopping Centre": {
+  "url": "",
+  "directoryUrl": ""
+ },
+ "The Quays": {
+  "url": "",
+  "directoryUrl": ""
+ }
+}

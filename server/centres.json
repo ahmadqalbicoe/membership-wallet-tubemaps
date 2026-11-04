@@ -1,0 +1,4304 @@
+[
+{
+"key": "Idlewells Shopping Centre",
+"name": "Idlewells Shopping Centre",
+"town": "Sutton-in-Ashfield",
+"localAuthority": "Ashfield District Council",
+"region": "East Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "East Midlands Designer Outlet",
+"name": "East Midlands Designer Outlet",
+"town": "Mansfield / South Normanton",
+"localAuthority": "Bolsover District Council",
+"region": "East Midlands",
+"nation": "England",
+"postcode": "DE55 2JW"
+},
+{
+"key": "Thurmaston Shopping Centre",
+"name": "Thurmaston Shopping Centre",
+"town": "Thurmaston",
+"localAuthority": "Charnwood Borough Council",
+"region": "East Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Pavements",
+"name": "The Pavements",
+"town": "Chesterfield",
+"localAuthority": "Chesterfield Borough Council",
+"region": "East Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Vicar Lane",
+"name": "Vicar Lane",
+"town": "Chesterfield",
+"localAuthority": "Chesterfield Borough Council",
+"region": "East Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "St Marks Shopping Centre",
+"name": "St Marks Shopping Centre",
+"town": "Lincoln",
+"localAuthority": "City of Lincoln Council",
+"region": "East Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Waterside Centre",
+"name": "Waterside Centre",
+"town": "Lincoln",
+"localAuthority": "City of Lincoln Council",
+"region": "East Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Derbion",
+"name": "Derbion",
+"town": "Derby",
+"localAuthority": "Derby City Council",
+"region": "East Midlands",
+"nation": "England",
+"postcode": "DE1 2PQ",
+"aliases": [
+"Intu Derby",
+"Westfield Derby"
+]
+},
+{
+"key": "Park Farm Shopping Centre",
+"name": "Park Farm Shopping Centre",
+"town": "Allestree, Derby",
+"localAuthority": "Derby City Council",
+"region": "East Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Masson Mill Shopping Village",
+"name": "Masson Mill Shopping Village",
+"town": "Matlock Bath",
+"localAuthority": "Derbyshire Dales District Council",
+"region": "East Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Peak Village",
+"name": "Peak Village",
+"town": "Rowsley",
+"localAuthority": "Derbyshire Dales District Council",
+"region": "East Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Spring Gardens",
+"name": "Spring Gardens",
+"town": "Buxton",
+"localAuthority": "High Peak Borough Council",
+"region": "East Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Beaumont Shopping Centre",
+"name": "Beaumont Shopping Centre",
+"town": "Leicester",
+"localAuthority": "Leicester City Council",
+"region": "East Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Haymarket Shopping Centre",
+"name": "Haymarket Shopping Centre",
+"town": "Leicester",
+"localAuthority": "Leicester City Council",
+"region": "East Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Highcross Leicester",
+"name": "Highcross Leicester",
+"town": "Leicester",
+"localAuthority": "Leicester City Council",
+"region": "East Midlands",
+"nation": "England",
+"postcode": "LE1 4AN"
+},
+{
+"key": "St Martins Square",
+"name": "St Martins Square",
+"town": "Leicester",
+"localAuthority": "Leicester City Council",
+"region": "East Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Four Seasons Shopping Centre",
+"name": "Four Seasons Shopping Centre",
+"town": "Mansfield",
+"localAuthority": "Mansfield District Council",
+"region": "East Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Forge Shopping Centre (Dronfield)",
+"name": "The Forge Shopping Centre",
+"town": "Dronfield",
+"localAuthority": "North East Derbyshire District Council",
+"region": "East Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Newlands Shopping Centre",
+"name": "Newlands Shopping Centre",
+"town": "Kettering",
+"localAuthority": "North Northamptonshire Council",
+"region": "East Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Rushden Lakes",
+"name": "Rushden Lakes",
+"town": "Rushden",
+"localAuthority": "North Northamptonshire Council",
+"region": "East Midlands",
+"nation": "England",
+"postcode": "NN10 6FH"
+},
+{
+"key": "Swansgate Shopping Centre",
+"name": "Swansgate Shopping Centre",
+"town": "Wellingborough",
+"localAuthority": "North Northamptonshire Council",
+"region": "East Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Flying Horse Walk",
+"name": "Flying Horse Walk",
+"town": "Nottingham",
+"localAuthority": "Nottingham City Council",
+"region": "East Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Victoria Centre (Nottingham)",
+"name": "Victoria Centre",
+"town": "Nottingham",
+"localAuthority": "Nottingham City Council",
+"region": "East Midlands",
+"nation": "England",
+"postcode": "NG1 3QN",
+"aliases": [
+"Intu Victoria Centre"
+]
+},
+{
+"key": "Springfields Outlet Shopping & Leisure",
+"name": "Springfields Outlet Shopping & Leisure",
+"town": "Spalding",
+"localAuthority": "South Holland District Council",
+"region": "East Midlands",
+"nation": "England",
+"postcode": "PE12 6EU"
+},
+{
+"key": "Grosvenor Shopping Centre",
+"name": "Grosvenor Shopping Centre",
+"town": "Northampton",
+"localAuthority": "West Northamptonshire Council",
+"region": "East Midlands",
+"nation": "England",
+"postcode": "NN1 2EW"
+},
+{
+"key": "Weston Favell Shopping Centre",
+"name": "Weston Favell Shopping Centre",
+"town": "Northampton",
+"localAuthority": "West Northamptonshire Council",
+"region": "East Midlands",
+"nation": "England",
+"postcode": "NN3 8JZ"
+},
+{
+"key": "Eastgate Shopping Centre",
+"name": "Eastgate Shopping Centre",
+"town": "Basildon",
+"localAuthority": "Basildon Borough Council",
+"region": "East of England",
+"nation": "England",
+"postcode": "SS14 1EB"
+},
+{
+"key": "The Harpur Centre",
+"name": "The Harpur Centre",
+"town": "Bedford",
+"localAuthority": "Bedford Borough Council",
+"region": "East of England",
+"nation": "England",
+"postcode": "MK40 1TJ"
+},
+{
+"key": "Vancouver Quarter",
+"name": "Vancouver Quarter",
+"town": "King's Lynn",
+"localAuthority": "Borough Council of King's Lynn and West Norfolk",
+"region": "East of England",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Braintree Village",
+"name": "Braintree Village",
+"town": "Braintree",
+"localAuthority": "Braintree District Council",
+"region": "East of England",
+"nation": "England",
+"postcode": "CM77 8YH"
+},
+{
+"key": "George Yard Shopping Centre",
+"name": "George Yard Shopping Centre",
+"town": "Braintree",
+"localAuthority": "Braintree District Council",
+"region": "East of England",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Pavilions Shopping Centre",
+"name": "Pavilions Shopping Centre",
+"town": "Waltham Cross",
+"localAuthority": "Broxbourne Borough Council",
+"region": "East of England",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Grand Arcade (Cambridge)",
+"name": "Grand Arcade",
+"town": "Cambridge",
+"localAuthority": "Cambridge City Council",
+"region": "East of England",
+"nation": "England",
+"postcode": "CB2 3BJ"
+},
+{
+"key": "Lion Yard",
+"name": "Lion Yard",
+"town": "Cambridge",
+"localAuthority": "Cambridge City Council",
+"region": "East of England",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Grafton",
+"name": "The Grafton",
+"town": "Cambridge",
+"localAuthority": "Cambridge City Council",
+"region": "East of England",
+"nation": "England",
+"postcode": "CB1 1PS"
+},
+{
+"key": "Knightswick Shopping Centre",
+"name": "Knightswick Shopping Centre",
+"town": "Canvey Island",
+"localAuthority": "Castle Point Borough Council",
+"region": "East of England",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Quadrant Shopping Centre (Dunstable)",
+"name": "Quadrant Shopping Centre",
+"town": "Dunstable",
+"localAuthority": "Central Bedfordshire Council",
+"region": "East of England",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Bond Street",
+"name": "Bond Street",
+"town": "Chelmsford",
+"localAuthority": "Chelmsford City Council",
+"region": "East of England",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "High Chelmer Shopping Centre",
+"name": "High Chelmer Shopping Centre",
+"town": "Chelmsford",
+"localAuthority": "Chelmsford City Council",
+"region": "East of England",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Meadows Shopping Centre",
+"name": "The Meadows Shopping Centre",
+"town": "Chelmsford",
+"localAuthority": "Chelmsford City Council",
+"region": "East of England",
+"nation": "England",
+"postcode": "CM2 6FD"
+},
+{
+"key": "Culver Square",
+"name": "Culver Square",
+"town": "Colchester",
+"localAuthority": "Colchester City Council",
+"region": "East of England",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Lion Walk",
+"name": "Lion Walk",
+"town": "Colchester",
+"localAuthority": "Colchester City Council",
+"region": "East of England",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Marlowes Shopping Centre",
+"name": "The Marlowes Shopping Centre",
+"town": "Hemel Hempstead",
+"localAuthority": "Dacorum Borough Council",
+"region": "East of England",
+"nation": "England",
+"postcode": "HP1 1DX"
+},
+{
+"key": "Jackson Square Shopping Centre",
+"name": "Jackson Square Shopping Centre",
+"town": "Bishop's Stortford",
+"localAuthority": "East Hertfordshire District Council",
+"region": "East of England",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Britten Centre",
+"name": "The Britten Centre",
+"town": "Lowestoft",
+"localAuthority": "East Suffolk Council",
+"region": "East of England",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Market Gates Shopping Centre",
+"name": "Market Gates Shopping Centre",
+"town": "Great Yarmouth",
+"localAuthority": "Great Yarmouth Borough Council",
+"region": "East of England",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Harvey Centre",
+"name": "The Harvey Centre",
+"town": "Harlow",
+"localAuthority": "Harlow District Council",
+"region": "East of England",
+"nation": "England",
+"postcode": "CM20 1XR"
+},
+{
+"key": "Buttermarket Shopping Centre",
+"name": "Buttermarket Shopping Centre",
+"town": "Ipswich",
+"localAuthority": "Ipswich Borough Council",
+"region": "East of England",
+"nation": "England",
+"postcode": "IP1 1DT"
+},
+{
+"key": "Sailmakers Shopping Centre",
+"name": "Sailmakers Shopping Centre",
+"town": "Ipswich",
+"localAuthority": "Ipswich Borough Council",
+"region": "East of England",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Mall Luton",
+"name": "The Mall Luton",
+"town": "Luton",
+"localAuthority": "Luton Borough Council",
+"region": "East of England",
+"nation": "England",
+"postcode": "LU1 2LJ"
+},
+{
+"key": "Garden Square Shopping Centre",
+"name": "Garden Square Shopping Centre",
+"town": "Letchworth",
+"localAuthority": "North Hertfordshire District Council",
+"region": "East of England",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Anglia Square",
+"name": "Anglia Square",
+"town": "Norwich",
+"localAuthority": "Norwich City Council",
+"region": "East of England",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Castle Quarter",
+"name": "Castle Quarter",
+"town": "Norwich",
+"localAuthority": "Norwich City Council",
+"region": "East of England",
+"nation": "England",
+"postcode": "NR1 3DD"
+},
+{
+"key": "Chantry Place",
+"name": "Chantry Place",
+"town": "Norwich",
+"localAuthority": "Norwich City Council",
+"region": "East of England",
+"nation": "England",
+"postcode": "NR1 3SH",
+"aliases": [
+"Chapelfield",
+"Intu Chapelfield"
+]
+},
+{
+"key": "The Mall Norwich",
+"name": "The Mall Norwich",
+"town": "Norwich",
+"localAuthority": "Norwich City Council",
+"region": "East of England",
+"nation": "England",
+"postcode": "NR2 1NA"
+},
+{
+"key": "Queensgate Shopping Centre",
+"name": "Queensgate Shopping Centre",
+"town": "Peterborough",
+"localAuthority": "Peterborough City Council",
+"region": "East of England",
+"nation": "England",
+"postcode": "PE1 1NT"
+},
+{
+"key": "Serpentine Green",
+"name": "Serpentine Green",
+"town": "Peterborough",
+"localAuthority": "Peterborough City Council",
+"region": "East of England",
+"nation": "England",
+"postcode": "PE7 8BE"
+},
+{
+"key": "The Royals Shopping Centre",
+"name": "The Royals Shopping Centre",
+"town": "Southend-on-Sea",
+"localAuthority": "Southend-on-Sea City Council",
+"region": "East of England",
+"nation": "England",
+"postcode": "SS1 1DG"
+},
+{
+"key": "Victoria Shopping Centre",
+"name": "Victoria Shopping Centre",
+"town": "Southend-on-Sea",
+"localAuthority": "Southend-on-Sea City Council",
+"region": "East of England",
+"nation": "England",
+"postcode": "SS2 5SP"
+},
+{
+"key": "The Maltings",
+"name": "The Maltings",
+"town": "St Albans",
+"localAuthority": "St Albans City and District Council",
+"region": "East of England",
+"nation": "England",
+"postcode": "AL1 3HL"
+},
+{
+"key": "The Forum (Stevenage)",
+"name": "The Forum",
+"town": "Stevenage",
+"localAuthority": "Stevenage Borough Council",
+"region": "East of England",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Lakeside Shopping Centre",
+"name": "Lakeside Shopping Centre",
+"town": "Thurrock",
+"localAuthority": "Thurrock Council",
+"region": "East of England",
+"nation": "England",
+"postcode": "RM20 2ZP",
+"aliases": [
+"Intu Lakeside"
+]
+},
+{
+"key": "Atria Watford",
+"name": "Atria Watford",
+"town": "Watford",
+"localAuthority": "Watford Borough Council",
+"region": "East of England",
+"nation": "England",
+"postcode": "WD17 2UB",
+"aliases": [
+"Intu Watford",
+"The Harlequin"
+]
+},
+{
+"key": "The Galleria",
+"name": "The Galleria",
+"town": "Hatfield",
+"localAuthority": "Welwyn Hatfield Borough Council",
+"region": "East of England",
+"nation": "England",
+"postcode": "AL10 0XR"
+},
+{
+"key": "The Howard Centre",
+"name": "The Howard Centre",
+"town": "Welwyn Garden City",
+"localAuthority": "Welwyn Hatfield Borough Council",
+"region": "East of England",
+"nation": "England",
+"postcode": "AL8 6HA"
+},
+{
+"key": "Arc Shopping Centre",
+"name": "Arc Shopping Centre",
+"town": "Bury St Edmunds",
+"localAuthority": "West Suffolk Council",
+"region": "East of England",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Brent Cross Shopping Centre",
+"name": "Brent Cross Shopping Centre",
+"town": "London",
+"localAuthority": "London Borough of Barnet",
+"region": "Greater London",
+"nation": "England",
+"postcode": "NW4 3FP"
+},
+{
+"key": "The Spires",
+"name": "The Spires",
+"town": "Barnet",
+"localAuthority": "London Borough of Barnet",
+"region": "Greater London",
+"nation": "England",
+"postcode": "EN5 5XY"
+},
+{
+"key": "Bexleyheath Shopping Centre (Broadway)",
+"name": "Bexleyheath Shopping Centre (Broadway)",
+"town": "Bexleyheath",
+"localAuthority": "Bexley London Borough Council",
+"region": "Greater London",
+"nation": "England",
+"postcode": "DA6 7JN"
+},
+{
+"key": "One New Change",
+"name": "One New Change",
+"town": "City of London",
+"localAuthority": "City of London Corporation",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Victoria Place Shopping Centre",
+"name": "Victoria Place Shopping Centre",
+"town": "Victoria",
+"localAuthority": "City of Westminster",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "West One Shopping Centre",
+"name": "West One Shopping Centre",
+"town": "Oxford Street",
+"localAuthority": "City of Westminster",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Whiteleys",
+"name": "Whiteleys",
+"town": "Bayswater",
+"localAuthority": "City of Westminster",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Centrale Shopping Centre",
+"name": "Centrale Shopping Centre",
+"town": "Croydon",
+"localAuthority": "London Borough of Croydon",
+"region": "Greater London",
+"nation": "England",
+"postcode": "CR0 1TY"
+},
+{
+"key": "Edmonton Green Shopping Centre (London)",
+"name": "Edmonton Green Shopping Centre",
+"town": "London",
+"localAuthority": "London Borough of Enfield",
+"region": "Greater London",
+"nation": "England",
+"postcode": "N9 0TZ"
+},
+{
+"key": "St George's Shopping Centre (Harrow)",
+"name": "St George's Shopping Centre",
+"town": "Harrow",
+"localAuthority": "London Borough of Harrow",
+"region": "Greater London",
+"nation": "England",
+"postcode": "HA1 1HS"
+},
+{
+"key": "N1 Shopping Centre (Angel Central)",
+"name": "N1 Shopping Centre (Angel Central)",
+"town": "London",
+"localAuthority": "Islington London Borough Council",
+"region": "Greater London",
+"nation": "England",
+"postcode": "N1 0PS"
+},
+{
+"key": "Lewisham Shopping Centre",
+"name": "Lewisham Shopping Centre",
+"town": "London",
+"localAuthority": "Lewisham London Borough Council",
+"region": "Greater London",
+"nation": "England",
+"postcode": "SE13 7HB"
+},
+{
+"key": "Heathway Shopping Centre",
+"name": "Heathway Shopping Centre",
+"town": "Dagenham",
+"localAuthority": "London Borough of Barking and Dagenham",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Vicarage Field",
+"name": "Vicarage Field",
+"town": "Barking",
+"localAuthority": "London Borough of Barking and Dagenham",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Broadwalk Shopping Centre (Edgware)",
+"name": "Broadwalk Shopping Centre",
+"town": "Edgware",
+"localAuthority": "London Borough of Barnet",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "London Designer Outlet",
+"name": "London Designer Outlet",
+"town": "Wembley Park",
+"localAuthority": "London Borough of Brent",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Blenheim Shopping Centre",
+"name": "Blenheim Shopping Centre",
+"town": "Penge",
+"localAuthority": "London Borough of Bromley",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Glades",
+"name": "The Glades",
+"town": "Bromley",
+"localAuthority": "London Borough of Bromley",
+"region": "Greater London",
+"nation": "England",
+"postcode": "BR1 1DN",
+"aliases": [
+"Intu Bromley"
+]
+},
+{
+"key": "The Mall Bromley",
+"name": "The Mall Bromley",
+"town": "Bromley",
+"localAuthority": "London Borough of Bromley",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Walnuts Shopping Centre",
+"name": "Walnuts Shopping Centre",
+"town": "Orpington",
+"localAuthority": "London Borough of Bromley",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "O2 Centre",
+"name": "O2 Centre",
+"town": "Finchley Road",
+"localAuthority": "London Borough of Camden",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Brunswick",
+"name": "The Brunswick",
+"town": "Bloomsbury",
+"localAuthority": "London Borough of Camden",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Whitgift Centre",
+"name": "Whitgift Centre",
+"town": "Croydon",
+"localAuthority": "London Borough of Croydon",
+"region": "Greater London",
+"nation": "England",
+"postcode": "CR0 1LP"
+},
+{
+"key": "Arcadia Centre",
+"name": "Arcadia Centre",
+"town": "Ealing",
+"localAuthority": "London Borough of Ealing",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Ealing Broadway Centre",
+"name": "Ealing Broadway Centre",
+"town": "Ealing",
+"localAuthority": "London Borough of Ealing",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Edmonton Green Shopping Centre (Edmonton)",
+"name": "Edmonton Green Shopping Centre",
+"town": "Edmonton",
+"localAuthority": "London Borough of Enfield",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Palace Exchange",
+"name": "Palace Exchange",
+"town": "Enfield Town",
+"localAuthority": "London Borough of Enfield",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Palace Gardens",
+"name": "Palace Gardens",
+"town": "Enfield Town",
+"localAuthority": "London Borough of Enfield",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Kingsland Shopping Centre",
+"name": "Kingsland Shopping Centre",
+"town": "Dalston",
+"localAuthority": "London Borough of Hackney",
+"region": "Greater London",
+"nation": "England",
+"postcode": "E8 2LX"
+},
+{
+"key": "Kings Mall",
+"name": "Kings Mall",
+"town": "Hammersmith",
+"localAuthority": "London Borough of Hammersmith and Fulham",
+"region": "Greater London",
+"nation": "England",
+"postcode": "W6 9HW"
+},
+{
+"key": "West 12 Shopping Centre",
+"name": "West 12 Shopping Centre",
+"town": "Shepherd's Bush",
+"localAuthority": "London Borough of Hammersmith and Fulham",
+"region": "Greater London",
+"nation": "England",
+"postcode": "W12 8PP"
+},
+{
+"key": "Westfield London",
+"name": "Westfield London",
+"town": "London",
+"localAuthority": "London Borough of Hammersmith and Fulham",
+"region": "Greater London",
+"nation": "England",
+"postcode": "W12 7GF"
+},
+{
+"key": "The Mall Wood Green",
+"name": "The Mall Wood Green",
+"town": "Wood Green",
+"localAuthority": "London Borough of Haringey",
+"region": "Greater London",
+"nation": "England",
+"postcode": "N22 6YQ"
+},
+{
+"key": "St Anns Shopping Centre",
+"name": "St Anns Shopping Centre",
+"town": "Harrow",
+"localAuthority": "London Borough of Harrow",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Brewery",
+"name": "The Brewery",
+"town": "Romford",
+"localAuthority": "London Borough of Havering",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Liberty",
+"name": "The Liberty",
+"town": "Romford",
+"localAuthority": "London Borough of Havering",
+"region": "Greater London",
+"nation": "England",
+"postcode": "RM1 3RL"
+},
+{
+"key": "The Mercury Mall",
+"name": "The Mercury Mall",
+"town": "Romford",
+"localAuthority": "London Borough of Havering",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Chimes",
+"name": "The Chimes",
+"town": "Uxbridge",
+"localAuthority": "London Borough of Hillingdon",
+"region": "Greater London",
+"nation": "England",
+"postcode": "UB8 1GE"
+},
+{
+"key": "The Pavilions",
+"name": "The Pavilions",
+"town": "Uxbridge",
+"localAuthority": "London Borough of Hillingdon",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Blenheim Centre",
+"name": "Blenheim Centre",
+"town": "Hounslow",
+"localAuthority": "London Borough of Hounslow",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Treaty Centre",
+"name": "Treaty Centre",
+"town": "Hounslow",
+"localAuthority": "London Borough of Hounslow",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Centre Court Shopping Centre",
+"name": "Centre Court Shopping Centre",
+"town": "Wimbledon",
+"localAuthority": "London Borough of Merton",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Stratford Centre",
+"name": "Stratford Centre",
+"town": "Stratford",
+"localAuthority": "London Borough of Newham",
+"region": "Greater London",
+"nation": "England",
+"postcode": "E15 1XE"
+},
+{
+"key": "Westfield Stratford City",
+"name": "Westfield Stratford City",
+"town": "London",
+"localAuthority": "London Borough of Newham",
+"region": "Greater London",
+"nation": "England",
+"postcode": "E20 1EJ"
+},
+{
+"key": "Aylesham Centre",
+"name": "Aylesham Centre",
+"town": "Peckham",
+"localAuthority": "London Borough of Southwark",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Hay's Galleria",
+"name": "Hay's Galleria",
+"town": "London Bridge",
+"localAuthority": "London Borough of Southwark",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Surrey Quays Shopping Centre (London)",
+"name": "Surrey Quays Shopping Centre",
+"town": "London",
+"localAuthority": "London Borough of Southwark",
+"region": "Greater London",
+"nation": "England",
+"postcode": "SE16 7LL"
+},
+{
+"key": "Surrey Quays Shopping Centre (Rotherhithe)",
+"name": "Surrey Quays Shopping Centre",
+"town": "Rotherhithe",
+"localAuthority": "London Borough of Southwark",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "St Nicholas Centre",
+"name": "St Nicholas Centre",
+"town": "Sutton",
+"localAuthority": "London Borough of Sutton",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Times Square",
+"name": "Times Square",
+"town": "Sutton",
+"localAuthority": "London Borough of Sutton",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Canary Wharf Shopping Centre",
+"name": "Canary Wharf Shopping Centre",
+"town": "Canary Wharf",
+"localAuthority": "London Borough of Tower Hamlets",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Mall Walthamstow",
+"name": "The Mall Walthamstow",
+"town": "Walthamstow",
+"localAuthority": "London Borough of Waltham Forest",
+"region": "Greater London",
+"nation": "England",
+"postcode": "E17 7JR"
+},
+{
+"key": "Putney Exchange",
+"name": "Putney Exchange",
+"town": "Putney",
+"localAuthority": "London Borough of Wandsworth",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Exchange Ilford",
+"name": "Exchange Ilford",
+"town": "Ilford",
+"localAuthority": "Redbridge London Borough Council",
+"region": "Greater London",
+"nation": "England",
+"postcode": "IG1 1RS"
+},
+{
+"key": "Cloisters Mall",
+"name": "Cloisters Mall",
+"town": "Kingston upon Thames",
+"localAuthority": "Royal Borough of Kingston upon Thames",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Eden Walk",
+"name": "Eden Walk",
+"town": "Kingston upon Thames",
+"localAuthority": "Royal Borough of Kingston upon Thames",
+"region": "Greater London",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Bentall Centre",
+"name": "The Bentall Centre",
+"town": "Kingston upon Thames",
+"localAuthority": "Royal Borough of Kingston upon Thames",
+"region": "Greater London",
+"nation": "England",
+"postcode": "KT1 1TP"
+},
+{
+"key": "Wandsworth Southside",
+"name": "Wandsworth Southside",
+"town": "London",
+"localAuthority": "London Borough of Wandsworth",
+"region": "Greater London",
+"nation": "England",
+"postcode": "SW18 4TF"
+},
+{
+"key": "Dalton Park Outlet",
+"name": "Dalton Park Outlet",
+"town": "Murton",
+"localAuthority": "Durham County Council",
+"region": "North East",
+"nation": "England",
+"postcode": "SR7 9HU"
+},
+{
+"key": "The Riverwalk",
+"name": "The Riverwalk",
+"town": "Durham",
+"localAuthority": "Durham County Council",
+"region": "North East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Metrocentre",
+"name": "Metrocentre",
+"town": "Gateshead",
+"localAuthority": "Gateshead Council",
+"region": "North East",
+"nation": "England",
+"postcode": "NE11 9YG",
+"aliases": [
+"Intu Metrocentre"
+]
+},
+{
+"key": "Middleton Grange",
+"name": "Middleton Grange",
+"town": "Hartlepool",
+"localAuthority": "Hartlepool Borough Council",
+"region": "North East",
+"nation": "England",
+"postcode": "TS24 7RZ"
+},
+{
+"key": "Cleveland Centre",
+"name": "Cleveland Centre",
+"town": "Middlesbrough",
+"localAuthority": "Middlesbrough Council",
+"region": "North East",
+"nation": "England",
+"postcode": "TS1 2NR"
+},
+{
+"key": "Hillstreet Shopping Centre",
+"name": "Hillstreet Shopping Centre",
+"town": "Middlesbrough",
+"localAuthority": "Middlesbrough Council",
+"region": "North East",
+"nation": "England",
+"postcode": "TS1 1SU"
+},
+{
+"key": "Eldon Square",
+"name": "Eldon Square",
+"town": "Newcastle",
+"localAuthority": "Newcastle City Council",
+"region": "North East",
+"nation": "England",
+"postcode": "NE1 7JB",
+"aliases": [
+"Intu Eldon Square"
+]
+},
+{
+"key": "Royal Quays Outlet",
+"name": "Royal Quays Outlet",
+"town": "North Shields",
+"localAuthority": "North Tyneside Council",
+"region": "North East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Manor Walks Shopping Centre",
+"name": "Manor Walks Shopping Centre",
+"town": "Cramlington",
+"localAuthority": "Northumberland County Council",
+"region": "North East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Teesside Park",
+"name": "Teesside Park",
+"town": "Stockton-on-Tees",
+"localAuthority": "Stockton-on-Tees Borough Council",
+"region": "North East",
+"nation": "England",
+"postcode": "TS17 7BW"
+},
+{
+"key": "Wellington Square",
+"name": "Wellington Square",
+"town": "Stockton-on-Tees",
+"localAuthority": "Stockton-on-Tees Borough Council",
+"region": "North East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Bridges",
+"name": "The Bridges",
+"town": "Sunderland",
+"localAuthority": "Sunderland City Council",
+"region": "North East",
+"nation": "England",
+"postcode": "SR1 3DR"
+},
+{
+"key": "The Galleries (Washington)",
+"name": "The Galleries",
+"town": "Washington",
+"localAuthority": "Sunderland City Council",
+"region": "North East",
+"nation": "England",
+"postcode": "NE38 7SD"
+},
+{
+"key": "The Mall Blackburn",
+"name": "The Mall Blackburn",
+"town": "Blackburn",
+"localAuthority": "Blackburn with Darwen Borough Council",
+"region": "North West",
+"nation": "England",
+"postcode": "BB1 7JG",
+"aliases": [
+"The Mall Blackburn"
+]
+},
+{
+"key": "Houndshill Shopping Centre",
+"name": "Houndshill Shopping Centre",
+"town": "Blackpool",
+"localAuthority": "Blackpool Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Crompton Place Shopping Centre",
+"name": "Crompton Place Shopping Centre",
+"town": "Bolton",
+"localAuthority": "Bolton Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Charter Walk Shopping Centre",
+"name": "Charter Walk Shopping Centre",
+"town": "Burnley",
+"localAuthority": "Burnley Borough Council",
+"region": "North West",
+"nation": "England",
+"postcode": "BB11 1QJ"
+},
+{
+"key": "The Millgate Shopping Centre",
+"name": "The Millgate Shopping Centre",
+"town": "Bury",
+"localAuthority": "Bury Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Rock",
+"name": "The Rock",
+"town": "Bury",
+"localAuthority": "Bury Council",
+"region": "North West",
+"nation": "England",
+"postcode": "BL9 0JX"
+},
+{
+"key": "The Market Shopping Centre",
+"name": "The Market Shopping Centre",
+"town": "Crewe",
+"localAuthority": "Cheshire East Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Cheshire Oaks Designer Outlet",
+"name": "Cheshire Oaks Designer Outlet",
+"town": "Ellesmere Port",
+"localAuthority": "Cheshire West and Chester Council",
+"region": "North West",
+"nation": "England",
+"postcode": "CH65 9JJ"
+},
+{
+"key": "Port Arcades",
+"name": "Port Arcades",
+"town": "Ellesmere Port",
+"localAuthority": "Cheshire West and Chester Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Market Walk Shopping Centre",
+"name": "Market Walk Shopping Centre",
+"town": "Chorley",
+"localAuthority": "Chorley Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Lanes Shopping Centre",
+"name": "The Lanes Shopping Centre",
+"town": "Carlisle",
+"localAuthority": "Cumberland Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Washington Square",
+"name": "Washington Square",
+"town": "Workington",
+"localAuthority": "Cumberland Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Green Oaks",
+"name": "Green Oaks",
+"town": "Widnes",
+"localAuthority": "Halton Borough Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Runcorn Shopping City / Halton Lea",
+"name": "Runcorn Shopping City / Halton Lea",
+"town": "Runcorn",
+"localAuthority": "Halton Borough Council",
+"region": "North West",
+"nation": "England",
+"postcode": "WA7 2EU"
+},
+{
+"key": "Accrington Arndale",
+"name": "Accrington Arndale",
+"town": "Accrington",
+"localAuthority": "Hyndburn Borough Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Prescot Shopping Centre",
+"name": "Prescot Shopping Centre",
+"town": "Prescot",
+"localAuthority": "Knowsley Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Arndale Centre Morecambe",
+"name": "Arndale Centre Morecambe",
+"town": "Morecambe",
+"localAuthority": "Lancaster City Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Marketgate Shopping Centre",
+"name": "Marketgate Shopping Centre",
+"town": "Lancaster",
+"localAuthority": "Lancaster City Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "St Nicholas Arcades",
+"name": "St Nicholas Arcades",
+"town": "Lancaster",
+"localAuthority": "Lancaster City Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Clayton Square",
+"name": "Clayton Square",
+"town": "Liverpool",
+"localAuthority": "Liverpool City Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Liverpool ONE",
+"name": "Liverpool ONE",
+"town": "Liverpool",
+"localAuthority": "Liverpool City Council",
+"region": "North West",
+"nation": "England",
+"postcode": "L1 8JQ"
+},
+{
+"key": "Metquarter",
+"name": "Metquarter",
+"town": "Liverpool",
+"localAuthority": "Liverpool City Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "St John's Shopping Centre",
+"name": "St John's Shopping Centre",
+"town": "Liverpool",
+"localAuthority": "Liverpool City Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Manchester Arndale",
+"name": "Manchester Arndale",
+"town": "Manchester",
+"localAuthority": "Manchester City Council",
+"region": "North West",
+"nation": "England",
+"postcode": "M4 3AQ"
+},
+{
+"key": "The Triangle",
+"name": "The Triangle",
+"town": "Manchester",
+"localAuthority": "Manchester City Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Spindles Town Square",
+"name": "Spindles Town Square",
+"town": "Oldham",
+"localAuthority": "Oldham Metropolitan Borough Council",
+"region": "North West",
+"nation": "England",
+"postcode": "OL1 1HD"
+},
+{
+"key": "Pendle Rise Shopping Centre",
+"name": "Pendle Rise Shopping Centre",
+"town": "Nelson",
+"localAuthority": "Pendle Borough Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Fishergate Shopping Centre",
+"name": "Fishergate Shopping Centre",
+"town": "Preston",
+"localAuthority": "Preston City Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "St George's Shopping Centre (Preston)",
+"name": "St George's Shopping Centre",
+"town": "Preston",
+"localAuthority": "Preston City Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Middleton Shopping Centre",
+"name": "Middleton Shopping Centre",
+"town": "Middleton",
+"localAuthority": "Rochdale Metropolitan Borough Council",
+"region": "North West",
+"nation": "England",
+"postcode": "M24 4EL"
+},
+{
+"key": "Rochdale Exchange",
+"name": "Rochdale Exchange",
+"town": "Rochdale",
+"localAuthority": "Rochdale Metropolitan Borough Council",
+"region": "North West",
+"nation": "England",
+"postcode": "OL16 1BA"
+},
+{
+"key": "Lowry Outlet Mall",
+"name": "Lowry Outlet Mall",
+"town": "Salford Quays",
+"localAuthority": "Salford City Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Salford Shopping Centre",
+"name": "Salford Shopping Centre",
+"town": "Salford",
+"localAuthority": "Salford City Council",
+"region": "North West",
+"nation": "England",
+"postcode": "M6 5JA"
+},
+{
+"key": "Marble Place Shopping Centre",
+"name": "Marble Place Shopping Centre",
+"town": "Southport",
+"localAuthority": "Sefton Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "New Strand Shopping Centre",
+"name": "New Strand Shopping Centre",
+"town": "Bootle",
+"localAuthority": "Sefton Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Merseyway Shopping Centre",
+"name": "Merseyway Shopping Centre",
+"town": "Stockport",
+"localAuthority": "Stockport Metropolitan Borough Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Ashton Arcades",
+"name": "Ashton Arcades",
+"town": "Ashton-under-Lyne",
+"localAuthority": "Tameside Metropolitan Borough Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Clarendon Square Shopping Centre",
+"name": "Clarendon Square Shopping Centre",
+"town": "Hyde",
+"localAuthority": "Tameside Metropolitan Borough Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Stretford Mall",
+"name": "Stretford Mall",
+"town": "Stretford",
+"localAuthority": "Trafford Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Trafford Centre",
+"name": "The Trafford Centre",
+"town": "Manchester",
+"localAuthority": "Trafford Council",
+"region": "North West",
+"nation": "England",
+"postcode": "M17 8AA",
+"aliases": [
+"Intu Trafford Centre"
+]
+},
+{
+"key": "Birchwood Shopping Centre",
+"name": "Birchwood Shopping Centre",
+"town": "Warrington",
+"localAuthority": "Warrington Borough Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Cockhedge Shopping Centre",
+"name": "Cockhedge Shopping Centre",
+"town": "Warrington",
+"localAuthority": "Warrington Borough Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Golden Square",
+"name": "Golden Square",
+"town": "Warrington",
+"localAuthority": "Warrington Borough Council",
+"region": "North West",
+"nation": "England",
+"postcode": "WA1 1QB"
+},
+{
+"key": "Golden Square Shopping Centre",
+"name": "Golden Square Shopping Centre",
+"town": "Warrington",
+"localAuthority": "Warrington Borough Council",
+"region": "North West",
+"nation": "England",
+"postcode": "WA1 1UZ"
+},
+{
+"key": "Concourse Shopping Centre",
+"name": "Concourse Shopping Centre",
+"town": "Skelmersdale",
+"localAuthority": "West Lancashire Borough Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Westmorland Shopping Centre",
+"name": "Westmorland Shopping Centre",
+"town": "Kendal",
+"localAuthority": "Westmorland and Furness Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Grand Arcade (Wigan)",
+"name": "Grand Arcade",
+"town": "Wigan",
+"localAuthority": "Wigan Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Spinning Gate Shopping Centre",
+"name": "Spinning Gate Shopping Centre",
+"town": "Leigh",
+"localAuthority": "Wigan Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Galleries (Wigan)",
+"name": "The Galleries",
+"town": "Wigan",
+"localAuthority": "Wigan Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Cherry Tree Shopping Centre",
+"name": "Cherry Tree Shopping Centre",
+"town": "Wallasey",
+"localAuthority": "Wirral Council",
+"region": "North West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Affinity Lancashire",
+"name": "Affinity Lancashire",
+"town": "Fleetwood",
+"localAuthority": "Wyre Council",
+"region": "North West",
+"nation": "England",
+"postcode": "FY7 6AE"
+},
+{
+"key": "Holmbush Centre",
+"name": "Holmbush Centre",
+"town": "Shoreham-by-Sea",
+"localAuthority": "Adur District Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Ashford Designer Outlet",
+"name": "Ashford Designer Outlet",
+"town": "Ashford",
+"localAuthority": "Ashford Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": "TN24 0SD"
+},
+{
+"key": "County Square",
+"name": "County Square",
+"town": "Ashford",
+"localAuthority": "Ashford Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Festival Place",
+"name": "Festival Place",
+"town": "Basingstoke",
+"localAuthority": "Basingstoke and Deane Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": "RG21 7BE"
+},
+{
+"key": "The Malls",
+"name": "The Malls",
+"town": "Basingstoke",
+"localAuthority": "Basingstoke and Deane Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Lexicon",
+"name": "The Lexicon",
+"town": "Bracknell",
+"localAuthority": "Bracknell Forest Council",
+"region": "South East",
+"nation": "England",
+"postcode": "RG12 1AP",
+"aliases": [
+"Princess Square"
+]
+},
+{
+"key": "Churchill Square",
+"name": "Churchill Square",
+"town": "Brighton",
+"localAuthority": "Brighton and Hove City Council",
+"region": "South East",
+"nation": "England",
+"postcode": "BN1 2RG"
+},
+{
+"key": "Chilterns Shopping Centre",
+"name": "Chilterns Shopping Centre",
+"town": "High Wycombe",
+"localAuthority": "Buckinghamshire Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Eden Shopping Centre",
+"name": "Eden Shopping Centre",
+"town": "High Wycombe",
+"localAuthority": "Buckinghamshire Council",
+"region": "South East",
+"nation": "England",
+"postcode": "HP11 2DQ"
+},
+{
+"key": "Friars Square",
+"name": "Friars Square",
+"town": "Aylesbury",
+"localAuthority": "Buckinghamshire Council",
+"region": "South East",
+"nation": "England",
+"postcode": "HP20 2QF"
+},
+{
+"key": "Hale Leys Shopping Centre",
+"name": "Hale Leys Shopping Centre",
+"town": "Aylesbury",
+"localAuthority": "Buckinghamshire Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Octagon Shopping Centre (High Wycombe)",
+"name": "Octagon Shopping Centre",
+"town": "High Wycombe",
+"localAuthority": "Buckinghamshire Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Whitefriars Shopping Centre",
+"name": "Whitefriars Shopping Centre",
+"town": "Canterbury",
+"localAuthority": "Canterbury City Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Bicester Village",
+"name": "Bicester Village",
+"town": "Bicester",
+"localAuthority": "Cherwell District Council",
+"region": "South East",
+"nation": "England",
+"postcode": "OX26 6WD"
+},
+{
+"key": "Castle Quay",
+"name": "Castle Quay",
+"town": "Banbury",
+"localAuthority": "Cherwell District Council",
+"region": "South East",
+"nation": "England",
+"postcode": "OX16 5UN"
+},
+{
+"key": "County Mall",
+"name": "County Mall",
+"town": "Crawley",
+"localAuthority": "Crawley Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": "RH10 1FP"
+},
+{
+"key": "Bluewater Shopping Centre",
+"name": "Bluewater Shopping Centre",
+"town": "Greenhithe",
+"localAuthority": "Dartford Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": "DA9 9ST"
+},
+{
+"key": "Orchards Shopping Centre (Dartford)",
+"name": "Orchards Shopping Centre",
+"town": "Dartford",
+"localAuthority": "Dartford Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Charlton Centre",
+"name": "Charlton Centre",
+"town": "Dover",
+"localAuthority": "Dover District Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Beacon",
+"name": "The Beacon",
+"town": "Eastbourne",
+"localAuthority": "Eastbourne Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": "BN21 3NW"
+},
+{
+"key": "The Swan Centre",
+"name": "The Swan Centre",
+"town": "Eastleigh",
+"localAuthority": "Eastleigh Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": "SO50 5SF"
+},
+{
+"key": "Spread Eagle Walk Shopping Centre",
+"name": "Spread Eagle Walk Shopping Centre",
+"town": "Epsom",
+"localAuthority": "Epsom and Ewell Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Ashley Centre",
+"name": "The Ashley Centre",
+"town": "Epsom",
+"localAuthority": "Epsom and Ewell Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": "KT18 5AB"
+},
+{
+"key": "Whiteley Shopping Centre",
+"name": "Whiteley Shopping Centre",
+"town": "Whiteley",
+"localAuthority": "Fareham Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": "PO15 7PD"
+},
+{
+"key": "The Friary Centre",
+"name": "The Friary Centre",
+"town": "Guildford",
+"localAuthority": "Guildford Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Tunsgate Quarter",
+"name": "Tunsgate Quarter",
+"town": "Guildford",
+"localAuthority": "Guildford Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "White Lion Walk",
+"name": "White Lion Walk",
+"town": "Guildford",
+"localAuthority": "Guildford Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Hart Centre",
+"name": "Hart Centre",
+"town": "Fleet",
+"localAuthority": "Hart District Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Priory Meadow Shopping Centre",
+"name": "Priory Meadow Shopping Centre",
+"town": "Hastings",
+"localAuthority": "Hastings Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Meridian Shopping",
+"name": "Meridian Shopping",
+"town": "Havant",
+"localAuthority": "Havant Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Swan Walk",
+"name": "Swan Walk",
+"town": "Horsham",
+"localAuthority": "Horsham District Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Fremlin Walk",
+"name": "Fremlin Walk",
+"town": "Maidstone",
+"localAuthority": "Maidstone Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": "ME14 1PS"
+},
+{
+"key": "The Mall Maidstone",
+"name": "The Mall Maidstone",
+"town": "Maidstone",
+"localAuthority": "Maidstone Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": "ME15 6AT"
+},
+{
+"key": "Hempstead Valley Shopping Centre",
+"name": "Hempstead Valley Shopping Centre",
+"town": "Gillingham",
+"localAuthority": "Medway Council",
+"region": "South East",
+"nation": "England",
+"postcode": "ME7 3PD"
+},
+{
+"key": "The Pentagon Shopping Centre",
+"name": "The Pentagon Shopping Centre",
+"town": "Chatham",
+"localAuthority": "Medway Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Market Place Shopping Centre",
+"name": "Market Place Shopping Centre",
+"town": "Burgess Hill",
+"localAuthority": "Mid Sussex District Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Orchards Shopping Centre (Haywards Heath)",
+"name": "Orchards Shopping Centre",
+"town": "Haywards Heath",
+"localAuthority": "Mid Sussex District Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Martlets",
+"name": "The Martlets",
+"town": "Burgess Hill",
+"localAuthority": "Mid Sussex District Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Brunel Centre (Bletchley)",
+"name": "Brunel Centre",
+"town": "Bletchley",
+"localAuthority": "Milton Keynes City Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Centre:MK",
+"name": "Centre:MK",
+"town": "Milton Keynes",
+"localAuthority": "Milton Keynes City Council",
+"region": "South East",
+"nation": "England",
+"postcode": "MK9 3ES"
+},
+{
+"key": "St Martin's Walk Shopping Centre",
+"name": "St Martin's Walk Shopping Centre",
+"town": "Dorking",
+"localAuthority": "Mole Valley District Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Furlong",
+"name": "The Furlong",
+"town": "Ringwood",
+"localAuthority": "New Forest District Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Clarendon Shopping Centre",
+"name": "Clarendon Shopping Centre",
+"town": "Oxford",
+"localAuthority": "Oxford City Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Golden Cross",
+"name": "Golden Cross",
+"town": "Oxford",
+"localAuthority": "Oxford City Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Templars Square",
+"name": "Templars Square",
+"town": "Oxford",
+"localAuthority": "Oxford City Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Westgate Oxford",
+"name": "Westgate Oxford",
+"town": "Oxford",
+"localAuthority": "Oxford City Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Cascades Shopping Centre",
+"name": "Cascades Shopping Centre",
+"town": "Portsmouth",
+"localAuthority": "Portsmouth City Council",
+"region": "South East",
+"nation": "England",
+"postcode": "PO1 4RL"
+},
+{
+"key": "Gunwharf Quays",
+"name": "Gunwharf Quays",
+"town": "Portsmouth",
+"localAuthority": "Portsmouth City Council",
+"region": "South East",
+"nation": "England",
+"postcode": "PO1 3TZ"
+},
+{
+"key": "Broad Street Mall",
+"name": "Broad Street Mall",
+"town": "Reading",
+"localAuthority": "Reading Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Oracle",
+"name": "The Oracle",
+"town": "Reading",
+"localAuthority": "Reading Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": "RG1 2AG"
+},
+{
+"key": "The Belfry",
+"name": "The Belfry",
+"town": "Redhill",
+"localAuthority": "Reigate and Banstead Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "King Edward Court",
+"name": "King Edward Court",
+"town": "Windsor",
+"localAuthority": "Royal Borough of Windsor and Maidenhead",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Windsor Royal Shopping",
+"name": "Windsor Royal Shopping",
+"town": "Windsor",
+"localAuthority": "Royal Borough of Windsor and Maidenhead",
+"region": "South East",
+"nation": "England",
+"postcode": "SL4 1RH"
+},
+{
+"key": "Kingsmead",
+"name": "Kingsmead",
+"town": "Farnborough",
+"localAuthority": "Rushmoor Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Princes Mead Shopping Centre",
+"name": "Princes Mead Shopping Centre",
+"town": "Farnborough",
+"localAuthority": "Rushmoor Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Wellington Centre",
+"name": "Wellington Centre",
+"town": "Aldershot",
+"localAuthority": "Rushmoor Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Queensmere Observatory",
+"name": "Queensmere Observatory",
+"town": "Slough",
+"localAuthority": "Slough Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "East Street Shopping Centre",
+"name": "East Street Shopping Centre",
+"town": "Southampton",
+"localAuthority": "Southampton City Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Mall Southampton",
+"name": "The Mall Southampton",
+"town": "Southampton",
+"localAuthority": "Southampton City Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Marlands",
+"name": "The Marlands",
+"town": "Southampton",
+"localAuthority": "Southampton City Council",
+"region": "South East",
+"nation": "England",
+"postcode": "SO14 7SJ"
+},
+{
+"key": "Westquay",
+"name": "Westquay",
+"town": "Southampton",
+"localAuthority": "Southampton City Council",
+"region": "South East",
+"nation": "England",
+"postcode": "SO15 1QF"
+},
+{
+"key": "Elmsleigh Centre",
+"name": "Elmsleigh Centre",
+"town": "Staines-upon-Thames",
+"localAuthority": "Spelthorne Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Mall Camberley",
+"name": "The Mall Camberley",
+"town": "Camberley",
+"localAuthority": "Surrey Heath Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": "GU15 3SL"
+},
+{
+"key": "The Forum (Sittingbourne)",
+"name": "The Forum",
+"town": "Sittingbourne",
+"localAuthority": "Swale Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Chantry Centre",
+"name": "The Chantry Centre",
+"town": "Andover",
+"localAuthority": "Test Valley Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": "SP10 1RL"
+},
+{
+"key": "Westwood Cross",
+"name": "Westwood Cross",
+"town": "Broadstairs",
+"localAuthority": "Thanet District Council",
+"region": "South East",
+"nation": "England",
+"postcode": "CT10 2BF"
+},
+{
+"key": "Angel Centre",
+"name": "Angel Centre",
+"town": "Tonbridge",
+"localAuthority": "Tonbridge and Malling Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Pavilion Shopping Centre",
+"name": "The Pavilion Shopping Centre",
+"town": "Tonbridge",
+"localAuthority": "Tonbridge and Malling Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Royal Victoria Place",
+"name": "Royal Victoria Place",
+"town": "Tunbridge Wells",
+"localAuthority": "Tunbridge Wells Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": "TN1 2SS"
+},
+{
+"key": "Kennet Shopping",
+"name": "Kennet Shopping",
+"town": "Newbury",
+"localAuthority": "West Berkshire Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Woolgate Shopping Centre",
+"name": "Woolgate Shopping Centre",
+"town": "Witney",
+"localAuthority": "West Oxfordshire District Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Brooks",
+"name": "The Brooks",
+"town": "Winchester",
+"localAuthority": "Winchester City Council",
+"region": "South East",
+"nation": "England",
+"postcode": "SO23 8QY"
+},
+{
+"key": "Woking Shopping (Peacocks & Wolsey Place)",
+"name": "Woking Shopping (Peacocks & Wolsey Place)",
+"town": "Woking",
+"localAuthority": "Woking Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": "GU21 6GH"
+},
+{
+"key": "Wolsey Place",
+"name": "Wolsey Place",
+"town": "Woking",
+"localAuthority": "Woking Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": "GU21 6XX"
+},
+{
+"key": "Guildbourne Centre",
+"name": "Guildbourne Centre",
+"town": "Worthing",
+"localAuthority": "Worthing Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Montague Centre",
+"name": "Montague Centre",
+"town": "Worthing",
+"localAuthority": "Worthing Borough Council",
+"region": "South East",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "SouthGate Bath",
+"name": "SouthGate Bath",
+"town": "Bath",
+"localAuthority": "Bath and North East Somerset Council",
+"region": "South West",
+"nation": "England",
+"postcode": "BA1 1AQ"
+},
+{
+"key": "Avenue Shopping Centre",
+"name": "Avenue Shopping Centre",
+"town": "Bournemouth",
+"localAuthority": "Bournemouth, Christchurch and Poole Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Castlepoint",
+"name": "Castlepoint",
+"town": "Bournemouth",
+"localAuthority": "Bournemouth, Christchurch and Poole Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Dolphin Shopping Centre",
+"name": "Dolphin Shopping Centre",
+"town": "Poole",
+"localAuthority": "Bournemouth, Christchurch and Poole Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Sovereign Centre",
+"name": "The Sovereign Centre",
+"town": "Boscombe / Bournemouth",
+"localAuthority": "Bournemouth, Christchurch and Poole Council",
+"region": "South West",
+"nation": "England",
+"postcode": "BH14 8SX"
+},
+{
+"key": "Broadwalk Shopping Centre (Bristol)",
+"name": "Broadwalk Shopping Centre",
+"town": "Bristol",
+"localAuthority": "Bristol City Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Cabot Circus",
+"name": "Cabot Circus",
+"town": "Bristol",
+"localAuthority": "Bristol City Council",
+"region": "South West",
+"nation": "England",
+"postcode": "BS1 3BX"
+},
+{
+"key": "The Galleries (Bristol)",
+"name": "The Galleries",
+"town": "Bristol",
+"localAuthority": "Bristol City Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Beechwood Shopping Centre",
+"name": "Beechwood Shopping Centre",
+"town": "Cheltenham",
+"localAuthority": "Cheltenham Borough Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Regent Arcade",
+"name": "Regent Arcade",
+"town": "Cheltenham",
+"localAuthority": "Cheltenham Borough Council",
+"region": "South West",
+"nation": "England",
+"postcode": "GL50 1JZ"
+},
+{
+"key": "Wharfside Shopping Centre",
+"name": "Wharfside Shopping Centre",
+"town": "Penzance",
+"localAuthority": "Cornwall Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Guildhall Shopping Centre (Exeter)",
+"name": "Guildhall Shopping Centre",
+"town": "Exeter",
+"localAuthority": "Exeter City Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Princesshay",
+"name": "Princesshay",
+"town": "Exeter",
+"localAuthority": "Exeter City Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Harlequin Centre",
+"name": "The Harlequin Centre",
+"town": "Exeter",
+"localAuthority": "Exeter City Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Gloucester Quays",
+"name": "Gloucester Quays",
+"town": "Gloucester",
+"localAuthority": "Gloucester City Council",
+"region": "South West",
+"nation": "England",
+"postcode": "GL1 5SH"
+},
+{
+"key": "Kings Walk Shopping Centre",
+"name": "Kings Walk Shopping Centre",
+"town": "Gloucester",
+"localAuthority": "Gloucester City Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Eastgate Shopping Centre Gloucester",
+"name": "The Eastgate Shopping Centre Gloucester",
+"town": "Gloucester",
+"localAuthority": "Gloucester City Council",
+"region": "South West",
+"nation": "England",
+"postcode": "GL1 1XN"
+},
+{
+"key": "Green Lanes Shopping Centre",
+"name": "Green Lanes Shopping Centre",
+"town": "Barnstaple",
+"localAuthority": "North Devon Council",
+"region": "South West",
+"nation": "England",
+"postcode": "EX31 1UL"
+},
+{
+"key": "Queensway Centre",
+"name": "Queensway Centre",
+"town": "Worle",
+"localAuthority": "North Somerset Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Sovereign",
+"name": "The Sovereign",
+"town": "Weston-super-Mare",
+"localAuthority": "North Somerset Council",
+"region": "South West",
+"nation": "England",
+"postcode": "BS23 1HL"
+},
+{
+"key": "Armada Centre",
+"name": "Armada Centre",
+"town": "Plymouth",
+"localAuthority": "Plymouth City Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Drake Circus",
+"name": "Drake Circus",
+"town": "Plymouth",
+"localAuthority": "Plymouth City Council",
+"region": "South West",
+"nation": "England",
+"postcode": "PL1 2AA"
+},
+{
+"key": "Angel Place Shopping Centre",
+"name": "Angel Place Shopping Centre",
+"town": "Bridgwater",
+"localAuthority": "Somerset Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Clarks Village",
+"name": "Clarks Village",
+"town": "Street",
+"localAuthority": "Somerset Council",
+"region": "South West",
+"nation": "England",
+"postcode": "BA16 0BB"
+},
+{
+"key": "Orchard Shopping Centre",
+"name": "Orchard Shopping Centre",
+"town": "Taunton",
+"localAuthority": "Somerset Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Westway Shopping Centre",
+"name": "The Westway Shopping Centre",
+"town": "Frome",
+"localAuthority": "Somerset Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Kings Chase Centre",
+"name": "Kings Chase Centre",
+"town": "Kingswood",
+"localAuthority": "South Gloucestershire Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Mall at Cribbs Causeway",
+"name": "The Mall at Cribbs Causeway",
+"town": "Bristol",
+"localAuthority": "South Gloucestershire Council",
+"region": "South West",
+"nation": "England",
+"postcode": "BS34 5DG"
+},
+{
+"key": "Yate Shopping Centre",
+"name": "Yate Shopping Centre",
+"town": "Yate",
+"localAuthority": "South Gloucestershire Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Merrywalks",
+"name": "Merrywalks",
+"town": "Stroud",
+"localAuthority": "Stroud District Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Brunel Centre (Swindon)",
+"name": "Brunel Centre",
+"town": "Swindon",
+"localAuthority": "Swindon Borough Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Swindon Designer Outlet",
+"name": "Swindon Designer Outlet",
+"town": "Swindon",
+"localAuthority": "Swindon Borough Council",
+"region": "South West",
+"nation": "England",
+"postcode": "SN2 2DY"
+},
+{
+"key": "West Swindon Shopping Centre",
+"name": "West Swindon Shopping Centre",
+"town": "Swindon",
+"localAuthority": "Swindon Borough Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Market Walk",
+"name": "Market Walk",
+"town": "Newton Abbot",
+"localAuthority": "Teignbridge District Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Crossways Centre",
+"name": "Crossways Centre",
+"town": "Paignton",
+"localAuthority": "Torbay Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Fleet Walk",
+"name": "Fleet Walk",
+"town": "Torquay",
+"localAuthority": "Torbay Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Union Square (Torquay)",
+"name": "Union Square",
+"town": "Torquay",
+"localAuthority": "Torbay Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Victoria Square (Paignton)",
+"name": "Victoria Square",
+"town": "Paignton",
+"localAuthority": "Torbay Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Affinity Devon",
+"name": "Affinity Devon",
+"town": "Bideford",
+"localAuthority": "Torridge District Council",
+"region": "South West",
+"nation": "England",
+"postcode": "EX39 3QU"
+},
+{
+"key": "Atlantic Village",
+"name": "Atlantic Village",
+"town": "Bideford",
+"localAuthority": "Torridge District Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Borough Parade Shopping Centre",
+"name": "Borough Parade Shopping Centre",
+"town": "Chippenham",
+"localAuthority": "Wiltshire Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Castle Place Shopping Centre",
+"name": "Castle Place Shopping Centre",
+"town": "Trowbridge",
+"localAuthority": "Wiltshire Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Cross Keys Shopping Centre",
+"name": "Cross Keys Shopping Centre",
+"town": "Salisbury",
+"localAuthority": "Wiltshire Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Emery Gate Shopping Centre",
+"name": "Emery Gate Shopping Centre",
+"town": "Chippenham",
+"localAuthority": "Wiltshire Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Shires Shopping Centre",
+"name": "The Shires Shopping Centre",
+"town": "Trowbridge",
+"localAuthority": "Wiltshire Council",
+"region": "South West",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Bullring & Grand Central",
+"name": "Bullring & Grand Central",
+"town": "Birmingham",
+"localAuthority": "Birmingham City Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": "B5 4BU"
+},
+{
+"key": "Gracechurch Shopping Centre",
+"name": "Gracechurch Shopping Centre",
+"town": "Sutton Coldfield",
+"localAuthority": "Birmingham City Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": "B72 1PD"
+},
+{
+"key": "Martineau Place",
+"name": "Martineau Place",
+"town": "Birmingham",
+"localAuthority": "Birmingham City Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Northfield Shopping Centre",
+"name": "Northfield Shopping Centre",
+"town": "Northfield, Birmingham",
+"localAuthority": "Birmingham City Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "One Stop Shopping Centre",
+"name": "One Stop Shopping Centre",
+"town": "Perry Barr, Birmingham",
+"localAuthority": "Birmingham City Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Mailbox",
+"name": "The Mailbox",
+"town": "Birmingham",
+"localAuthority": "Birmingham City Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Mall Sutton Coldfield",
+"name": "The Mall Sutton Coldfield",
+"town": "Sutton Coldfield",
+"localAuthority": "Birmingham City Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Mander Centre",
+"name": "Mander Centre",
+"town": "Wolverhampton",
+"localAuthority": "City of Wolverhampton Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": "WV1 3NH"
+},
+{
+"key": "Wulfrun Centre",
+"name": "Wulfrun Centre",
+"town": "Wolverhampton",
+"localAuthority": "City of Wolverhampton Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": "WV1 3HH"
+},
+{
+"key": "Arena Park Shopping Centre",
+"name": "Arena Park Shopping Centre",
+"town": "Coventry",
+"localAuthority": "Coventry City Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Cathedral Lanes Shopping Centre",
+"name": "Cathedral Lanes Shopping Centre",
+"town": "Coventry",
+"localAuthority": "Coventry City Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Lower Precinct",
+"name": "Lower Precinct",
+"town": "Coventry",
+"localAuthority": "Coventry City Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "West Orchards Shopping Centre",
+"name": "West Orchards Shopping Centre",
+"town": "Coventry",
+"localAuthority": "Coventry City Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Cornbow Shopping Centre",
+"name": "Cornbow Shopping Centre",
+"town": "Halesowen",
+"localAuthority": "Dudley Metropolitan Borough Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": "B63 3AB"
+},
+{
+"key": "Merry Hill",
+"name": "Merry Hill",
+"town": "Brierley Hill",
+"localAuthority": "Dudley Metropolitan Borough Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": "DY5 1QX",
+"aliases": [
+"Intu Merry Hill"
+]
+},
+{
+"key": "The Ryemarket",
+"name": "The Ryemarket",
+"town": "Stourbridge",
+"localAuthority": "Dudley Metropolitan Borough Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Coopers Square",
+"name": "Coopers Square",
+"town": "Burton upon Trent",
+"localAuthority": "East Staffordshire Borough Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Octagon Shopping Centre (Burton upon Trent)",
+"name": "Octagon Shopping Centre",
+"town": "Burton upon Trent",
+"localAuthority": "East Staffordshire Borough Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Maylord Shopping Centre",
+"name": "Maylord Shopping Centre",
+"town": "Hereford",
+"localAuthority": "Herefordshire Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Old Market",
+"name": "Old Market",
+"town": "Hereford",
+"localAuthority": "Herefordshire Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Three Spires Shopping Centre",
+"name": "Three Spires Shopping Centre",
+"town": "Lichfield",
+"localAuthority": "Lichfield District Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": "WS13 6JF"
+},
+{
+"key": "Ropewalk Shopping Centre",
+"name": "Ropewalk Shopping Centre",
+"town": "Nuneaton",
+"localAuthority": "Nuneaton and Bedworth Borough Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": "CV11 5TZ"
+},
+{
+"key": "Kingfisher Shopping Centre",
+"name": "Kingfisher Shopping Centre",
+"town": "Redditch",
+"localAuthority": "Redditch Borough Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": "B97 4HJ"
+},
+{
+"key": "Clock Towers Shopping Centre",
+"name": "Clock Towers Shopping Centre",
+"town": "Rugby",
+"localAuthority": "Rugby Borough Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Swan Centre Rugby",
+"name": "The Swan Centre Rugby",
+"town": "Rugby",
+"localAuthority": "Rugby Borough Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": "CV21 3EB"
+},
+{
+"key": "Darwin Shopping Centre",
+"name": "Darwin Shopping Centre",
+"town": "Shrewsbury",
+"localAuthority": "Shropshire Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Pride Hill Shopping Centre",
+"name": "Pride Hill Shopping Centre",
+"town": "Shrewsbury",
+"localAuthority": "Shropshire Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Chelmsley Wood Shopping Centre",
+"name": "Chelmsley Wood Shopping Centre",
+"town": "Chelmsley Wood",
+"localAuthority": "Solihull Metropolitan Borough Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Mell Square",
+"name": "Mell Square",
+"town": "Solihull",
+"localAuthority": "Solihull Metropolitan Borough Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Touchwood",
+"name": "Touchwood",
+"town": "Solihull",
+"localAuthority": "Solihull Metropolitan Borough Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": "B91 3GJ"
+},
+{
+"key": "Guildhall Shopping Centre (Stafford)",
+"name": "Guildhall Shopping Centre",
+"town": "Stafford",
+"localAuthority": "Stafford Borough Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Potteries Centre (Stoke-on-Trent)",
+"name": "The Potteries Centre",
+"town": "Stoke-on-Trent",
+"localAuthority": "Stoke-on-Trent City Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": "ST1 1PS",
+"aliases": [
+"Intu Potteries"
+]
+},
+{
+"key": "The Potteries Centre (Hanley)",
+"name": "The Potteries Centre",
+"town": "Hanley",
+"localAuthority": "Stoke-on-Trent City Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": "",
+"aliases": [
+"Intu Potteries"
+]
+},
+{
+"key": "Maybird Centre",
+"name": "Maybird Centre",
+"town": "Stratford-upon-Avon",
+"localAuthority": "Stratford-on-Avon District Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Ankerside Shopping Centre",
+"name": "Ankerside Shopping Centre",
+"town": "Tamworth",
+"localAuthority": "Tamworth Borough Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": "B79 7LG"
+},
+{
+"key": "Telford Centre",
+"name": "Telford Centre",
+"town": "Telford",
+"localAuthority": "Telford and Wrekin Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": "TF3 4BX"
+},
+{
+"key": "Saddlers Centre",
+"name": "Saddlers Centre",
+"town": "Walsall",
+"localAuthority": "Walsall Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Royal Priors",
+"name": "Royal Priors",
+"town": "Leamington Spa",
+"localAuthority": "Warwick District Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Cathedral Plaza Shopping Centre",
+"name": "Cathedral Plaza Shopping Centre",
+"town": "Worcester",
+"localAuthority": "Worcester City Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Worcester Crowngate",
+"name": "Worcester Crowngate",
+"town": "Worcester",
+"localAuthority": "Worcester City Council",
+"region": "West Midlands",
+"nation": "England",
+"postcode": "WR1 3LE"
+},
+{
+"key": "Alhambra Shopping Centre",
+"name": "Alhambra Shopping Centre",
+"town": "Barnsley",
+"localAuthority": "Barnsley Metropolitan Borough Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": "S70 1SB"
+},
+{
+"key": "Airedale Shopping Centre",
+"name": "Airedale Shopping Centre",
+"town": "Keighley",
+"localAuthority": "Bradford Metropolitan District Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": "BD21 3QQ"
+},
+{
+"key": "Broadway Bradford",
+"name": "Broadway Bradford",
+"town": "Bradford",
+"localAuthority": "Bradford Metropolitan District Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": "BD1 1US"
+},
+{
+"key": "The Piece Hall",
+"name": "The Piece Hall",
+"town": "Halifax",
+"localAuthority": "Calderdale Metropolitan Borough Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": "HX1 1RE"
+},
+{
+"key": "Woolshops Shopping Centre",
+"name": "Woolshops Shopping Centre",
+"town": "Halifax",
+"localAuthority": "Calderdale Metropolitan Borough Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": "HX1 1RU"
+},
+{
+"key": "Frenchgate Shopping Centre",
+"name": "Frenchgate Shopping Centre",
+"town": "Doncaster",
+"localAuthority": "City of Doncaster Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": "DN1 1SW"
+},
+{
+"key": "York Designer Outlet",
+"name": "York Designer Outlet",
+"town": "York",
+"localAuthority": "City of York Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": "YO19 4TA"
+},
+{
+"key": "Flemingate",
+"name": "Flemingate",
+"town": "Beverley",
+"localAuthority": "East Riding of Yorkshire Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "North Point Shopping Centre",
+"name": "North Point Shopping Centre",
+"town": "Hull",
+"localAuthority": "Hull City Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Princes Quay",
+"name": "Princes Quay",
+"town": "Hull",
+"localAuthority": "Hull City Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "St Stephen's Hull",
+"name": "St Stephen's Hull",
+"town": "Hull",
+"localAuthority": "Hull City Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Prospect Centre",
+"name": "The Prospect Centre",
+"town": "Hull",
+"localAuthority": "Hull City Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Crossgates Shopping Centre",
+"name": "Crossgates Shopping Centre",
+"town": "Leeds",
+"localAuthority": "Leeds City Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": "LS15 8DU"
+},
+{
+"key": "Horsefair Centre",
+"name": "Horsefair Centre",
+"town": "Wetherby",
+"localAuthority": "Leeds City Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Merrion Centre",
+"name": "Merrion Centre",
+"town": "Leeds",
+"localAuthority": "Leeds City Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "St John's Centre",
+"name": "St John's Centre",
+"town": "Leeds",
+"localAuthority": "Leeds City Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Core",
+"name": "The Core",
+"town": "Leeds",
+"localAuthority": "Leeds City Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Light",
+"name": "The Light",
+"town": "Leeds",
+"localAuthority": "Leeds City Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Trinity Leeds",
+"name": "Trinity Leeds",
+"town": "Leeds",
+"localAuthority": "Leeds City Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": "LS1 5ER"
+},
+{
+"key": "Victoria Leeds",
+"name": "Victoria Leeds",
+"town": "Leeds",
+"localAuthority": "Leeds City Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": "LS2 7AU"
+},
+{
+"key": "White Rose Shopping Centre",
+"name": "White Rose Shopping Centre",
+"town": "Leeds",
+"localAuthority": "Leeds City Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": "LS11 8LU"
+},
+{
+"key": "Freshney Place",
+"name": "Freshney Place",
+"town": "Grimsby",
+"localAuthority": "North East Lincolnshire Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": "DN31 1ED"
+},
+{
+"key": "The Parishes",
+"name": "The Parishes",
+"town": "Scunthorpe",
+"localAuthority": "North Lincolnshire Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Brunswick Shopping Centre",
+"name": "Brunswick Shopping Centre",
+"town": "Scarborough",
+"localAuthority": "North Yorkshire Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Victoria Gardens Shopping Centre",
+"name": "Victoria Gardens Shopping Centre",
+"town": "Harrogate",
+"localAuthority": "North Yorkshire Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Crystal Peaks Shopping Mall",
+"name": "Crystal Peaks Shopping Mall",
+"town": "Sheffield",
+"localAuthority": "Sheffield City Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": "S20 7PJ"
+},
+{
+"key": "Hillsborough Exchange",
+"name": "Hillsborough Exchange",
+"town": "Sheffield",
+"localAuthority": "Sheffield City Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Meadowhall",
+"name": "Meadowhall",
+"town": "Sheffield",
+"localAuthority": "Sheffield City Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": "S9 1EP"
+},
+{
+"key": "Orchard Square",
+"name": "Orchard Square",
+"town": "Sheffield",
+"localAuthority": "Sheffield City Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "The Moor Quarter",
+"name": "The Moor Quarter",
+"town": "Sheffield",
+"localAuthority": "Sheffield City Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Carlton Lanes Shopping Centre",
+"name": "Carlton Lanes Shopping Centre",
+"town": "Castleford",
+"localAuthority": "Wakefield Council",
+"region": "Yorkshire and the Humber",
+"nation": "England",
+"postcode": ""
+},
+{
+"key": "Bon Accord & St Nicholas Centres",
+"name": "Bon Accord & St Nicholas Centres",
+"town": "Aberdeen",
+"localAuthority": "Aberdeen City Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": "AB25 1HZ"
+},
+{
+"key": "Bon Accord Centre",
+"name": "Bon Accord Centre",
+"town": "Aberdeen",
+"localAuthority": "Aberdeen City Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": "AB10 1BA"
+},
+{
+"key": "The Academy Shopping Centre",
+"name": "The Academy Shopping Centre",
+"town": "Aberdeen",
+"localAuthority": "Aberdeen City Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": ""
+},
+{
+"key": "Trinity Centre Aberdeen",
+"name": "Trinity Centre Aberdeen",
+"town": "Aberdeen",
+"localAuthority": "Aberdeen City Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": "AB11 6BE"
+},
+{
+"key": "Union Square (Aberdeen)",
+"name": "Union Square",
+"town": "Aberdeen",
+"localAuthority": "Aberdeen City Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": "AB11 5RG"
+},
+{
+"key": "Cameron Toll Shopping Centre",
+"name": "Cameron Toll Shopping Centre",
+"town": "Edinburgh",
+"localAuthority": "City of Edinburgh Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": ""
+},
+{
+"key": "Ocean Terminal (Edinburgh)",
+"name": "Ocean Terminal",
+"town": "Edinburgh",
+"localAuthority": "City of Edinburgh Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": "EH6 6JJ"
+},
+{
+"key": "Ocean Terminal (Leith)",
+"name": "Ocean Terminal",
+"town": "Leith",
+"localAuthority": "City of Edinburgh Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": ""
+},
+{
+"key": "St James Quarter",
+"name": "St James Quarter",
+"town": "Edinburgh",
+"localAuthority": "City of Edinburgh Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": "EH1 3AD",
+"aliases": [
+"St James Centre"
+]
+},
+{
+"key": "The Gyle Shopping Centre",
+"name": "The Gyle Shopping Centre",
+"town": "Edinburgh",
+"localAuthority": "City of Edinburgh Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": "EH12 9JY"
+},
+{
+"key": "Waverley Market",
+"name": "Waverley Market",
+"town": "Edinburgh",
+"localAuthority": "City of Edinburgh Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": ""
+},
+{
+"key": "Westside Plaza",
+"name": "Westside Plaza",
+"town": "Edinburgh",
+"localAuthority": "City of Edinburgh Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": ""
+},
+{
+"key": "Gretna Gateway Outlet Village",
+"name": "Gretna Gateway Outlet Village",
+"town": "Gretna",
+"localAuthority": "Dumfries and Galloway Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": "DG16 5GG"
+},
+{
+"key": "Overgate Shopping Centre",
+"name": "Overgate Shopping Centre",
+"town": "Dundee",
+"localAuthority": "Dundee City Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": "DD1 1UQ"
+},
+{
+"key": "Wellgate Centre",
+"name": "Wellgate Centre",
+"town": "Dundee",
+"localAuthority": "Dundee City Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": "DD1 2DB"
+},
+{
+"key": "The Mall Falkirk",
+"name": "The Mall Falkirk",
+"town": "Falkirk",
+"localAuthority": "Falkirk Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": ""
+},
+{
+"key": "Kingdom Shopping Centre",
+"name": "Kingdom Shopping Centre",
+"town": "Glenrothes",
+"localAuthority": "Fife Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": ""
+},
+{
+"key": "Kingsgate Shopping Centre",
+"name": "Kingsgate Shopping Centre",
+"town": "Dunfermline",
+"localAuthority": "Fife Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": "KY12 7QU"
+},
+{
+"key": "The Mercat Shopping Centre",
+"name": "The Mercat Shopping Centre",
+"town": "Kirkcaldy",
+"localAuthority": "Fife Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": ""
+},
+{
+"key": "Buchanan Galleries",
+"name": "Buchanan Galleries",
+"town": "Glasgow",
+"localAuthority": "Glasgow City Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": "G1 2FF"
+},
+{
+"key": "Glasgow Fort",
+"name": "Glasgow Fort",
+"town": "Glasgow",
+"localAuthority": "Glasgow City Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": ""
+},
+{
+"key": "Princes Square",
+"name": "Princes Square",
+"town": "Glasgow",
+"localAuthority": "Glasgow City Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": "G1 3JN"
+},
+{
+"key": "Silverburn",
+"name": "Silverburn",
+"town": "Glasgow",
+"localAuthority": "Glasgow City Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": "G53 6AG"
+},
+{
+"key": "St Enoch Centre",
+"name": "St Enoch Centre",
+"town": "Glasgow",
+"localAuthority": "Glasgow City Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": "G1 4BW"
+},
+{
+"key": "The Forge Shopping Centre (Glasgow)",
+"name": "The Forge Shopping Centre",
+"town": "Glasgow",
+"localAuthority": "Glasgow City Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": "G31 4EB"
+},
+{
+"key": "Antonine Centre",
+"name": "Antonine Centre",
+"town": "Cumbernauld",
+"localAuthority": "North Lanarkshire Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": ""
+},
+{
+"key": "Cumbernauld Shopping Centre",
+"name": "Cumbernauld Shopping Centre",
+"town": "Cumbernauld",
+"localAuthority": "North Lanarkshire Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": "G67 1ER"
+},
+{
+"key": "Motherwell Shopping Centre",
+"name": "Motherwell Shopping Centre",
+"town": "Motherwell",
+"localAuthority": "North Lanarkshire Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": ""
+},
+{
+"key": "Braehead",
+"name": "Braehead",
+"town": "Renfrew",
+"localAuthority": "Renfrewshire Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": "G51 4BN",
+"aliases": [
+"Intu Braehead"
+]
+},
+{
+"key": "Ayr Central",
+"name": "Ayr Central",
+"town": "Ayr",
+"localAuthority": "South Ayrshire Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": "KA7 1TP"
+},
+{
+"key": "Kyle Centre",
+"name": "Kyle Centre",
+"town": "Ayr",
+"localAuthority": "South Ayrshire Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": ""
+},
+{
+"key": "East Kilbride Shopping Centre",
+"name": "East Kilbride Shopping Centre",
+"town": "East Kilbride",
+"localAuthority": "South Lanarkshire Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": "G74 1LL"
+},
+{
+"key": "Regent Shopping Centre",
+"name": "Regent Shopping Centre",
+"town": "Hamilton",
+"localAuthority": "South Lanarkshire Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": ""
+},
+{
+"key": "The Thistles",
+"name": "The Thistles",
+"town": "Stirling",
+"localAuthority": "Stirling Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": "FK8 2EA"
+},
+{
+"key": "Thistles Shopping Centre",
+"name": "Thistles Shopping Centre",
+"town": "Stirling",
+"localAuthority": "Stirling Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": "FK8 2EE"
+},
+{
+"key": "Clyde Shopping Centre",
+"name": "Clyde Shopping Centre",
+"town": "Clydebank",
+"localAuthority": "West Dunbartonshire Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": "G81 2UA"
+},
+{
+"key": "Almondvale Shopping Centre",
+"name": "Almondvale Shopping Centre",
+"town": "Livingston",
+"localAuthority": "West Lothian Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": "EH54 6GS"
+},
+{
+"key": "Livingston Designer Outlet",
+"name": "Livingston Designer Outlet",
+"town": "Livingston",
+"localAuthority": "West Lothian Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": "EH54 6QX"
+},
+{
+"key": "The Centre: Livingston",
+"name": "The Centre: Livingston",
+"town": "Livingston",
+"localAuthority": "West Lothian Council",
+"region": "Scotland",
+"nation": "Scotland",
+"postcode": "EH54 6HR"
+},
+{
+"key": "Festival Park",
+"name": "Festival Park",
+"town": "Ebbw Vale",
+"localAuthority": "Blaenau Gwent County Borough Council",
+"region": "Wales",
+"nation": "Wales",
+"postcode": ""
+},
+{
+"key": "Bridgend Designer Outlet",
+"name": "Bridgend Designer Outlet",
+"town": "Bridgend",
+"localAuthority": "Bridgend County Borough Council",
+"region": "Wales",
+"nation": "Wales",
+"postcode": "CF32 9SU"
+},
+{
+"key": "Bridgend Shopping Centre",
+"name": "Bridgend Shopping Centre",
+"town": "Bridgend",
+"localAuthority": "Bridgend County Borough Council",
+"region": "Wales",
+"nation": "Wales",
+"postcode": ""
+},
+{
+"key": "The Rhiw Shopping Centre",
+"name": "The Rhiw Shopping Centre",
+"town": "Bridgend",
+"localAuthority": "Bridgend County Borough Council",
+"region": "Wales",
+"nation": "Wales",
+"postcode": ""
+},
+{
+"key": "Queens Arcade",
+"name": "Queens Arcade",
+"town": "Cardiff",
+"localAuthority": "Cardiff Council",
+"region": "Wales",
+"nation": "Wales",
+"postcode": "CF10 2BY"
+},
+{
+"key": "St David's",
+"name": "St David's",
+"town": "Cardiff",
+"localAuthority": "Cardiff Council",
+"region": "Wales",
+"nation": "Wales",
+"postcode": "CF10 2EN"
+},
+{
+"key": "St David's Dewi Sant",
+"name": "St David's Dewi Sant",
+"town": "Cardiff",
+"localAuthority": "Cardiff Council",
+"region": "Wales",
+"nation": "Wales",
+"postcode": "CF10 2EF"
+},
+{
+"key": "The Capitol Shopping Centre",
+"name": "The Capitol Shopping Centre",
+"town": "Cardiff",
+"localAuthority": "Cardiff Council",
+"region": "Wales",
+"nation": "Wales",
+"postcode": "CF10 2HQ"
+},
+{
+"key": "Merlins Walk",
+"name": "Merlins Walk",
+"town": "Carmarthen",
+"localAuthority": "Carmarthenshire County Council",
+"region": "Wales",
+"nation": "Wales",
+"postcode": ""
+},
+{
+"key": "St Elli Shopping Centre",
+"name": "St Elli Shopping Centre",
+"town": "Llanelli",
+"localAuthority": "Carmarthenshire County Council",
+"region": "Wales",
+"nation": "Wales",
+"postcode": ""
+},
+{
+"key": "Quadrant Shopping Centre (Swansea)",
+"name": "Quadrant Shopping Centre",
+"town": "Swansea",
+"localAuthority": "City and County of Swansea Council",
+"region": "Wales",
+"nation": "Wales",
+"postcode": "SA1 3QW"
+},
+{
+"key": "Victoria Centre (Llandudno)",
+"name": "Victoria Centre",
+"town": "Llandudno",
+"localAuthority": "Conwy County Borough Council",
+"region": "Wales",
+"nation": "Wales",
+"postcode": "",
+"aliases": [
+"Intu Victoria Centre"
+]
+},
+{
+"key": "Tweedmill Outlet",
+"name": "Tweedmill Outlet",
+"town": "St Asaph",
+"localAuthority": "Denbighshire County Council",
+"region": "Wales",
+"nation": "Wales",
+"postcode": "LL17 0UY"
+},
+{
+"key": "Daniel Owen Centre",
+"name": "Daniel Owen Centre",
+"town": "Mold",
+"localAuthority": "Flintshire County Council",
+"region": "Wales",
+"nation": "Wales",
+"postcode": "CH7 1AP"
+},
+{
+"key": "Deiniol Centre",
+"name": "Deiniol Centre",
+"town": "Bangor",
+"localAuthority": "Gwynedd Council",
+"region": "Wales",
+"nation": "Wales",
+"postcode": ""
+},
+{
+"key": "Menai Centre",
+"name": "Menai Centre",
+"town": "Bangor",
+"localAuthority": "Gwynedd Council",
+"region": "Wales",
+"nation": "Wales",
+"postcode": ""
+},
+{
+"key": "St Tydfil Shopping Centre",
+"name": "St Tydfil Shopping Centre",
+"town": "Merthyr Tydfil",
+"localAuthority": "Merthyr Tydfil County Borough Council",
+"region": "Wales",
+"nation": "Wales",
+"postcode": ""
+},
+{
+"key": "Caldicot Shopping Centre",
+"name": "Caldicot Shopping Centre",
+"town": "Caldicot",
+"localAuthority": "Monmouthshire County Council",
+"region": "Wales",
+"nation": "Wales",
+"postcode": "NP26 4HY"
+},
+{
+"key": "Aberafan Centre",
+"name": "Aberafan Centre",
+"town": "Port Talbot",
+"localAuthority": "Neath Port Talbot County Borough Council",
+"region": "Wales",
+"nation": "Wales",
+"postcode": "SA13 1PB"
+},
+{
+"key": "Cambrian Centre",
+"name": "Cambrian Centre",
+"town": "Newport",
+"localAuthority": "Newport City Council",
+"region": "Wales",
+"nation": "Wales",
+"postcode": ""
+},
+{
+"key": "Friars Walk Shopping Centre",
+"name": "Friars Walk Shopping Centre",
+"town": "Newport",
+"localAuthority": "Newport City Council",
+"region": "Wales",
+"nation": "Wales",
+"postcode": "NP20 1EA"
+},
+{
+"key": "Kingsway Shopping Centre",
+"name": "Kingsway Shopping Centre",
+"town": "Newport",
+"localAuthority": "Newport City Council",
+"region": "Wales",
+"nation": "Wales",
+"postcode": "NP20 1EW"
+},
+{
+"key": "Cwmbran Centre",
+"name": "Cwmbran Centre",
+"town": "Cwmbran",
+"localAuthority": "Torfaen County Borough Council",
+"region": "Wales",
+"nation": "Wales",
+"postcode": "NP44 1PB"
+},
+{
+"key": "Eagles Meadow",
+"name": "Eagles Meadow",
+"town": "Wrexham",
+"localAuthority": "Wrexham County Borough Council",
+"region": "Wales",
+"nation": "Wales",
+"postcode": "LL13 8DG"
+},
+{
+"key": "Abbey Centre",
+"name": "Abbey Centre",
+"town": "Newtownabbey",
+"localAuthority": "Antrim and Newtownabbey Borough Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": "BT37 9UH"
+},
+{
+"key": "Castle Mall",
+"name": "Castle Mall",
+"town": "Antrim",
+"localAuthority": "Antrim and Newtownabbey Borough Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": ""
+},
+{
+"key": "The Junction Retail and Leisure Park",
+"name": "The Junction Retail and Leisure Park",
+"town": "Antrim",
+"localAuthority": "Antrim and Newtownabbey Borough Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": "BT41 4LL"
+},
+{
+"key": "Ards Shopping Centre",
+"name": "Ards Shopping Centre",
+"town": "Newtownards",
+"localAuthority": "Ards and North Down Borough Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": "BT23 4BN"
+},
+{
+"key": "Bloomfield Shopping Centre",
+"name": "Bloomfield Shopping Centre",
+"town": "Bangor",
+"localAuthority": "Ards and North Down Borough Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": ""
+},
+{
+"key": "High Street Mall",
+"name": "High Street Mall",
+"town": "Portadown",
+"localAuthority": "Armagh City, Banbridge and Craigavon Borough Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": ""
+},
+{
+"key": "Meadows Shopping Centre",
+"name": "Meadows Shopping Centre",
+"town": "Portadown",
+"localAuthority": "Armagh City, Banbridge and Craigavon Borough Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": ""
+},
+{
+"key": "Rushmere Shopping Centre",
+"name": "Rushmere Shopping Centre",
+"town": "Craigavon",
+"localAuthority": "Armagh City, Banbridge and Craigavon Borough Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": "BT64 1AA"
+},
+{
+"key": "The Boulevard",
+"name": "The Boulevard",
+"town": "Banbridge",
+"localAuthority": "Armagh City, Banbridge and Craigavon Borough Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": "BT32 4LF"
+},
+{
+"key": "CastleCourt Shopping Centre",
+"name": "CastleCourt Shopping Centre",
+"town": "Belfast",
+"localAuthority": "Belfast City Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": "BT1 1DD"
+},
+{
+"key": "Great Northern Mall",
+"name": "Great Northern Mall",
+"town": "Belfast",
+"localAuthority": "Belfast City Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": ""
+},
+{
+"key": "Kennedy Centre",
+"name": "Kennedy Centre",
+"town": "Belfast",
+"localAuthority": "Belfast City Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": ""
+},
+{
+"key": "The Park Centre",
+"name": "The Park Centre",
+"town": "Belfast",
+"localAuthority": "Belfast City Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": ""
+},
+{
+"key": "Victoria Square (Belfast)",
+"name": "Victoria Square",
+"town": "Belfast",
+"localAuthority": "Belfast City Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": "BT1 4QG"
+},
+{
+"key": "Westwood Centre",
+"name": "Westwood Centre",
+"town": "Belfast",
+"localAuthority": "Belfast City Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": ""
+},
+{
+"key": "Diamond Shopping Centre",
+"name": "Diamond Shopping Centre",
+"town": "Coleraine",
+"localAuthority": "Causeway Coast and Glens Borough Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": ""
+},
+{
+"key": "Foyleside Shopping Centre",
+"name": "Foyleside Shopping Centre",
+"town": "Derry",
+"localAuthority": "Derry City and Strabane District Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": "BT48 6XY"
+},
+{
+"key": "Lisnagelvin Centre",
+"name": "Lisnagelvin Centre",
+"town": "Derry",
+"localAuthority": "Derry City and Strabane District Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": ""
+},
+{
+"key": "Quayside Centre",
+"name": "Quayside Centre",
+"town": "Derry",
+"localAuthority": "Derry City and Strabane District Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": ""
+},
+{
+"key": "Richmond Centre",
+"name": "Richmond Centre",
+"town": "Derry",
+"localAuthority": "Derry City and Strabane District Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": "BT48 6PE"
+},
+{
+"key": "Erneside Shopping Centre",
+"name": "Erneside Shopping Centre",
+"town": "Enniskillen",
+"localAuthority": "Fermanagh and Omagh District Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": ""
+},
+{
+"key": "Bow Street Mall",
+"name": "Bow Street Mall",
+"town": "Lisburn",
+"localAuthority": "Lisburn and Castlereagh City Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": "BT28 1AW"
+},
+{
+"key": "Meadowlane Shopping Centre",
+"name": "Meadowlane Shopping Centre",
+"town": "Magherafelt",
+"localAuthority": "Mid Ulster District Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": ""
+},
+{
+"key": "Oaks Shopping Centre",
+"name": "Oaks Shopping Centre",
+"town": "Dungannon",
+"localAuthority": "Mid Ulster District Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": ""
+},
+{
+"key": "Fairhill Shopping Centre",
+"name": "Fairhill Shopping Centre",
+"town": "Ballymena",
+"localAuthority": "Mid and East Antrim Borough Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": "BT43 6UF"
+},
+{
+"key": "Tower Centre",
+"name": "Tower Centre",
+"town": "Ballymena",
+"localAuthority": "Mid and East Antrim Borough Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": ""
+},
+{
+"key": "Buttercrane Shopping Centre",
+"name": "Buttercrane Shopping Centre",
+"town": "Newry",
+"localAuthority": "Newry, Mourne and Down District Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": "BT35 8HJ"
+},
+{
+"key": "The Quays",
+"name": "The Quays",
+"town": "Newry",
+"localAuthority": "Newry, Mourne and Down District Council",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": "BT35 8QS"
+},
+{
+"key": "Forestside Shopping Centre",
+"name": "Forestside Shopping Centre",
+"town": "Newtownbreda, Belfast",
+"localAuthority": "To confirm (Belfast City / Lisburn and Castlereagh)",
+"region": "Northern Ireland",
+"nation": "Northern Ireland",
+"postcode": ""
+}
+]

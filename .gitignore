@@ -1,0 +1,10 @@
+node_modules/
+scraper/output/
+scraper/test/output/
+scraper/overrides.suggested.json
+server/data/admin-token.txt
+server/data/*.tmp
+server/data/*.broken-*
+.netlify/
+.DS_Store
+Thumbs.db
