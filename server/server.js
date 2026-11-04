@@ -1,4 +1,4 @@
-// UK shopping centres tube map: static site + UK Malls brand sync API + local JSON database.
+// Shopping Malls Tube Map: static site + UK Malls brand sync API + local JSON database.
 // No dependencies. Node 18+.   PORT=4003 node server.js
 'use strict';
 const http = require('http'), fs = require('fs'), path = require('path'), crypto = require('crypto'), zlib = require('zlib');
@@ -89,6 +89,6 @@ http.createServer(async (req, res) => {
   } catch (e) { console.error(e); send(res, 500, { error: 'server error' }); }
 }).listen(PORT, HOST, () => {
   if (!fs.existsSync(path.join(ROOT, 'brands-data.js'))) writeStatic();
-  console.log(`UK shopping centres tube map on http://${HOST}:${PORT}  (site: ${ROOT}, data: ${DATA})`);
+  console.log(`Shopping Malls Tube Map on http://${HOST}:${PORT}  (site: ${ROOT}, data: ${DATA})`);
   console.log(`Admin token for the "Fetch brands" buttons: ${process.env.ADMIN_TOKEN ? '(from ADMIN_TOKEN)' : ADMIN_TOKEN + '  (saved in ' + tokenFile + ')'}`);
 });

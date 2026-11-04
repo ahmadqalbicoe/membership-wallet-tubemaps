@@ -1,5 +1,5 @@
 {
-  "name": "uk-shopping-tube-map-server",
+  "name": "shopping-malls-tube-map-server",
   "version": "2.0.0",
   "private": true,
   "description": "Tube map site + UK Malls brand sync with a local JSON database. No dependencies.",

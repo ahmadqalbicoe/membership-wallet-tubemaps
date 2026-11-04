@@ -1,0 +1,905 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Shopping Malls Tube Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4F1EA;--paper:#FFFDF8;--ink:#1D1D1B;--muted:#6A665E;--line:#DEDAD0;--soft:#ECE8DE;--accent:#1B3A6B;--warn:#B8472E;--ok:#2F7D4F;--amber:#B07D09;
+ --map-bg:#FFFDF8;--map-ink:#1D1D1B;--node:#FFFFFF;--halo:#FFFDF8;
+ --ui:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15171B;--paper:#1D2026;--ink:#ECE9E2;--muted:#A19C92;--line:#343841;--soft:#262A31;--accent:#8FB0E8;--warn:#F08A73;--ok:#6CC08F;--amber:#E2B54A;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15171B;--paper:#1D2026;--ink:#ECE9E2;--muted:#A19C92;--line:#343841;--soft:#262A31;--accent:#8FB0E8;--warn:#F08A73;--ok:#6CC08F;--amber:#E2B54A;color-scheme:dark}
+.vp.dark,.alt.dark{--paper:#1D2026;--ink:#ECE9E2;--muted:#A19C92;--line:#343841;--map-bg:#14161A;--map-ink:#ECE9E2;--node:#1D2026;--halo:#14161A}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--ui);font-size:15px;line-height:1.5}
+.wrap{max-width:1500px;margin:0 auto;padding:0 18px 60px}
+header.top{padding:30px 0 16px;display:grid;gap:14px;border-bottom:3px solid var(--ink)}
+.brand{display:flex;gap:16px;align-items:center}
+.disc{width:58px;height:58px;border-radius:50%;background:#1B3A6B;color:#fff;display:grid;place-items:center;font:700 16px var(--ui);letter-spacing:.02em;flex:none}
+h1{font-size:clamp(28px,4.4vw,46px);line-height:1;margin:0;font-weight:700;letter-spacing:-.02em}
+.sub{color:var(--muted);margin:8px 0 0;max-width:80ch}
+.stats{display:flex;flex-wrap:wrap;gap:6px}
+.stat{font:500 12.5px var(--mono);border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:3px 10px;color:var(--muted);white-space:nowrap}
+.stat b{color:var(--ink);font-weight:500}
+.ptabs{display:flex;gap:2px;margin-top:14px;border-bottom:1px solid var(--line);overflow-x:auto}
+.ptabs button{border:0;background:none;color:var(--muted);font:600 15px var(--ui);padding:10px 14px 9px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px;white-space:nowrap}
+.ptabs button.on{color:var(--ink);border-bottom-color:var(--ink)}
+.ptabs button .n{font:500 11px var(--mono);color:var(--muted);margin-left:6px}
+[hidden]{display:none!important}
+.band{padding:14px 0 6px;display:grid;gap:8px}
+.band h2{font-size:13px;margin:0;color:var(--muted);font-weight:600}
+.roundels{display:flex;flex-wrap:wrap;gap:6px}
+.rd{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font:700 10.5px var(--mono);color:#fff;border:2px solid var(--paper);box-shadow:0 0 0 1px var(--line);cursor:pointer;padding:0;transition:transform .12s}
+.rd:hover{transform:scale(1.12)}.rd.on{box-shadow:0 0 0 2.5px var(--ink)}.rd.dimr{opacity:.3}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12.5px;color:var(--muted);padding:6px 0}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.bar{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;padding:10px 0;border-top:1px solid var(--line);margin-top:8px}
+.tabs{display:flex;border:1px solid var(--ink);border-radius:8px;overflow:hidden}
+.tabs button{border:0;background:var(--paper);color:var(--ink);font:500 13px var(--ui);padding:6px 12px;cursor:pointer;border-right:1px solid var(--line)}
+.tabs button:last-child{border-right:0}.tabs button.on{background:var(--ink);color:var(--bg)}
+label.ctl{display:inline-flex;gap:6px;align-items:center;font-size:13px;color:var(--muted)}
+select,input[type=search]{font:13px var(--ui);background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:5px 7px}
+.btn{font:500 13px var(--ui);background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:5px 10px;cursor:pointer}
+.btn.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn.go{border-color:var(--ok);color:var(--ok);font-weight:600}
+.fac{display:flex;flex-wrap:wrap;gap:5px}
+.fac button{font:12px var(--ui);border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:4px;padding:3px 8px;cursor:pointer}
+.fac button.on{background:#F2C230;color:#1D1D1B;border-color:#1D1D1B}
+.fac button span{font-family:var(--mono);color:var(--muted);margin-left:4px}.fac button.on span{color:#1D1D1B}
+.main{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:14px}
+@media (max-width:1000px){.main{grid-template-columns:1fr}}
+#stageWrap{position:relative}
+.vp{position:relative;background:var(--map-bg);border:1px solid var(--line);border-radius:10px;overflow:hidden;height:78vh;min-height:520px;touch-action:none;cursor:grab}
+.vp svg{display:block;width:100%;height:100%;user-select:none}
+.vp.grab{cursor:grabbing}
+.vp:fullscreen{border-radius:0;height:100vh}
+.alt{height:78vh;min-height:520px;overflow:auto;background:var(--map-bg);border:1px solid var(--line);border-radius:10px}
+.zoom{position:absolute;right:10px;top:10px;display:grid;gap:4px;z-index:2}
+.zoom button{width:32px;height:32px;border-radius:6px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font:600 15px var(--ui);cursor:pointer}
+.zoom button.t{font-size:11px}
+.hint{position:absolute;left:10px;bottom:8px;font-size:11.5px;color:var(--muted);background:var(--paper);padding:2px 8px;border-radius:4px;border:1px solid var(--line)}
+.lbl{font:500 9.5px var(--ui);fill:var(--map-ink);paint-order:stroke;stroke:var(--halo);stroke-width:3px;stroke-linejoin:round;cursor:pointer}
+.lbl.big{font-weight:700;font-size:11px}
+.stn{cursor:pointer}
+.dim{opacity:.1}
+.stn.sel circle.o{stroke-width:4}
+.ring{fill:none;stroke:var(--map-ink);stroke-width:1.5;stroke-dasharray:3 2.5;pointer-events:none}
+.tour{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:8px;border:1.5px solid var(--ink);border-radius:10px;padding:6px 10px;background:var(--paper);position:relative;overflow:hidden}
+.tour .tl{font-weight:700;font-size:14px;margin-right:4px}
+.tbar{position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--soft)}.tbar i{display:block;height:100%;width:0;background:var(--ok);transition:width .3s}
+.tcap{position:absolute;left:50%;top:14px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:8px;font-size:14px;z-index:3;max-width:calc(100% - 100px);text-align:center;box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.tcap b{font-family:var(--mono);font-weight:500;margin-right:6px;opacity:.75}
+.rail{display:grid;gap:12px;align-content:start;grid-auto-rows:max-content;max-height:calc(78vh + 54px);overflow:auto}
+@media (max-width:1000px){.rail{max-height:none}}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px 15px}
+.card h3{margin:0 0 6px;font-size:16px;font-weight:600}
+.card .k{font:500 11.5px var(--mono);color:var(--muted)}
+.card p{margin:6px 0;font-size:14px}
+.keyc{padding:0}
+.kh{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 14px;background:var(--ink);color:var(--bg);cursor:pointer;border:0;width:100%;font:inherit;text-align:left;border-radius:10px 10px 0 0}
+.keyc.closed .kh{border-radius:10px}
+.kh b{font-size:17px;letter-spacing:.02em}.kh span{font:500 12px var(--mono);opacity:.8}
+.kb{padding:12px 14px 14px;display:grid;gap:12px}.keyc.closed .kb{display:none}
+.kx{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-items:center;background:var(--soft);border-radius:10px;padding:10px 12px}
+.kx .bd{grid-row:1/4;display:grid;justify-items:center;gap:3px}
+.kx .sym{min-width:40px;height:40px;border-radius:10px;border:4px solid #DC241F;display:grid;place-items:center;font:800 15px var(--ui);background:var(--paper)}
+.kx .num{font:700 11px var(--mono);color:#DC241F}
+.kx .ar{font-size:12.5px;line-height:1.35}.kx .ar b{color:#DC241F}.kx .hi{grid-column:2;color:var(--muted);font-size:11.5px;font-style:italic}
+.kg .gt{font:700 11.5px var(--ui);letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin:2px 0 3px;display:flex;justify-content:space-between}
+.kgrid{display:grid;grid-template-columns:1fr 1fr;gap:2px 8px}
+.kr{display:grid;grid-template-columns:6px 32px minmax(0,1fr);gap:6px;align-items:center;border:0;background:none;color:var(--ink);text-align:left;font:12px var(--ui);padding:2px 3px;border-radius:6px;cursor:pointer;width:100%;min-width:0}
+.kr:hover{background:var(--soft)}.kr.on{background:var(--soft);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.kr .cl{height:22px;border-radius:3px}
+.kr .sb{height:20px;min-width:30px;border-radius:6px;border:2.5px solid;display:grid;place-items:center;font:800 10px var(--mono);background:var(--paper)}
+.kr .nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pill{display:inline-block;white-space:nowrap;font:500 11px var(--mono);padding:1px 7px;border-radius:999px;border:1px solid var(--line);margin:0 4px 4px 0;color:var(--muted)}
+.pill.ok{border-color:var(--ok);color:var(--ok)}.pill.warn{border-color:var(--warn);color:var(--warn)}.pill.am{border-color:var(--amber);color:var(--amber)}
+.hops{font-size:13px}.hops a,.lk{color:var(--accent);cursor:pointer;text-decoration:none}.hops a:hover,.lk:hover{text-decoration:underline}
+.plan-r{display:grid;gap:6px}.plan-r select{width:100%}
+.route-list{font-size:12.5px;margin:6px 0 0;padding-left:0;list-style:none}
+.route-list li{display:grid;grid-template-columns:14px 1fr;gap:8px;align-items:start;padding:2px 0}
+.route-list li i{width:10px;height:10px;border-radius:50%;border:2.5px solid;margin-top:4px;background:var(--paper)}
+.route-list li.chg{color:var(--muted);font-style:italic}
+.ctr{border-top:1px solid var(--soft);padding:9px 0 7px}
+.ctr:first-of-type{border-top:0}
+.ctr h4{margin:0;font-size:14.5px}
+.ctr .t{font-size:12.5px;color:var(--muted);margin-bottom:5px}
+.ctr dl{display:grid;grid-template-columns:96px minmax(0,1fr);gap:2px 8px;margin:0;font-size:12.5px}
+.ctr dt{color:var(--muted);font:500 11.5px var(--mono);padding-top:1px}.ctr dd{margin:0;word-break:break-word}
+.ctr .tbc{color:var(--muted);opacity:.75}
+.ctr a{color:var(--accent)}
+.flag{border-left:3px solid var(--warn);padding:4px 9px;background:var(--soft);font-size:13px;margin:6px 0}
+section.more{margin-top:34px}
+section.more h2{font-size:22px;margin:0 0 12px;font-weight:700;letter-spacing:-.01em}
+.finds{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:10px}
+.find{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--warn);border-radius:0 0 8px 8px;padding:12px 14px}
+.find.ok{border-top-color:var(--ok)}.find.ac{border-top-color:var(--accent)}
+.find b{display:block;font-size:15.5px;margin-bottom:4px}.find p{margin:0;font-size:14px;color:var(--muted)}
+.find .go{font:500 12px var(--mono);color:var(--accent);cursor:pointer;margin-top:6px;display:inline-block}
+.itabs{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+.tbl{overflow:auto;background:var(--paper);border:1px solid var(--line);border-radius:10px;max-height:560px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:13px}
+th,td{text-align:left;padding:6px 10px;border-bottom:1px solid var(--soft);vertical-align:top}
+th{position:sticky;top:0;background:var(--paper);font:500 11.5px var(--mono);color:var(--muted);border-bottom:1px solid var(--line);z-index:1}
+td.key{font-family:var(--mono);white-space:nowrap}
+tr.cl{cursor:pointer}tr.cl:hover td{background:var(--soft)}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.stk{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:10px;padding:12px}
+.stk .c{background:var(--paper);border:1px solid var(--line);border-top:6px solid;border-radius:0 0 8px 8px;padding:10px 12px}
+.stk .c h4{margin:0 0 2px;font-size:14.5px}.stk .c ol{margin:6px 0 0;padding-left:26px;font-size:12.5px}
+.stk .c li{cursor:pointer}.stk .c li:hover{text-decoration:underline}.stk .c li.m{font-weight:700}.stk .c li.dimm{opacity:.3}
+.gapgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin-top:16px}
+.gbox{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px}
+.gbox h3{margin:0 0 10px;font-size:15px}
+.brow{display:grid;grid-template-columns:120px 1fr 40px;gap:8px;align-items:center;font-size:12.5px;margin:5px 0}
+.brow .tr{height:10px;background:var(--soft);border-radius:5px;overflow:hidden}.brow .tr i{display:block;height:100%;border-radius:5px}
+.brow b{font:500 12px var(--mono);text-align:right}
+.lede{max-width:80ch;color:var(--muted);margin:18px 0 6px}
+details.br{margin-top:8px;border:1px solid var(--line);border-radius:8px;background:var(--bg)}
+details.br>summary{cursor:pointer;padding:6px 10px;font:600 12.5px var(--ui);list-style:none;display:flex;justify-content:space-between;gap:8px}
+details.br>summary::-webkit-details-marker{display:none}details.br>summary:after{content:'▸';color:var(--muted)}details.br[open]>summary:after{content:'▾'}
+.bgrp{display:flex;flex-wrap:wrap;gap:4px;padding:0 10px 6px}.bgrp button{font:11px var(--ui);border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:1px 8px;cursor:pointer}.bgrp button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.blist{max-height:340px;overflow:auto;padding:0 6px 6px}
+details.b{border-top:1px solid var(--soft)}details.b>summary{cursor:pointer;list-style:none;display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:8px;align-items:center;padding:5px 4px;font-size:13px}
+details.b>summary::-webkit-details-marker{display:none}
+.blogo{width:22px;height:22px;border-radius:4px;background:var(--soft) center/contain no-repeat;display:grid;place-items:center;font:700 10px var(--mono);color:var(--muted);overflow:hidden}
+.bmeta{font:500 10.5px var(--mono);color:var(--muted);white-space:nowrap}
+.bbody{padding:2px 6px 8px 34px;font-size:12.5px;display:grid;gap:3px}.bbody .ln{color:var(--muted)}.bbody a{color:var(--accent)}
+.bnote{font-size:12px;color:var(--muted);margin-top:6px;font-style:italic}
+/* station -> malls list */
+.mlist{display:grid;gap:6px;margin-top:10px}
+.mrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;align-items:center;text-align:left;width:100%;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:9px;padding:9px 11px;cursor:pointer;font:inherit;border-left:4px solid var(--lc)}
+.mrow:hover,.mrow.on{background:var(--soft);border-color:var(--ink);border-left-color:var(--lc)}
+.mrow b{font-size:14.5px;line-height:1.25}.mrow .t{grid-column:1;font-size:12px;color:var(--muted)}.mrow .ar{grid-row:1/4;grid-column:2;font-size:18px;color:var(--muted)}
+.mrow .ps{grid-column:1;display:flex;flex-wrap:wrap;gap:4px;margin-top:2px}.mrow .ps .pill{margin:0}
+.pill.br{border-color:var(--accent);color:var(--accent)}
+/* mall -> brands drawer */
+.mall{position:absolute;top:0;right:0;bottom:0;width:min(600px,100%);background:var(--paper);border-left:1px solid var(--line);z-index:5;display:flex;flex-direction:column;box-shadow:-10px 0 30px rgba(0,0,0,.14);border-radius:0 10px 10px 0;transform:translateX(102%);transition:transform .25s ease;visibility:hidden}
+.mall.open{transform:none;visibility:visible}
+.mh{padding:12px 16px 10px;border-bottom:1px solid var(--line);position:relative}
+.mh .bar{position:absolute;left:0;top:0;right:0;height:6px;background:var(--lc)}
+.crumb{font:500 12px var(--mono);color:var(--muted);margin-top:4px;padding-right:118px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}.crumb a{color:var(--accent);cursor:pointer}
+.mh h3{margin:4px 0 2px;font-size:22px;line-height:1.15;padding-right:70px}
+.mh .t{color:var(--muted);font-size:13px}
+.mx{position:absolute;right:12px;top:16px;display:flex;gap:6px}.mx button{width:32px;height:32px;border-radius:50%;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;font-size:15px}
+.mfacts{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:6px 14px;padding:10px 16px;border-bottom:1px solid var(--line);font-size:12.5px}
+.mfacts div>span:first-child{display:block;font:500 10.5px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
+.mbody{flex:1;overflow:auto;padding:12px 16px 20px}
+.mtools{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px}.mtools h4{margin:0;font-size:16px;flex:1}
+.mtools input{font:13px var(--ui);padding:6px 10px;border:1px solid var(--line);border-radius:7px;background:var(--bg);color:var(--ink);width:min(220px,100%)}
+.bchips{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}.bchips button{font:12px var(--ui);border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:3px 10px;cursor:pointer}.bchips button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.bchips button span{font-family:var(--mono);opacity:.7;margin-left:4px}
+.bgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px}
+.bc{border:1px solid var(--line);border-radius:9px;background:var(--paper);padding:9px;cursor:pointer;display:grid;grid-template-columns:34px minmax(0,1fr);gap:4px 9px;align-items:center;text-align:left;font:inherit;color:var(--ink)}
+.bc:hover,.bc.on{border-color:var(--ink);background:var(--soft)}
+.bc .lg{width:34px;height:34px;border-radius:7px;background:var(--soft) center/contain no-repeat;display:grid;place-items:center;font:700 13px var(--mono);color:var(--muted);grid-row:1/3;overflow:hidden}
+.bc .lg{position:relative}.bc .lg img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff}
+.bc b{font-size:13.5px;line-height:1.2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.bc small{font-size:11.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bdet{grid-column:1/-1;border:1.5px solid var(--ink);border-radius:10px;padding:12px 14px;background:var(--bg);font-size:13px;display:grid;gap:6px}
+.bdet h5{margin:0;font-size:17px}.bdet .row{display:grid;grid-template-columns:84px minmax(0,1fr);gap:8px}.bdet .row span{font:500 11px var(--mono);color:var(--muted);padding-top:2px}.bdet a{color:var(--accent)}
+.empty{border:1.5px dashed var(--line);border-radius:10px;padding:18px;text-align:center;color:var(--muted);font-size:13.5px}
+.empty b{display:block;color:var(--ink);font-size:15px;margin-bottom:4px}
+@media (max-width:1000px){.mall{position:fixed;top:0;left:0;width:100%;border-radius:0;z-index:50}}
+/* UK Malls */
+.ukstrip{margin:0 16px;padding:9px 12px;border:1px solid var(--line);border-radius:9px;background:var(--bg);font-size:12.5px;display:grid;gap:6px;margin-top:10px}
+.ukstrip .hd{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.ukstrip .hd b{font-size:13px}.ukstrip a{color:var(--accent)}
+.ukstrip .act{display:flex;gap:6px;flex-wrap:wrap}.ukstrip .btn{font-size:12px;padding:3px 9px}
+.ukc{display:grid;gap:5px;max-height:260px;overflow:auto}.ukc div{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;align-items:center;border:1px solid var(--line);border-radius:7px;padding:6px 8px;background:var(--paper)}
+.ukc small{color:var(--muted);grid-column:1}.ukc .btn{grid-row:1/3;grid-column:2}
+.dbar{height:6px;background:var(--soft);border-radius:3px;overflow:hidden;margin:8px 0 4px}.dbar i{display:block;height:100%;background:var(--ok);width:0;transition:width .4s}
+.drow{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.drow .btn.pri{background:var(--ink);color:var(--bg);border-color:var(--ink);font-weight:600}
+.dstat{font:500 11.5px var(--mono);color:var(--muted);line-height:1.6}
+.dtok{display:flex;gap:6px;margin-top:8px}.dtok input{flex:1;font:13px var(--mono);padding:5px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);min-width:0}
+.derr{color:var(--warn);font-size:12px;margin-top:6px}
+/* map overlays: search, brand filter, tooltip, help */
+.mtop{position:absolute;left:10px;top:10px;right:56px;display:flex;flex-wrap:wrap;gap:6px;align-items:flex-start;z-index:3;pointer-events:none}
+.msearch{position:relative;pointer-events:auto;width:min(340px,100%)}
+.msearch input{width:100%;font:14px var(--ui);padding:9px 12px 9px 34px;border:1.5px solid var(--ink);border-radius:10px;background:var(--paper);color:var(--ink);box-shadow:0 4px 14px rgba(0,0,0,.1)}
+.msearch:before{content:'⌕';position:absolute;left:11px;top:6px;font-size:19px;color:var(--muted);pointer-events:none}
+.msr{position:absolute;left:0;right:0;top:44px;background:var(--paper);border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 30px rgba(0,0,0,.18);max-height:min(420px,60vh);overflow:auto;display:none}
+.msr.on{display:block}
+.msr .grp{font:700 10.5px var(--ui);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 12px 3px}
+.msr button{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px;align-items:center;width:100%;border:0;background:none;color:var(--ink);text-align:left;padding:7px 12px;font:13.5px var(--ui);cursor:pointer}
+.msr button:hover,.msr button.on{background:var(--soft)}
+.msr .ty{font:700 10px var(--mono);border-radius:5px;padding:2px 5px;color:#fff;min-width:26px;text-align:center}
+.msr small{color:var(--muted);font-size:11.5px;white-space:nowrap}
+.msr .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bchip{pointer-events:auto;display:flex;align-items:center;gap:8px;background:var(--ink);color:var(--bg);border-radius:10px;padding:7px 8px 7px 12px;font-size:13px;box-shadow:0 4px 14px rgba(0,0,0,.15);max-width:100%}
+.bchip b{font-weight:700}.bchip button{border:0;background:rgba(255,255,255,.18);color:inherit;border-radius:6px;width:24px;height:24px;cursor:pointer;font-size:13px}
+.tip{position:absolute;z-index:4;pointer-events:none;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:10px;box-shadow:0 10px 26px rgba(0,0,0,.18);padding:9px 11px;font-size:12.5px;max-width:270px;opacity:0;transition:opacity .12s;border-top:4px solid var(--lc)}
+.tip.on{opacity:1}.tip h5{margin:0 0 2px;font-size:14px}.tip .k{font:500 11px var(--mono);color:var(--muted)}.tip ul{margin:5px 0 0;padding-left:16px}.tip .cta{margin-top:6px;font-size:11.5px;color:var(--accent);font-weight:600}
+.tip .nums{display:flex;gap:10px;margin-top:4px}.tip .nums span{font:500 11px var(--mono);color:var(--muted)}.tip .nums b{display:block;font:700 15px var(--ui);color:var(--ink)}
+.lbadge{cursor:pointer}.lbadge text{font:800 10px var(--mono);pointer-events:none}
+.area{font:800 46px var(--ui);letter-spacing:.06em;text-transform:uppercase;pointer-events:none;opacity:.09}
+.vp.z-low .lbl:not(.big):not(.bshow){display:none}.lbl.bshow{font-weight:700}.vp.z-low .area{opacity:.11}.vp.z-high .area{opacity:0}
+.lhit{cursor:pointer}
+.stn.bhit circle.o{stroke-width:4}
+.help{position:absolute;inset:0;z-index:6;background:rgba(20,20,20,.45);display:grid;place-items:center;padding:16px}
+.help[hidden]{display:none}
+.hcard{background:var(--paper);color:var(--ink);border-radius:14px;max-width:620px;width:100%;padding:20px 22px;box-shadow:0 20px 50px rgba(0,0,0,.3);max-height:100%;overflow:auto}
+.hcard h3{margin:0 0 4px;font-size:21px}.hcard>p{margin:0 0 14px;color:var(--muted);font-size:14px}
+.hsteps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px}
+.hstep{display:grid;grid-template-columns:54px 1fr;gap:10px;align-items:center;background:var(--soft);border-radius:10px;padding:10px}
+.hstep svg{display:block}.hstep b{display:block;font-size:14px}.hstep span{font-size:12.5px;color:var(--muted);line-height:1.35}
+.hcard .go{margin-top:14px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.hcard .go small{color:var(--muted)}
+/* student + affiliate tabs */
+.xbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0}
+.xbar input[type=search]{flex:1 1 280px;font:14px var(--ui);padding:8px 12px;border:1.5px solid var(--ink);border-radius:9px;background:var(--paper);color:var(--ink)}
+.xbar select{font:13px var(--ui);padding:7px 8px}
+.xchips{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0}
+.xchips button{font:12.5px var(--ui);border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:4px 11px;cursor:pointer}
+.xchips button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}.xchips button span{font-family:var(--mono);opacity:.65;margin-left:4px}
+.xgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px;margin-top:8px}
+.xc{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 14px;cursor:pointer;text-align:left;font:inherit;color:var(--ink);display:grid;gap:5px;align-content:start;border-top:4px solid var(--xc,var(--line))}
+.xc:hover{border-color:var(--ink);border-top-color:var(--xc,var(--ink))}
+.xc h4{margin:0;font-size:15px;line-height:1.25}.xc .k{font:500 11.5px var(--mono);color:var(--muted)}.xc p{margin:0;font-size:13px;color:var(--muted);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.xc .row{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.score{display:inline-flex;gap:2px;vertical-align:middle}.score i{width:9px;height:9px;border-radius:50%;background:var(--soft);border:1px solid var(--line)}.score i.on{background:var(--ok);border-color:var(--ok)}
+.xmodal{position:fixed;inset:0;z-index:60;background:rgba(15,15,15,.5);display:grid;place-items:center;padding:16px}
+.xmodal[hidden]{display:none}
+.xm{background:var(--paper);color:var(--ink);border-radius:14px;width:min(760px,100%);max-height:calc(100vh - 32px);overflow:auto;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.xm .hd{position:sticky;top:0;background:var(--paper);padding:16px 18px 12px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:6px;border-top:6px solid var(--xc,var(--ink));border-radius:14px 14px 0 0}
+.xm .hd h3{margin:0;font-size:21px;line-height:1.2}.xm .hd .k{font:500 12px var(--mono);color:var(--muted)}
+.xm .bd{padding:6px 18px 18px;display:grid;gap:12px;font-size:14px;line-height:1.55}
+.xm .bd h5{margin:4px 0 2px;font:700 11.5px var(--ui);letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.xm .bd p{margin:0;white-space:pre-line}.xm a{color:var(--accent);word-break:break-all}
+.xm .close{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;font-size:16px}
+.bmall{display:flex;flex-wrap:wrap;gap:5px}.bmall button{font:12px var(--ui);border:1px solid var(--accent);color:var(--accent);background:var(--paper);border-radius:999px;padding:2px 9px;cursor:pointer}
+.bmall button:hover{background:var(--accent);color:var(--paper)}
+.rpill{display:inline-block;font:600 11px var(--ui);border-radius:999px;padding:2px 8px;color:#fff;white-space:nowrap}
+.xdet summary{cursor:pointer;list-style:none}.xdet summary::-webkit-details-marker{display:none}.xdet summary:after{content:' ▸';color:var(--muted);font-size:18px}.xdet[open] summary:after{content:' ▾'}
+td .lk{white-space:nowrap}
+.uni{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}.uni button{font:12px var(--ui);border:1px solid var(--line);background:var(--soft);color:var(--ink);border-radius:999px;padding:2px 9px;cursor:pointer}
+footer{margin-top:30px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:12px}
+footer a{color:var(--accent)}
+@media (max-width:640px){.vp .hint{display:none}.vp,.alt{height:64vh;min-height:420px}.brand{align-items:flex-start}.disc{width:44px;height:44px;font-size:13px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+ <div class="brand"><div class="disc">SMTM</div><div><h1>Shopping Malls Tube Map</h1>
+ <p class="sub">Every UK shopping centre, mall and outlet in the longlist, drawn as a metro network, with the brands inside them, the student benefit schemes around them and the retailers' affiliate routes. Each <b>line is a region</b> of the UK and each <b>station is a local authority</b>; the bigger the station, the more centres it holds. Lines meet at interchanges where regions border each other, and a ferry joins Northern Ireland to Scotland. Click a station to see its centres, owners, managing agents and pension fund status, or plan a route across the country.</p></div></div>
+ <div class="stats" id="stats"></div>
+</header>
+<nav class="ptabs" id="ptabs"><button data-pg="map" class="on">Tube map</button><button data-pg="gaps">Ownership and data gaps<span class="n" id="gapN"></span></button><button data-pg="stu">Student benefits<span class="n" id="stuN"></span></button><button data-pg="aff">Retailers &amp; affiliate APIs<span class="n" id="affN"></span></button></nav>
+
+<div id="pg-map">
+<div class="band"><h2>Follow a line — click to select, Esc to clear</h2><div class="roundels" id="jrny"></div></div>
+<div class="legend">
+ <span><svg width="34" height="8"><line x1="2" y1="4" x2="32" y2="4" stroke="#DC241F" stroke-width="5" stroke-linecap="round"/></svg>Line — one region</span>
+ <span><svg width="14" height="14"><circle cx="7" cy="7" r="4.5" fill="var(--paper)" stroke="var(--ink)" stroke-width="2"/></svg>Station — local authority</span>
+ <span><svg width="20" height="20"><circle cx="10" cy="10" r="8" fill="var(--paper)" stroke="var(--ink)" stroke-width="2.4"/><text x="10" y="13.5" font-size="9" text-anchor="middle" fill="var(--ink)" font-family="IBM Plex Mono">5</text></svg>Bigger = more centres</span>
+ <span><svg width="26" height="12"><rect x="1" y="2" width="24" height="8" rx="4" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.6"/></svg>Interchange</span>
+ <span><svg width="26" height="8"><line x1="2" y1="4" x2="24" y2="4" stroke="var(--ink)" stroke-width="1.6" stroke-dasharray="2 3" stroke-linecap="round"/></svg>Out-of-station link</span>
+ <span><svg width="26" height="8"><line x1="2" y1="4" x2="24" y2="4" stroke="#1B6FB5" stroke-width="2" stroke-dasharray="6 3"/></svg>Ferry</span>
+ <span><svg width="18" height="18"><circle cx="9" cy="9" r="5" fill="var(--paper)" stroke="var(--ink)" stroke-width="2"/><circle cx="9" cy="9" r="8" fill="none" stroke="var(--ink)" stroke-width="1.3" stroke-dasharray="3 2.5"/></svg>Pension fund stake verified</span>
+</div>
+<div class="bar">
+ <div class="tabs" id="views"><button data-v="map" class="on">Metro map</button><button data-v="stack">Stack</button></div>
+ <label class="ctl">Colour by <select id="colourBy"><option value="line">Line colour</option><option value="pension">Pension fund status</option><option value="size">Largest size tier</option><option value="data">How complete the data is</option><option value="brands" id="cbBrands" hidden>Number of brands found</option></select></label>
+ <label class="ctl">Labels <select id="labels"><option value="auto">All that fit</option><option value="big">Big stations only</option><option value="none">None</option></select></label>
+ <button class="btn" id="darkmap">Dark map</button>
+ <button class="btn" id="fsBtn" title="Full screen (F)">⛶ Full screen</button>
+ <button class="btn go" id="e2e">▶ Ride from Cornwall to Aberdeen</button>
+</div>
+<div class="bar" style="border-top:0;padding-top:0"><span style="font-size:13px;color:var(--muted)">Station facilities</span><div class="fac" id="fac"></div></div>
+<div class="main">
+ <div id="stageWrap">
+  <div class="vp" id="vp"><svg id="svg"><g id="world"><g id="ga"></g><g id="gl"></g><g id="gh"></g><g id="gi"></g><g id="gb"></g><g id="gs"></g><g id="gt"></g></g></svg>
+   <div class="mtop"><div class="msearch"><input id="mapq" type="search" placeholder="Find a council, centre or brand…  ( / )" autocomplete="off" aria-label="Search the map"><div class="msr" id="mapr"></div></div><div id="bchip"></div></div>
+   <div class="zoom"><button id="zi" aria-label="Zoom in">+</button><button id="zo" aria-label="Zoom out">−</button><button id="zf" class="t">fit</button><button id="helpBtn" aria-label="How to read this map" title="How to read this map">?</button></div>
+   <div class="tip" id="tip"></div>
+   <div class="help" id="help" hidden><div class="hcard"><h3>How to read this map</h3><p>UK shopping centres drawn like the London Underground.</p><div class="hsteps">
+    <div class="hstep"><svg width="54" height="24"><line x1="4" y1="12" x2="50" y2="12" stroke="#DC241F" stroke-width="6" stroke-linecap="round"/></svg><div><b>Each line is a region</b><span>12 lines, from Greater London (LN) to Northern Ireland (NI). Click a line or its badge to follow it.</span></div></div>
+    <div class="hstep"><svg width="54" height="40"><line x1="2" y1="20" x2="52" y2="20" stroke="#DC241F" stroke-width="5"/><circle cx="16" cy="20" r="5" fill="#fff" stroke="#DC241F" stroke-width="2.4"/><circle cx="38" cy="20" r="10" fill="#fff" stroke="#DC241F" stroke-width="2.4"/><text x="38" y="24" text-anchor="middle" font-size="10" font-family="IBM Plex Mono">5</text></svg><div><b>Each station is a council</b><span>Bigger stations have more shopping centres; the number shows how many.</span></div></div>
+    <div class="hstep"><svg width="54" height="40"><rect x="6" y="6" width="42" height="28" rx="6" fill="#fff" stroke="#1D1D1B" stroke-width="1.5"/><line x1="12" y1="15" x2="40" y2="15" stroke="#999" stroke-width="3"/><line x1="12" y1="24" x2="34" y2="24" stroke="#999" stroke-width="3"/></svg><div><b>Click a station</b><span>Its shopping centres are listed on the right. Click one to open all its brands.</span></div></div>
+    <div class="hstep"><svg width="54" height="40"><circle cx="22" cy="18" r="10" fill="none" stroke="#1D1D1B" stroke-width="2.5"/><line x1="29" y1="25" x2="40" y2="36" stroke="#1D1D1B" stroke-width="3" stroke-linecap="round"/></svg><div><b>Search anything</b><span>Type a brand like "Primark" to light up every station where you can find it.</span></div></div>
+   </div><div class="go"><small>Drag to move · scroll or pinch to zoom · Esc to clear</small><button class="btn" id="helpOk" style="background:var(--ink);color:var(--bg);border-color:var(--ink);font-weight:600">Got it</button></div></div></div>
+   <div class="tcap" id="tourCap" hidden></div>
+   <div class="hint">Drag to pan · wheel or pinch to zoom · click a station to list its centres</div>
+  </div>
+  <aside class="mall" id="mall" aria-label="Shopping centre and its brands"></aside>
+  <div class="alt" id="alt" hidden><div class="stk" id="stk"></div></div>
+  <div class="tour"><span class="tl">🎬 Ride a line</span><select id="tourSel" aria-label="Choose a line"></select><button class="btn" id="tourPlay">▶ Start</button><button class="btn" id="tourPrev" aria-label="Previous station">⏮</button><button class="btn" id="tourNext" aria-label="Next station">⏭</button><select id="tourSpd" aria-label="Speed"><option value="1.7">Slow</option><option value="1" selected>Normal</option><option value="0.5">Fast</option></select><button class="btn" id="tourStop" aria-label="Stop">✕</button><div class="tbar"><i id="tourBar"></i></div></div>
+ </div>
+ <aside class="rail">
+  <div class="card keyc" id="keyCard"></div>
+  <div class="card" id="pcard" hidden></div>
+  <div class="card" id="detail"><h3>Station detail</h3><p style="color:var(--muted)">Click any station to list its shopping centres, then click a centre to see all its brands.</p></div>
+  <div class="card" id="dataCard" hidden></div>
+  <div class="card"><h3>Plan a journey</h3><div class="plan-r"><select id="pFrom"></select><select id="pTo"></select><button class="btn" id="pGo">Find the route</button></div><div id="pOut"></div></div>
+ </aside>
+</div>
+<section class="more"><h2>What the map shows</h2><div class="finds" id="finds"></div></section>
+<section class="more"><h2>Station and centre index</h2><div class="itabs"><div class="tabs" id="itab"><button data-t="st" class="on">Stations</button><button data-t="ct">Centres</button><button data-t="br" id="itabBr" hidden>Brands</button></div><input type="search" id="q" placeholder="Search stations, centres, towns, owners, postcodes…" style="width:min(420px,100%)"></div><div class="tbl"><table><thead id="ihead"></thead><tbody id="idx"></tbody></table></div></section>
+</div>
+
+<div id="pg-gaps" hidden>
+ <p class="lede">Where the longlist is solid and where it still needs work. Most centres were added from public lists, so owner, size and postcode are often still to confirm. Pension fund status is marked Verified only where a public source confirms a pension investor stake.</p>
+ <div class="gapgrid" id="gapgrid"></div>
+ <section class="more"><h2>Centres with a verified pension fund stake</h2><div class="tbl"><table><thead><tr><th>Station</th><th>Centre</th><th>Town</th><th>Owner</th><th>Status</th><th>Evidence</th></tr></thead><tbody id="pens"></tbody></table></div></section>
+ <section class="more"><h2>Owners with the most centres</h2><div class="finds" id="owners"></div></section>
+</div>
+
+<div id="pg-stu" hidden>
+ <p class="lede">The UK student benefits ecosystem: discount platforms like Student Beans, UNiDAYS and TOTUM, students' union and university schemes, brand student offers and Freshers channels. Each is scored 1–5 for how well Membership Wallet can tap, partner with, copy or beat it. Validated <span id="stuUpd"></span>.</p>
+ <div class="stats" id="stuStats" style="margin:12px 0"></div>
+ <div class="xbar"><input type="search" id="stuQ" placeholder="Search platforms, brands, universities…"><select id="stuSort"><option value="sc">Highest score first</option><option value="n">A–Z</option><option value="malls">Most brands found in malls</option></select></div>
+ <div class="xchips" id="stuType"></div><div class="xchips" id="stuScore"></div>
+ <div class="xgrid" id="stuGrid"></div>
+ <section class="more"><h2>Students' union census <span class="k" id="suN"></span></h2><p class="lede" style="margin-top:0">Every listed students' union, what was found and where its campus sits on the tube map.</p>
+  <div class="xchips" id="suFilt"></div><div class="tbl"><table><thead><tr><th>Union</th><th>Nation</th><th>Status</th><th>What was found</th><th>On the map</th><th>Evidence</th></tr></thead><tbody id="suBody"></tbody></table></div></section>
+ <section class="more"><details class="xdet"><summary><h2 style="display:inline">Historical, inactive or unverified <span class="k" id="hiN"></span></h2></summary><div class="xgrid" id="hiGrid" style="margin-top:12px"></div></details></section>
+</div>
+<div id="pg-aff" hidden>
+ <p class="lede">How to get offers and product data from UK retailers. Most retailers have no public API of their own; you join the affiliate network they use (Awin, impact.com, Rakuten, CJ, Partnerize) and use its publisher API. The <b>In malls</b> column shows how many centres on the tube map have that brand.</p>
+ <div class="gapgrid" id="affBars"></div>
+ <section class="more"><h2>Networks, banks &amp; platforms <span class="k" id="nwN"></span></h2><div class="xchips" id="nwCat"></div><div class="xgrid" id="nwGrid"></div></section>
+ <section class="more"><h2>Retailers &amp; brands <span class="k" id="rtN"></span></h2>
+  <div class="xbar"><input type="search" id="rtQ" placeholder="Search retailers, categories…"><select id="rtRoute"></select><select id="rtCat"></select><label class="ctl"><input type="checkbox" id="rtInMalls"> Only brands found in malls</label></div>
+  <div class="tbl" style="max-height:640px"><table><thead><tr><th>#</th><th>Retailer / brand</th><th>Category</th><th>Affiliate route</th><th>In malls</th><th>Student deals</th><th>Links</th></tr></thead><tbody id="rtBody"></tbody></table></div></section>
+</div>
+
+<footer>Built from <b>UK Shopping Centres by Local Authority (FINAL)</b>, November 2026: 472 centres across 248 local authorities, about 70% of the c.700 UK centres. Sources include Savills, Knight Frank, NBIM, CPP Investments, UK Malls Directory, company press releases and Wikipedia's list of UK shopping centres. Station positions are schematic: they follow geography loosely, with London and the big cities stretched out so they can be read.</footer>
+</div>
+<div class="xmodal" id="xmodal" hidden><div class="xm" id="xm"></div></div>
+<script>
+const D=__DATA__;
+const X=__EXTRA__;
+const CODES={'Greater London':'LN','South East':'SE','East of England':'EE','South West':'SW','West Midlands':'WM','East Midlands':'EM','North West':'NW','North East':'NE','Yorkshire and the Humber':'YH','Wales':'WA','Scotland':'SC','Northern Ireland':'NI'};
+const GROUPS=[['England — South',['LN','SE','EE','SW']],['England — Midlands',['WM','EM']],['England — North',['NW','NE','YH']],['Wales, Scotland, Northern Ireland',['WA','SC','NI']]];
+const C=10,NS='http://www.w3.org/2000/svg',$=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const el=(t,a,p)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);p&&p.appendChild(e);return e};
+const S=D.stations,byId={},L=D.lines,byCode={};
+const TBC=v=>!v||v=='None'||/^(To be confirmed|To confirm|Not assessed|Not verified)$/i.test(v);
+const SIZE_RANK={'Large':4,'Medium':3,'Small/medium':2,'Small':1};
+L.forEach(l=>{l.code=CODES[l.region];byCode[l.code]=l;l.stops.forEach((id,i)=>{const s=S[id];s.line=l;s.idx=i;s.code=l.code+'.'+(i+1)})});
+S.forEach(s=>{byId[s.id]=s;s.px=s.gx*C;s.py=s.gy*C;s.n=s.centres.length;s.r=3.6+Math.min(s.n,8)*.9;
+ s.verified=s.centres.some(c=>/^Verified/.test(c.pension));s.noPen=s.centres.some(c=>/No Pension/.test(c.pension));
+ s.large=s.centres.some(c=>c.size=='Large');s.sizeRank=Math.max(0,...s.centres.map(c=>SIZE_RANK[c.size]||0));
+ s.outlet=s.centres.some(c=>/outlet/i.test(c.type));s.ownerKnown=s.centres.some(c=>!TBC(c.owner));
+ s.noPost=s.centres.some(c=>TBC(c.postcode));s.web=s.centres.some(c=>c.website&&c.website!='None');
+ const f=['postcode','size','owner','pension','manager'];let ok=0;s.centres.forEach(c=>f.forEach(k=>{if(!TBC(c[k]))ok++}));s.complete=ok/(f.length*s.n)});
+const ALLC=S.flatMap(s=>s.centres.map(c=>({...c,s})));
+// stats
+const nInter=D.interchanges.length;
+const stat=(n,t)=>`<span class="stat"><b>${n}</b> ${t}</span>`;
+$('stats').innerHTML=[stat(L.length,'lines'),stat(S.length,'stations'),stat(ALLC.length,'centres'),stat(nInter,'interchanges'),stat(ALLC.filter(c=>c.size=='Large').length,'large centres'),
+ stat(ALLC.filter(c=>/^Verified/.test(c.pension)).length,'pension verified'),stat(ALLC.filter(c=>!TBC(c.owner)).length,'owner confirmed'),stat(ALLC.filter(c=>TBC(c.owner)).length,'owner to confirm'),stat(ALLC.filter(c=>TBC(c.postcode)).length,'postcode to confirm')].join('');
+$('gapN').textContent=ALLC.filter(c=>TBC(c.owner)).length;
+// ---------- render map
+function route(a,b,flip){const dx=b.px-a.px,dy=b.py-a.py,ax=Math.abs(dx),ay=Math.abs(dy),sx=Math.sign(dx),sy=Math.sign(dy),d=Math.min(ax,ay),p=[[a.px,a.py]];
+ if(ax>ay){const st=(ax-d)/2;if(flip)p.push([a.px+sx*(ax-d),a.py]);else{p.push([a.px+sx*st,a.py]);p.push([a.px+sx*(st+d),b.py])}}
+ else if(ay>ax){const st=(ay-d)/2;if(flip)p.push([a.px,a.py+sy*(ay-d)]);else{p.push([a.px,a.py+sy*st]);p.push([b.px,a.py+sy*(st+d)])}}
+ p.push([b.px,b.py]);return p}
+function rounded(pts,R=7){let d=`M${pts[0][0]},${pts[0][1]}`;for(let i=1;i<pts.length-1;i++){const[x0,y0]=pts[i-1],[x1,y1]=pts[i],[x2,y2]=pts[i+1];const l1=Math.hypot(x1-x0,y1-y0),l2=Math.hypot(x2-x1,y2-y1);if(l1<.01||l2<.01)continue;const r=Math.min(R,l1/2,l2/2);d+=` L${x1-(x1-x0)/l1*r},${y1-(y1-y0)/l1*r} Q${x1},${y1} ${x1+(x2-x1)/l2*r},${y1+(y2-y1)/l2*r}`}const p=pts[pts.length-1];return d+` L${p[0]},${p[1]}`}
+const gl=$('gl'),gi=$('gi'),gs=$('gs'),gt=$('gt'),segs=[];
+L.forEach(l=>{let pts=[];l.stops.forEach((id,i)=>{if(!i){pts.push([S[id].px,S[id].py]);return}pts.push(...route(S[l.stops[i-1]],S[id],i%2==0).slice(1))});
+ const cl=pts.filter((p,i)=>!i||p[0]!=pts[i-1][0]||p[1]!=pts[i-1][1]);for(let i=1;i<cl.length;i++)segs.push([cl[i-1],cl[i]]);
+ l.el=el('path',{d:rounded(cl),fill:'none',stroke:l.color,'stroke-width':5.5,'stroke-linecap':'round','stroke-linejoin':'round'},gl)});
+const links=[];
+D.interchanges.forEach(([a,b,dd])=>{a=S[a];b=S[b];const g=el('g',{},gi);const lk={a,b,g,kind:dd<0?'ferry':dd>4.5?'walk':'inter'};links.push(lk);
+ if(lk.kind=='ferry'){el('path',{d:`M${a.px},${a.py} Q${(a.px+b.px)/2},${Math.min(a.py,b.py)-40} ${b.px},${b.py}`,fill:'none',stroke:'#1B6FB5','stroke-width':2.2,'stroke-dasharray':'7 4'},g);
+  const t=el('text',{x:(a.px+b.px)/2,y:Math.min(a.py,b.py)-26,'text-anchor':'middle',class:'lbl'},g);t.textContent='⛴ Ferry';return}
+ if(lk.kind=='walk'){el('line',{x1:a.px,y1:a.py,x2:b.px,y2:b.py,stroke:'var(--map-ink)','stroke-width':1.6,'stroke-dasharray':'2 3','stroke-linecap':'round'},g);return}
+ el('line',{x1:a.px,y1:a.py,x2:b.px,y2:b.py,stroke:'var(--map-ink)','stroke-width':9,'stroke-linecap':'round'},g);
+ el('line',{x1:a.px,y1:a.py,x2:b.px,y2:b.py,stroke:'var(--node)','stroke-width':5.6,'stroke-linecap':'round'},g);a.ix=b.ix=1});
+S.forEach(s=>{const g=el('g',{class:'stn'},gs);s.g=g;
+ if(s.verified)el('circle',{cx:s.px,cy:s.py,r:s.r+3.5,class:'ring'},g);
+ s.c=el('circle',{cx:s.px,cy:s.py,r:s.r,fill:'var(--node)',stroke:s.ix?'var(--map-ink)':s.line.color,'stroke-width':s.ix?2.2:2.4,class:'o'},g);
+ if(s.n>=4){s.tx=el('text',{x:s.px,y:s.py+3.2,'text-anchor':'middle','font-size':8.5,'font-family':'IBM Plex Mono',fill:'var(--map-ink)','pointer-events':'none'},g);s.tx.textContent=s.n}
+ g.addEventListener('click',e=>{e.stopPropagation();pickStation(s)})});
+// labels
+const ctx=document.createElement('canvas').getContext('2d');
+function placeLabels(){gt.innerHTML='';const mode=$('labels').value;if(mode=='none')return;const boxes=[];
+ const hit=b=>boxes.some(o=>b.x<o.x+o.w&&b.x+b.w>o.x&&b.y<o.y+o.h&&b.y+b.h>o.y);
+ const segHit=b=>segs.some(([p,q])=>{for(let k=1;k<6;k++){const x=p[0]+(q[0]-p[0])*k/6,y=p[1]+(q[1]-p[1])*k/6;if(x>b.x-2&&x<b.x+b.w+2&&y>b.y-2&&y<b.y+b.h+2)return true}return false});
+ S.forEach(s=>boxes.push({x:s.px-s.r,y:s.py-s.r,w:s.r*2,h:s.r*2}));
+ [...S].sort((a,b)=>b.n-a.n).forEach(s=>{const big=s.n>=3;if(mode=='big'&&!big)return;const fs=big?11:9.5;ctx.font=`${big?700:500} ${fs}px "Hanken Grotesk",system-ui`;
+  const w=ctx.measureText(s.name).width,h=fs,o=s.r+3;
+  const cand=[[o,h/2-1.5,0],[-o,h/2-1.5,1],[-w/2,-o-2,2],[-w/2,o+h-1,2],[o-1,-o+2,0],[o-1,o+h-3,0],[-o+1,-o+2,1],[-o+1,o+h-3,1]];
+  let best,bs=1e9;cand.forEach((c,i)=>{const x=c[2]==1?s.px+c[0]-w:s.px+c[0],y=s.py+c[1]-h+2,b={x,y,w,h};const sc=(hit(b)?100:0)+(segHit(b)?8:0)+i*.5;if(sc<bs){bs=sc;best=b}});
+  boxes.push(best);const t=el('text',{x:best.x,y:best.y+h-2,class:'lbl'+(big?' big':'')},gt);t.textContent=s.name;s.t=t;t.addEventListener('click',e=>{e.stopPropagation();pickStation(s)})})
+ applyState()}
+// ---------- pan / zoom
+const vp=$('vp'),world=$('world');const W=Math.max(...S.map(s=>s.px))+60,H=Math.max(...S.map(s=>s.py))+60;
+let k=1,tx=0,ty=0;const apply=()=>{world.setAttribute('transform',`translate(${tx},${ty}) scale(${k})`);vp.classList.toggle('z-low',k<0.85);vp.classList.toggle('z-high',k>1.7)};
+function fit(){const r=vp.getBoundingClientRect();k=Math.min((r.width-20)/W,(r.height-20)/H);tx=(r.width-W*k)/2;ty=(r.height-H*k)/2;apply()}
+function zoomAt(f,cx,cy){const nk=Math.max(.2,Math.min(8,k*f));tx=cx-(cx-tx)*nk/k;ty=cy-(cy-ty)*nk/k;k=nk;apply()}
+let anim;function flyTo(s,z){const r=vp.getBoundingClientRect();z=z||Math.max(k,1.8);const T=[r.width/2-s.px*z,r.height/2-s.py*z,z],F=[tx,ty,k],t0=performance.now();cancelAnimationFrame(anim);
+ const step=t=>{let p=Math.min(1,(t-t0)/450);p=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;tx=F[0]+(T[0]-F[0])*p;ty=F[1]+(T[1]-F[1])*p;k=F[2]+(T[2]-F[2])*p;apply();if(p<1)anim=requestAnimationFrame(step)};anim=requestAnimationFrame(step)}
+vp.addEventListener('wheel',e=>{e.preventDefault();const r=vp.getBoundingClientRect();zoomAt(Math.exp(-e.deltaY*.0015),e.clientX-r.left,e.clientY-r.top)},{passive:false});
+const ptrs=new Map();let moved=0;
+vp.addEventListener('pointerdown',e=>{if(e.target.closest('.zoom,.tcap'))return;ptrs.set(e.pointerId,[e.clientX,e.clientY]);moved=0;vp.classList.add('grab')});
+window.addEventListener('pointermove',e=>{if(!ptrs.has(e.pointerId))return;const p=ptrs.get(e.pointerId);
+ if(ptrs.size==1){tx+=e.clientX-p[0];ty+=e.clientY-p[1];moved+=Math.abs(e.clientX-p[0])+Math.abs(e.clientY-p[1]);ptrs.set(e.pointerId,[e.clientX,e.clientY]);apply()}
+ else if(ptrs.size==2){const[a,b]=[...ptrs.values()];const d0=Math.hypot(a[0]-b[0],a[1]-b[1]);ptrs.set(e.pointerId,[e.clientX,e.clientY]);const[c,d]=[...ptrs.values()];const r=vp.getBoundingClientRect();zoomAt(Math.hypot(c[0]-d[0],c[1]-d[1])/d0,(c[0]+d[0])/2-r.left,(c[1]+d[1])/2-r.top);moved=99}});
+const up=e=>{ptrs.delete(e.pointerId);if(!ptrs.size)vp.classList.remove('grab')};window.addEventListener('pointerup',up);window.addEventListener('pointercancel',up);
+$('svg').addEventListener('click',()=>{if(moved<5){selLine=null;selStation=null;route_=null;applyState();renderLineCard();$('detail').innerHTML='<h3>Station detail</h3><p style="color:var(--muted)">Click any station.</p>'}});
+$('zi').onclick=()=>{const r=vp.getBoundingClientRect();zoomAt(1.4,r.width/2,r.height/2)};$('zo').onclick=()=>{const r=vp.getBoundingClientRect();zoomAt(1/1.4,r.width/2,r.height/2)};$('zf').onclick=fit;
+// ---------- state
+let selLine=null,selStation=null,route_=null,brandSel=null;const facOn=new Set();
+const PEN_COL={v:'#2F7D4F',n:'#8A857B',u:'#D9A21B'},SIZE_COL=['#C9C4B8','#9EC5E8','#5E9BD6','#2C6CB0','#1B3A6B'];
+function stationFill(s){const m=$('colourBy').value;
+ if(m=='pension')return s.verified?PEN_COL.v:s.noPen?PEN_COL.n:PEN_COL.u;
+ if(m=='size')return SIZE_COL[s.sizeRank];
+ if(m=='brands'){const n=s.brandCount||0;return !s.brandTried?'#C9C4B8':n>=150?'#1B3A6B':n>=60?'#2C6CB0':n>=20?'#5E9BD6':n>0?'#9EC5E8':'#C8553D'}
+ if(m=='data'){const p=s.complete;return p>=.8?'#2F7D4F':p>=.5?'#8DB24A':p>=.25?'#E2A93B':'#C8553D'}
+ return null}
+const FAC=[['large','Large centre',s=>s.large],['verified','Pension stake verified',s=>s.verified],['owner','Owner confirmed',s=>s.ownerKnown],['outlet','Outlet centre',s=>s.outlet],['multi','3+ centres',s=>s.n>=3],['inter','Interchange',s=>!!s.ix],['web','Website listed',s=>s.web],['nopost','Postcode to confirm',s=>s.noPost]];
+function applyState(){const m=$('colourBy').value;
+ const facF=s=>!facOn.size||FAC.filter(f=>facOn.has(f[0])).every(f=>f[2](s));
+ const inRoute=route_?new Set(route_.path.map(s=>s.id)):null;
+ L.forEach(l=>{const on=(!selLine||selLine==l)&&!route_;l.el.style.opacity=route_?(route_.lines.has(l)?.9:.08):on?(m=='line'?1:.35):.1});
+ links.forEach(x=>{x.g.style.opacity=route_?(inRoute.has(x.a.id)&&inRoute.has(x.b.id)?1:.1):selLine&&x.a.line!=selLine&&x.b.line!=selLine?.12:1});
+ S.forEach(s=>{const vis=route_?inRoute.has(s.id):(!selLine||s.line==selLine)&&facF(s)&&(!brandSel||brandSel.stations.has(s));s.g.classList.toggle('bhit',!!brandSel&&brandSel.stations.has(s));s.g.classList.toggle('dim',!vis);s.t&&s.t.classList.toggle('dim',!vis);
+  const bh=!!brandSel&&brandSel.stations.has(s);s.t&&s.t.classList.toggle('bshow',bh);
+  const f=bh?s.line.color:stationFill(s);s.c.setAttribute('fill',f||'var(--node)');s.c.setAttribute('stroke',f?'var(--map-ink)':s.ix?'var(--map-ink)':s.line.color);
+  if(s.tx)s.tx.setAttribute('fill',f&&m!='pension'&&s.sizeRank>=3||f&&m=='pension'&&s.verified?'#fff':'var(--map-ink)');
+  s.g.classList.toggle('sel',s==selStation)});
+ document.querySelectorAll('.rd').forEach(b=>{b.classList.toggle('on',selLine&&b.dataset.c==selLine.code);b.classList.toggle('dimr',!!selLine&&b.dataset.c!=selLine.code)});
+ document.querySelectorAll('.kr').forEach(b=>b.classList.toggle('on',selLine&&b.dataset.c==selLine.code));
+ renderStack()}
+// roundels + key
+$('jrny').innerHTML=L.map(l=>`<button class="rd" data-c="${l.code}" style="background:${l.color};${l.code=='WM'||l.code=='YH'?'color:#1D1D1B':''}" title="${esc(l.region)} — ${esc(l.name)}">${l.code}</button>`).join('');
+$('jrny').onclick=e=>{const b=e.target.closest('.rd');if(b)pickLine(byCode[b.dataset.c])};
+function renderKey(){const s0=S.find(s=>s.name=='Westminster')||S[0];
+ $('keyCard').innerHTML=`<button class="kh" id="kh"><b>KEY</b><span>${L.length} lines ▾</span></button><div class="kb">
+ <div class="kx"><div class="bd"><div class="sym">LN</div><div class="num">${s0.code}</div></div>
+ <div class="ar"><b>■</b> Line colour — one region</div><div class="ar"><b>LN</b> Line symbol — Greater London</div><div class="ar"><b>${s0.code}</b> Station number — stop ${s0.idx+1}: ${esc(s0.name)}</div><div class="hi">Pick a line below or click a station on the map</div></div>
+ ${GROUPS.map(([g,cs])=>`<div class="kg"><div class="gt"><span>${g}</span><span>${cs.reduce((a,c)=>a+byCode[c].stops.length,0)} stations</span></div><div class="kgrid">${cs.map(c=>{const l=byCode[c];return `<button class="kr" data-c="${c}" title="${esc(l.region)}"><span class="cl" style="background:${l.color}"></span><span class="sb" style="border-color:${l.color}">${c}</span><span class="nm">${esc(l.region)}</span></button>`}).join('')}</div></div>`).join('')}</div>`;
+ $('kh').onclick=()=>$('keyCard').classList.toggle('closed');
+ $('keyCard').querySelectorAll('.kr').forEach(b=>b.onclick=()=>pickLine(byCode[b.dataset.c]))}
+renderKey();
+function fitTo(arr,max=2.5){const xs=arr.map(s=>s.px),ys=arr.map(s=>s.py),R=vp.getBoundingClientRect(),bw=Math.max(...xs)-Math.min(...xs)+120,bh=Math.max(...ys)-Math.min(...ys)+120;
+ k=Math.min(R.width/bw,R.height/bh,max);tx=R.width/2-(Math.max(...xs)+Math.min(...xs))/2*k;ty=R.height/2-(Math.max(...ys)+Math.min(...ys))/2*k;apply()}
+function pickLine(l,keep){selLine=selLine==l&&!keep?null:l;route_=null;applyState();renderLineCard();if(!vp.hidden){selLine?fitTo(selLine.stops.map(id=>S[id])):fit()}}
+function renderLineCard(){const c=$('pcard');if(!selLine){c.hidden=true;return}const l=selLine,n=l.stops.reduce((a,id)=>a+S[id].n,0);
+ const ints=links.filter(x=>x.a.line==l||x.b.line==l).map(x=>{const o=x.a.line==l?x.b:x.a,m=x.a.line==l?x.a:x.b;return {m,o,kind:x.kind}});
+ c.hidden=false;c.style.borderTop=`6px solid ${l.color}`;
+ c.innerHTML=`<div class="k">${l.code} · ${esc(l.name)}</div><h3>${esc(l.region)}</h3><p><span class="pill">${l.stops.length} stations</span><span class="pill">${n} centres</span><span class="pill ok">${l.stops.reduce((a,id)=>a+S[id].centres.filter(c=>/^Verified/.test(c.pension)).length,0)} pension verified</span></p>
+ <div class="hops"><b style="font-size:12px;color:var(--muted)">CHANGE HERE FOR</b><br>${ints.map(i=>`<a data-s="${i.m.id}">${i.m.code} ${esc(i.m.name)}</a> → <span style="color:${i.o.line.color}">■</span> ${i.o.line.code} ${esc(i.o.name)}${i.kind=='ferry'?' (ferry)':i.kind=='walk'?' (walk)':''}`).join('<br>')||'—'}</div>
+ <ol class="route-list" style="padding-left:0;margin-top:10px">${l.stops.map(id=>{const s=S[id];return `<li><i style="border-color:${l.color}"></i><span><a class="lk" data-s="${s.id}">${s.code} ${esc(s.name)}</a> <span class="k">${s.n}</span></span></li>`}).join('')}</ol>`;
+ c.querySelectorAll('[data-s]').forEach(a=>a.onclick=()=>pickStation(S[a.dataset.s]))}
+// detail
+function penPill(p){return /^Verified/.test(p)?`<span class="pill ok">${esc(p)}</span>`:/No Pension/.test(p)?`<span class="pill">${esc(p)}</span>`:`<span class="pill am">${esc(p)}</span>`}
+const val=v=>TBC(v)?`<span class="tbc">${esc(v||'—')}</span>`:esc(v);
+function pickStation(s,opts={}){if(curMall&&curMall.s!=s)closeMall();selStation=s;if(!route_&&selLine&&selLine!=s.line)selLine=null;applyState();
+ const adj=[s.line.stops[s.idx-1],s.line.stops[s.idx+1]].filter(x=>x!=null).map(id=>S[id]);
+ const ch=links.filter(x=>x.a==s||x.b==s).map(x=>({o:x.a==s?x.b:x.a,kind:x.kind}));
+ const miss=s.centres.filter(c=>TBC(c.owner)).length;
+ $('detail').innerHTML=`<div class="k" style="color:${s.line.color}">${s.code} · ${esc(s.line.region)} · ${esc(s.nation)}</div><h3>${esc(s.la)}</h3>
+ <p><span class="pill">${s.n} centre${s.n>1?'s':''}</span>${s.verified?'<span class="pill ok">pension stake</span>':''}${s.ix?'<span class="pill">interchange</span>':''}<span class="pill ${s.complete<.4?'warn':''}">data ${Math.round(s.complete*100)}% complete</span></p>
+ <div class="k" style="margin-top:10px">SHOPPING CENTRES HERE — click one to see its brands</div>
+ <div class="mlist">${s.centres.map((c,i)=>`<button class="mrow ${curMall==c?'on':''}" data-m="${i}" style="--lc:${s.line.color}"><b>${esc(c.name)}</b><span class="ar">›</span><span class="t">${esc(c.type)} · ${esc(c.town)}</span><span class="ps">${c.size&&!TBC(c.size)?`<span class="pill">${esc(c.size)}</span>`:''}${/^Verified/.test(c.pension)?'<span class="pill ok">pension</span>':''}${c.brandData?(c.brandData.brands.length?`<span class="pill br">${c.brandData.brands.length} brands</span>`:'<span class="pill am">no brand list</span>'):''}${brandSel&&brandSel.centres.has(c)?`<span class="pill ok">✓ ${esc(brandSel.name)}</span>`:''}</span></button>`).join('')}</div>
+ <div class="hops" style="margin-top:10px">${adj.map(a=>`<a data-s="${a.id}">${a.idx<s.idx?'◀':'▶'} ${a.code} ${esc(a.name)}</a>`).join(' &nbsp; ')}${ch.length?'<br>'+ch.map(c=>`Change: <a data-s="${c.o.id}"><span style="color:${c.o.line.color}">■</span> ${c.o.code} ${esc(c.o.name)}</a>${c.kind=='ferry'?' (ferry)':''}`).join('<br>'):''}</div>
+ ${miss?`<div class="flag">${miss} of ${s.n} centre${s.n>1?'s have':' has'} no confirmed owner yet.</div>`:''}${uniBlock(s)}
+`;
+ $('detail').querySelectorAll('.mrow').forEach(b=>b.onclick=()=>openMall(s.centres[+b.dataset.m]));
+ $('detail').querySelectorAll('[data-uni]').forEach(b=>b.onclick=()=>openSU(+b.dataset.uni));$('detail').querySelectorAll('[data-sp]').forEach(b=>b.onclick=()=>openStudent(+b.dataset.sp));
+ $('detail').querySelectorAll('[data-s]').forEach(a=>a.onclick=()=>{const t=S[a.dataset.s];pickStation(t);flyTo(t)});
+ if(!keyAuto){keyAuto=1;$('keyCard').classList.add('closed')}
+ const rail=document.querySelector('.rail');if(window.innerWidth>1000)rail.scrollTo({top:$('detail').offsetTop-rail.offsetTop-4,behavior:'smooth'});
+ if(window.innerWidth<=1000&&!opts.noScroll&&!tourT)$('detail').scrollIntoView({behavior:'smooth',block:'start'})}
+let keyAuto=0;
+// ---------- mall view: a centre and all its brands
+let curMall=null,mallGroup='*',mallQ='',mallSel=null;
+S.forEach(s=>s.centres.forEach(c=>c.s=s));
+{const n={};S.forEach(s=>s.centres.forEach(c=>n[c.name]=(n[c.name]||0)+1));S.forEach(s=>s.centres.forEach(c=>c.key=n[c.name]>1?`${c.name} (${c.town})`:c.name))}
+const BSTATUS={needs_review:['Check the UK Malls match','A possible match was found on UK Malls but the name or town is not a clear fit. Confirm it above to load its brands.'],
+ not_fetched:['Brands not fetched yet','This centre is matched to a UK Malls page. Press "Fetch from UK Malls" above, or "Fetch all brands" in the Brand data card.'],
+ not_on_ukmalls:['Not found on UK Malls','No matching page was found on UK Malls. Use "Find on UK Malls" above to pick one by hand.'],needs_url:['No brand list yet','The spreadsheet links to a directory or article, not this centre\'s own website. Add its website in the scraper\'s overrides.json and run it again.'],
+ no_directory_found:['No store list found','The scraper reached the website but could not find a page listing the stores. Set a directoryUrl for this centre in overrides.json.'],
+ unreachable:['Website could not be reached','The centre\'s website did not respond when the scraper ran.'],blocked_by_robots:['Website does not allow scraping','robots.txt on this site asks automated tools not to read these pages.'],skipped:['Skipped','This centre is set to skip in overrides.json.']};
+function openMall(c,opts={}){curMall=c;mallGroup='*';mallQ=brandSel&&brandSel.centres.has(c)?brandSel.name:'';mallSel=opts.brand||null;const s=c.s;
+ if(selStation!=s){selStation=s;applyState()}
+ document.querySelectorAll('.mrow').forEach(b=>b.classList.toggle('on',s.centres[+b.dataset.m]==c));
+ if(!vp.hidden&&!opts.noFly)flyTo(s,Math.max(k,1.6));
+ renderMall();$('mall').classList.add('open');
+ if(window.innerWidth<=1000)document.body.style.overflow='hidden'}
+function closeMall(){curMall=null;$('mall').classList.remove('open');document.body.style.overflow='';document.querySelectorAll('.mrow.on').forEach(b=>b.classList.remove('on'))}
+function renderMall(){const c=curMall;if(!c)return;const s=c.s,d=c.brandData,brands=d?d.brands:[];
+ const U=d&&d.ukmalls||null;const facts=[['Postcode',c.postcode],['Size tier',c.size],['Owner',c.owner],['Managing agent',c.manager],['Local authority',s.la]];
+ if(U&&U.phone)facts.push(['Phone',U.phone]);if(U&&U.address&&TBC(c.postcode))facts.push(['Address',U.address]);
+ const m=$('mall');m.style.setProperty('--lc',s.line.color);
+ m.innerHTML=`<div class="mh"><div class="bar"></div><div class="crumb"><a data-act="line">${s.line.code} ${esc(s.line.region)}</a>›<a data-act="station">${s.code} ${esc(s.name)}</a>›<span>${esc(c.name)}</span></div>
+  <h3>${esc(c.name)}</h3><div class="t">${esc(c.type)} · ${esc(c.town)} ${penPill(c.pension)}${c.website&&c.website!='None'?` · <a class="lk" href="${esc(c.website)}" target="_blank" rel="noopener">website ↗</a>`:''}</div>
+  <div class="mx">${s.n>1?`<button data-act="prev" title="Previous centre at this station" aria-label="Previous centre">‹</button><button data-act="next" title="Next centre at this station" aria-label="Next centre">›</button>`:''}<button data-act="close" title="Close (Esc)" aria-label="Close">✕</button></div></div>
+  <div class="mfacts">${facts.map(([k,v])=>`<div><span>${k}</span>${val(v)}</div>`).join('')}${U&&U.hours&&U.hours.length?`<div style="grid-column:1/-1"><span>Opening hours (UK Malls)</span>${U.hours.map(h=>esc(h.replace(/:\s/,' '))).join(' · ')}</div>`:''}</div>
+  ${ukStrip(c)}
+  <div class="mbody">${brands.length?`<div class="mtools"><h4>Brands <span class="k">${brands.length}</span></h4><input type="search" id="mq" placeholder="Search brands…" value="${esc(mallQ)}"></div><div class="bchips" id="mchips"></div><div class="bgrid" id="mgrid"></div>`
+   :`<div class="empty">${d?`<b>${esc((BSTATUS[d.status]||['No brands found'])[0])}</b>${esc((BSTATUS[d.status]||['',d.note||''])[1])}`:BRANDS_LOADED?'<b>Not scraped yet</b>This centre was not part of the last scraper run.':'<b>Brands not loaded yet</b>Run the brand scraper and publish its brands.json next to this page; every centre with a website will then list its brands here.'}</div>`}</div>`;
+ m.querySelectorAll('[data-act]').forEach(b=>b.onclick=()=>{const a=b.dataset.act,i=s.centres.indexOf(c);
+  if(a=='close')closeMall();else if(a=='station'){closeMall();pickStation(s,{noScroll:true})}else if(a=='line'){closeMall();pickLine(s.line,true)}
+  else if(a=='prev'||a=='next'){openMall(s.centres[(i+(a=='next'?1:s.n-1))%s.n],{noFly:true})}});
+ wireUk(c);
+ if(brands.length){$('mq').oninput=e=>{mallQ=e.target.value;drawBrands()};drawBrands()}}
+function drawBrands(){const brands=curMall.brandData.brands,q=mallQ.trim().toLowerCase();
+ const groups={};brands.forEach(b=>groups[b.group]=(groups[b.group]||0)+1);
+ $('mchips').innerHTML=`<button data-g="*" class="${mallGroup=='*'?'on':''}">All<span>${brands.length}</span></button>`+Object.entries(groups).sort((a,b)=>b[1]-a[1]).map(([g,n])=>`<button data-g="${esc(g)}" class="${mallGroup==g?'on':''}">${esc(g)}<span>${n}</span></button>`).join('');
+ $('mchips').onclick=e=>{const b=e.target.closest('button');if(!b)return;mallGroup=b.dataset.g;drawBrands()};
+ const list=[...brands].filter(b=>(mallGroup=='*'||b.group==mallGroup)&&(!q||(b.name+' '+b.category+' '+b.group+' '+b.unit).toLowerCase().includes(q))).sort((a,b)=>a.name.localeCompare(b.name));
+ let html='';list.forEach((b,i)=>{const on=mallSel&&mallSel.name==b.name;
+  html+=`<button class="bc ${on?'on':''}" data-i="${brands.indexOf(b)}"><span class="lg">${esc((b.name||'?').slice(0,2))}${b.logo?`<img src="${esc(b.logo)}" alt="" loading="lazy" onerror="this.remove()">`:''}</span><b>${esc(b.name)}</b><small>${esc([b.group!='Other'?b.group:b.category,b.unit].filter(Boolean).join(' · ')||'—')}</small></button>`;
+  if(on)html+=brandDetail(b)});
+ $('mgrid').innerHTML=html||'<div class="empty" style="grid-column:1/-1">No brands match.</div>';
+ $('mgrid').querySelectorAll('.bc').forEach(x=>x.onclick=()=>{const b=brands[+x.dataset.i];mallSel=mallSel&&mallSel.name==b.name?null:b;drawBrands();const det=$('mgrid').querySelector('.bdet');det&&det.scrollIntoView({block:'nearest',behavior:'smooth'})});
+ const det=$('mgrid').querySelector('.bdet');if(det){det.querySelector('[data-x]').onclick=()=>{mallSel=null;drawBrands()};det.querySelectorAll('[data-sp]').forEach(a=>a.onclick=()=>openStudent(+a.dataset.sp))}}
+function brandDetail(b){const row=(k,v)=>v?`<div class="row"><span>${k}</span><div>${v}</div></div>`:'';const ret=retailerFor(b.name),sp=studentFor(b.name);
+ return `<div class="bdet"><div style="display:flex;justify-content:space-between;gap:8px"><h5>${esc(b.name)}</h5><button class="btn" data-x style="padding:2px 9px">✕</button></div>
+ ${row('Type',esc([b.group,b.category&&b.category!=b.group?b.category:''].filter(Boolean).join(' · ')))}${row('Where',esc([b.unit,b.level].filter(Boolean).join(', ')))}
+ ${row('Hours',(b.hours||[]).map(esc).join('<br>'))}${row('Phone',b.phone?`<a href="tel:${esc(b.phone.replace(/\s/g,''))}">${esc(b.phone)}</a>`:'')}${row('Email',b.email?`<a href="mailto:${esc(b.email)}">${esc(b.email)}</a>`:'')}
+ ${row('About',esc((b.description||'').slice(0,400)))}
+ ${row('Affiliate',ret?`<span class="rpill" style="background:${routeColor(ret.route)}">${esc(ret.route)}</span> ${esc(ret.cat)} · <a href="${esc(ret.url)}" target="_blank" rel="noopener">site ↗</a>${ret.dev?` · <a href="${esc(ret.dev)}" target="_blank" rel="noopener">${esc(ret.lt)} ↗</a>`:''}`:'')}
+ ${row('Student deals',sp.length?sp.slice(0,6).map(i=>`<a class="lk" data-sp="${i}">${esc(X.students[i].n.split(' (')[0])}</a>`).join(' · ')+(sp.length>6?` +${sp.length-6}`:''):'')}
+ ${row('Links',[b.website?`<a href="${esc(b.website)}" target="_blank" rel="noopener">Brand website ↗</a>`:'',b.url?`<a href="${esc(b.url)}" target="_blank" rel="noopener">${b.source=='ukmalls'?'Page on UK Malls':'Page on centre site'} ↗</a>`:'',...Object.entries(b.socials||{}).map(([k,v])=>`<a href="${esc(v)}" target="_blank" rel="noopener">${esc(k)}</a>`)].filter(Boolean).join(' · '))}</div>`}
+// ---------- orientation: region names, line badges, hover areas
+const ga=$('ga'),gh=$('gh'),gb=$('gb');
+L.forEach(l=>{const st=l.stops.map(id=>S[id]);const cx=st.reduce((a,s)=>a+s.px,0)/st.length,cy=st.reduce((a,s)=>a+s.py,0)/st.length;
+ const t=el('text',{x:cx,y:cy,'text-anchor':'middle',class:'area',fill:l.color},ga);t.textContent=l.region.replace('Yorkshire and the Humber','Yorkshire').replace('Northern Ireland','N. Ireland');
+ l.hit=el('path',{d:l.el.getAttribute('d'),fill:'none',stroke:'transparent','stroke-width':16,'stroke-linecap':'round',class:'lhit'},gh);
+ l.hit.addEventListener('pointerenter',e=>showTip(e,lineTip(l),l.color));l.hit.addEventListener('pointermove',moveTip);l.hit.addEventListener('pointerleave',hideTip);
+ l.hit.addEventListener('click',e=>{e.stopPropagation();if(moved<5)pickLine(l,true)});
+ // badges at both ends, pushed outwards from the line
+ [[0,1],[st.length-1,st.length-2]].forEach(([i,j])=>{const a=st[i],b=st[j]||{px:a.px-1,py:a.py};let dx=a.px-b.px,dy=a.py-b.py;const d=Math.hypot(dx,dy)||1;dx/=d;dy/=d;
+  const x=a.px+dx*(a.r+17),y=a.py+dy*(a.r+17);const g=el('g',{class:'lbadge',transform:`translate(${x},${y})`},gb);
+  el('rect',{x:-15,y:-9,width:30,height:18,rx:5,fill:'var(--node)',stroke:l.color,'stroke-width':2.6},g);
+  const tx=el('text',{x:0,y:3.6,'text-anchor':'middle',fill:'var(--map-ink)'},g);tx.textContent=l.code;
+  g.addEventListener('click',e=>{e.stopPropagation();pickLine(l,true)});g.addEventListener('pointerenter',e=>showTip(e,lineTip(l),l.color));g.addEventListener('pointermove',moveTip);g.addEventListener('pointerleave',hideTip)})});
+gl.style.pointerEvents='none';
+// ---------- tooltips
+const tip=$('tip');
+function moveTip(e){const r=vp.getBoundingClientRect();let x=e.clientX-r.left+14,y=e.clientY-r.top+14;const w=tip.offsetWidth,h=tip.offsetHeight;if(x+w>r.width-8)x=e.clientX-r.left-w-14;if(y+h>r.height-8)y=e.clientY-r.top-h-14;tip.style.left=x+'px';tip.style.top=y+'px'}
+function showTip(e,html,color){if(ptrs.size)return;tip.innerHTML=html;tip.style.setProperty('--lc',color);tip.classList.add('on');moveTip(e)}
+function hideTip(){tip.classList.remove('on')}
+function lineTip(l){const st=l.stops.map(id=>S[id]),n=st.reduce((a,s)=>a+s.n,0),b=st.reduce((a,s)=>a+(s.brandCount||0),0);
+ return `<div class="k">${l.code} · ${esc(l.name)}</div><h5>${esc(l.region)}</h5><div class="nums"><span><b>${st.length}</b>councils</span><span><b>${n}</b>centres</span>${b?`<span><b>${b.toLocaleString()}</b>brands</span>`:''}</div><div class="cta">Click to follow this line</div>`}
+function stationTip(s){const b=s.brandCount||0;const top=[...s.centres].sort((x,y)=>((y.brandData&&y.brandData.brands.length)||0)-((x.brandData&&x.brandData.brands.length)||0)).slice(0,4);
+ const has=brandSel&&brandSel.stations.has(s)?s.centres.filter(c=>brandSel.centres.has(c)):null;
+ return `<div class="k" style="color:${s.line.color}">${s.code} · ${esc(s.line.region)}</div><h5>${esc(s.la)}</h5><div class="nums"><span><b>${s.n}</b>centre${s.n>1?'s':''}</span>${b?`<span><b>${b.toLocaleString()}</b>brands</span>`:''}${s.ix?'<span><b>⇄</b>interchange</span>':''}</div>
+ ${has?`<div style="margin-top:5px"><b>${esc(brandSel.name)}</b> at ${has.map(c=>esc(c.name)).join(', ')}</div>`:`<ul>${top.map(c=>`<li>${esc(c.name)}${c.brandData&&c.brandData.brands.length?` <span class="k">${c.brandData.brands.length}</span>`:''}</li>`).join('')}${s.n>4?`<li class="k">+${s.n-4} more</li>`:''}</ul>`}<div class="cta">Click to see ${s.n>1?'these centres':'this centre'} and their brands</div>`}
+S.forEach(s=>{s.g.addEventListener('pointerenter',e=>showTip(e,stationTip(s),s.line.color));s.g.addEventListener('pointermove',moveTip);s.g.addEventListener('pointerleave',hideTip)});
+vp.addEventListener('pointerdown',hideTip);
+// ---------- help
+function showHelp(){$('help').hidden=false}
+$('helpBtn').onclick=showHelp;$('helpOk').onclick=()=>{$('help').hidden=true;lsSet2('seenHelp','1')};$('help').onclick=e=>{if(e.target.id=='help'){$('help').hidden=true;lsSet2('seenHelp','1')}};
+function lsGet2(k){try{return localStorage.getItem(k)}catch{return null}}function lsSet2(k,v){try{localStorage.setItem(k,v)}catch{}}
+if(!lsGet2('seenHelp'))setTimeout(showHelp,600);
+// ---------- map search: councils, centres, brands
+const mapq=$('mapq'),mapr=$('mapr');let mres=[],msel=0;
+const normB=s=>String(s||'').toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]/g,'');
+function brandIndex(){if(brandIndex.v===ALLB.length)return brandIndex.m;const m=new Map();ALLB.forEach(b=>{const k=normB(b.name);if(!k)return;if(!m.has(k))m.set(k,{name:b.name,centres:new Set(),stations:new Set()});const x=m.get(k);x.centres.add(b.centre);x.stations.add(b.s)});brandIndex.v=ALLB.length;brandIndex.m=m;return m}
+function searchMap(q){q=q.trim().toLowerCase();if(!q)return [];const nq=normB(q),out=[];
+ S.forEach(s=>{if(s.name.toLowerCase().includes(q)||s.la.toLowerCase().includes(q)||s.code.toLowerCase()==q)out.push({t:'st',s,score:s.name.toLowerCase().startsWith(q)?0:1})});
+ S.forEach(s=>s.centres.forEach(c=>{if((c.name+' '+c.town).toLowerCase().includes(q))out.push({t:'ct',c,s,score:c.name.toLowerCase().startsWith(q)?0:1})}));
+ if(nq.length>=2)for(const [k,x] of brandIndex())if(k.includes(nq))out.push({t:'br',b:x,score:(k==nq?-1:k.startsWith(nq)?0:1)-x.centres.size/1000});
+ const g={st:out.filter(x=>x.t=='st'),ct:out.filter(x=>x.t=='ct'),br:out.filter(x=>x.t=='br')};Object.values(g).forEach(a=>a.sort((x,y)=>x.score-y.score));
+ return [...g.br.slice(0,6),...g.st.slice(0,5),...g.ct.slice(0,7)]}
+function drawMapResults(){if(!mres.length){mapr.innerHTML=mapq.value.trim()?'<div class="grp">No matches</div>':'';mapr.classList.toggle('on',!!mapq.value.trim());return}
+ let html='',last='';mres.forEach((r,i)=>{const grp={br:'Brands — show where to find them',st:'Councils (stations)',ct:'Shopping centres'}[r.t];if(grp!=last){html+=`<div class="grp">${grp}</div>`;last=grp}
+  if(r.t=='br')html+=`<button data-i="${i}" class="${i==msel?'on':''}"><span class="ty" style="background:#2F7D4F">BR</span><span class="nm">${esc(r.b.name)}</span><small>${r.b.centres.size} centre${r.b.centres.size>1?'s':''}</small></button>`;
+  if(r.t=='st')html+=`<button data-i="${i}" class="${i==msel?'on':''}"><span class="ty" style="background:${r.s.line.color}">${r.s.line.code}</span><span class="nm">${esc(r.s.la)}</span><small>${r.s.n} centre${r.s.n>1?'s':''}</small></button>`;
+  if(r.t=='ct')html+=`<button data-i="${i}" class="${i==msel?'on':''}"><span class="ty" style="background:${r.s.line.color}">${r.s.line.code}</span><span class="nm">${esc(r.c.name)}</span><small>${esc(r.c.town)}</small></button>`});
+ mapr.innerHTML=html;mapr.classList.add('on')}
+mapq.addEventListener('input',()=>{mres=searchMap(mapq.value);msel=0;drawMapResults()});
+mapq.addEventListener('keydown',e=>{if(e.key=='ArrowDown'){msel=Math.min(msel+1,mres.length-1);drawMapResults();e.preventDefault()}else if(e.key=='ArrowUp'){msel=Math.max(msel-1,0);drawMapResults();e.preventDefault()}else if(e.key=='Enter'&&mres[msel])pickResult(mres[msel]);else if(e.key=='Escape'){mapq.value='';mapr.classList.remove('on');mapq.blur()}});
+mapq.addEventListener('focus',()=>{if(mapq.value.trim())drawMapResults()});
+mapr.addEventListener('pointerdown',e=>e.stopPropagation());
+mapr.addEventListener('click',e=>{const b=e.target.closest('[data-i]');if(b)pickResult(mres[+b.dataset.i])});
+document.addEventListener('click',e=>{if(!e.target.closest('.msearch'))mapr.classList.remove('on')});
+function pickResult(r){mapr.classList.remove('on');mapq.blur();
+ if(r.t=='br'){setBrand(r.b);return}
+ if(vp.hidden)$('views').children[0].click();
+ if(r.t=='st'){pickStation(r.s,{noScroll:true});flyTo(r.s,2.2)}
+ if(r.t=='ct'){pickStation(r.s,{noScroll:true});flyTo(r.s,2.2);setTimeout(()=>openMall(r.c,{noFly:true}),350)}
+ mapq.value=''}
+function setBrand(b){brandSel=b;route_=null;selLine=null;if(curMall)closeMall();applyState();renderBchip();renderLineCard();if(selStation)pickStation(selStation,{noScroll:true});
+ if(vp.hidden)$('views').children[0].click();fitTo([...b.stations],2.2);mapq.value=''}
+function renderBchip(){const c=$('bchip');if(!brandSel){c.innerHTML='';return}
+ c.innerHTML=`<div class="bchip"><span><b>${esc(brandSel.name)}</b> · ${brandSel.centres.size} centre${brandSel.centres.size>1?'s':''} at ${brandSel.stations.size} station${brandSel.stations.size>1?'s':''}</span><button aria-label="Clear brand filter" title="Clear (Esc)">✕</button></div>`;
+ c.querySelector('button').onclick=()=>{brandSel=null;renderBchip();applyState();if(selStation)pickStation(selStation,{noScroll:true});fit()}}
+// planner
+const graph=new Map();S.forEach(s=>graph.set(s.id,[]));
+L.forEach(l=>l.stops.forEach((id,i)=>{if(i){graph.get(id).push([l.stops[i-1],0]);graph.get(l.stops[i-1]).push([id,0])}}));
+links.forEach(x=>{graph.get(x.a.id).push([x.b.id,1]);graph.get(x.b.id).push([x.a.id,1])});
+function plan(a,b){const dist=new Map([[a.id,0]]),prev=new Map(),Q=[[0,a.id]];
+ while(Q.length){Q.sort((x,y)=>x[0]-y[0]);const[d,u]=Q.shift();if(u==b.id)break;if(d>dist.get(u))continue;
+  for(const[v,chg]of graph.get(u)){const nd=d+1+chg*3;if(nd<(dist.get(v)??1e9)){dist.set(v,nd);prev.set(v,u);Q.push([nd,v])}}}
+ if(!dist.has(b.id))return null;const path=[];let c=b.id;while(c!=null){path.unshift(S[c]);c=prev.get(c)}
+ return {path,lines:new Set(path.map(s=>s.line))}}
+const opts=[...S].sort((a,b)=>a.name.localeCompare(b.name)).map(s=>`<option value="${s.id}">${esc(s.name)} (${s.code})</option>`).join('');
+$('pFrom').innerHTML='<option value="">From…</option>'+opts;$('pTo').innerHTML='<option value="">To…</option>'+opts;
+function showRoute(a,b){const r=plan(a,b);if(!r){$('pOut').innerHTML='<p class="muted">No route found.</p>';return null}route_=r;selLine=null;applyState();renderLineCard();
+ let html='',chg=0;r.path.forEach((s,i)=>{if(i&&s.line!=r.path[i-1].line){chg++;html+=`<li class="chg"><span></span><span>Change to ${s.line.code} ${esc(s.line.region)}</span></li>`}
+  html+=`<li><i style="border-color:${s.line.color}"></i><a class="lk" data-s="${s.id}">${s.code} ${esc(s.name)}</a></li>`});
+ $('pOut').innerHTML=`<p style="font-size:13px"><b>${r.path.length} stations</b>, ${chg} change${chg!=1?'s':''}, ${r.path.reduce((a,s)=>a+s.n,0)} centres on the way</p><ol class="route-list">${html}</ol><button class="btn" id="pRide" style="margin-top:6px">▶ Ride this route</button> <button class="btn" id="pClr">Clear</button>`;
+ $('pOut').querySelectorAll('[data-s]').forEach(x=>x.onclick=()=>{pickStation(S[x.dataset.s]);flyTo(S[x.dataset.s])});
+ $('pRide').onclick=()=>startTour(r.path,`${a.name} → ${b.name}`);$('pClr').onclick=()=>{route_=null;$('pOut').innerHTML='';applyState()};
+ fitTo(r.path);return r}
+$('pGo').onclick=()=>{const a=S[$('pFrom').value],b=S[$('pTo').value];if(a&&b)showRoute(a,b)};
+// tour
+let tourT=null,tourPath=[],tourI=0,tourName='';
+$('tourSel').innerHTML=L.map(l=>`<option value="${l.code}">${l.code} — ${esc(l.region)}</option>`).join('');
+function tourShow(){const s=tourPath[tourI];pickStation(s,{noScroll:true});flyTo(s,1.7);$('tourCap').hidden=false;
+ $('tourCap').innerHTML=`<b>${tourI+1}/${tourPath.length}</b>${esc(s.name)} · ${s.n} centre${s.n>1?'s':''}${s.n<=3?': '+s.centres.map(c=>esc(c.name)).join(', '):''}`;
+ $('tourBar').style.width=((tourI+1)/tourPath.length*100)+'%'}
+function tick(){if(tourI<tourPath.length-1){tourI++;tourShow();tourT=setTimeout(tick,1900*+$('tourSpd').value)}else{tourT=null;$('tourPlay').textContent='▶ Start'}}
+function startTour(path,name){stopTour(true);tourPath=path;tourI=0;tourName=name;$('vp').scrollIntoView({behavior:'smooth',block:'center'});tourShow();$('tourPlay').textContent='❚❚ Pause';tourT=setTimeout(tick,1900*+$('tourSpd').value)}
+function stopTour(keep){clearTimeout(tourT);tourT=null;$('tourPlay').textContent='▶ Start';if(!keep){$('tourCap').hidden=true;$('tourBar').style.width=0}}
+$('tourPlay').onclick=()=>{if(tourT){clearTimeout(tourT);tourT=null;$('tourPlay').textContent='▶ Resume';return}
+ if(tourPath.length&&tourI<tourPath.length-1&&$('tourPlay').textContent.includes('Resume')){$('tourPlay').textContent='❚❚ Pause';tourT=setTimeout(tick,300);return}
+ const l=byCode[$('tourSel').value];pickLine(l,true);startTour(l.stops.map(id=>S[id]),l.region)};
+$('tourNext').onclick=()=>{if(!tourPath.length)return;clearTimeout(tourT);tourT=null;$('tourPlay').textContent='▶ Resume';tourI=Math.min(tourI+1,tourPath.length-1);tourShow()};
+$('tourPrev').onclick=()=>{if(!tourPath.length)return;clearTimeout(tourT);tourT=null;$('tourPlay').textContent='▶ Resume';tourI=Math.max(tourI-1,0);tourShow()};
+$('tourStop').onclick=()=>stopTour();
+$('e2e').onclick=()=>{const a=S.find(s=>s.name=='Cornwall'),b=S.find(s=>s.name=='Aberdeen');if(!a||!b)return;$('pFrom').value=a.id;$('pTo').value=b.id;const r=showRoute(a,b);if(r)startTour(r.path,'Cornwall → Aberdeen')};
+// controls
+$('colourBy').onchange=applyState;$('labels').onchange=placeLabels;
+$('darkmap').onclick=e=>{vp.classList.toggle('dark');$('alt').classList.toggle('dark');e.target.classList.toggle('on')};
+$('fsBtn').onclick=()=>{document.fullscreenElement?document.exitFullscreen():vp.requestFullscreen&&vp.requestFullscreen()};
+document.addEventListener('fullscreenchange',()=>setTimeout(fit,60));
+document.addEventListener('keydown',e=>{if(e.target.matches('input,select'))return;if(e.key=='Escape'&&curMall){closeMall();return}if(e.key=='/'){e.preventDefault();$('mapq').focus();return}if(e.key=='Escape'){brandSel=null;renderBchip();selLine=null;selStation=null;route_=null;stopTour();applyState();renderLineCard()}if(e.key=='f'||e.key=='F')$('fsBtn').click()});
+function renderFac(){$('fac').innerHTML=FAC.map(f=>`<button data-f="${f[0]}" class="${facOn.has(f[0])?'on':''}">${f[1]}<span>${S.filter(f[2]).length}</span></button>`).join('')}renderFac();
+$('fac').onclick=e=>{const b=e.target.closest('button');if(!b)return;const f=b.dataset.f;facOn.has(f)?facOn.delete(f):facOn.add(f);b.classList.toggle('on');applyState()};
+$('views').onclick=e=>{const b=e.target.closest('button');if(!b)return;[...$('views').children].forEach(x=>x.classList.toggle('on',x==b));const st=b.dataset.v=='stack';vp.hidden=st;$('alt').hidden=!st;if(!st)setTimeout(fit,20)};
+function renderStack(){if($('alt').hidden&&$('stk').innerHTML)return;const facF=s=>!facOn.size||FAC.filter(f=>facOn.has(f[0])).every(f=>f[2](s));
+ $('stk').innerHTML=L.map(l=>`<div class="c" style="border-top-color:${l.color};${selLine&&selLine!=l?'opacity:.35':''}"><h4>${l.code} · ${esc(l.region)}</h4><div class="k">${l.stops.length} stations · ${l.stops.reduce((a,id)=>a+S[id].n,0)} centres</div><ol>${l.stops.map(id=>{const s=S[id];return `<li data-s="${s.id}" class="${s.n>=3?'m':''} ${facF(s)?'':'dimm'}">${esc(s.name)} <span class="k">${s.n}</span></li>`}).join('')}</ol></div>`).join('');
+ $('stk').querySelectorAll('[data-s]').forEach(li=>li.onclick=()=>pickStation(S[li.dataset.s]))}
+// page tabs
+function showPage(pg){[...$('ptabs').children].forEach(x=>x.classList.toggle('on',x.dataset.pg==pg));['map','gaps','stu','aff'].forEach(k=>$('pg-'+k).hidden=k!=pg);if(pg=='map')setTimeout(fit,20)}
+$('ptabs').onclick=e=>{const b=e.target.closest('button');if(b)showPage(b.dataset.pg)};
+function goStation(s){showPage('map');
+ if(!$('alt').hidden)$('views').children[0].click();vp.scrollIntoView({behavior:'smooth',block:'center'});setTimeout(()=>{pickStation(s,{noScroll:true});flyTo(s,2.4)},350)}
+// findings
+(function(){const byN=[...S].sort((a,b)=>b.n-a.n),top=byN[0];
+ const lineN=L.map(l=>({l,n:l.stops.reduce((a,id)=>a+S[id].n,0)})).sort((a,b)=>b.n-a.n);
+ const ver=ALLC.filter(c=>/^Verified/.test(c.pension)),nas=ALLC.filter(c=>c.size=='Not assessed').length,own=ALLC.filter(c=>TBC(c.owner)).length;
+ const lowest=[...L].map(l=>{const st=l.stops.map(id=>S[id]);return {l,p:st.reduce((a,s)=>a+s.complete*s.n,0)/st.reduce((a,s)=>a+s.n,0)}}).sort((a,b)=>a.p-b.p);
+ const outl=ALLC.filter(c=>/outlet/i.test(c.type));const lg=ALLC.filter(c=>c.size=='Large');
+ const F=[['ac',`${lineN[0].l.region} carries the most centres`,`The ${lineN[0].l.code} line has ${lineN[0].n} centres across ${lineN[0].l.stops.length} stations, ahead of ${lineN[1].l.region} (${lineN[1].n}) and ${lineN[2].l.region} (${lineN[2].n}). ${lineN.at(-1).l.region} is the quietest line with ${lineN.at(-1).n}.`,S[lineN[0].l.stops[0]]],
+  ['ac',`${top.name} is the busiest station`,`${top.la} holds ${top.n} centres, then ${byN[1].name} (${byN[1].n}) and ${byN[2].name} (${byN[2].n}). ${S.filter(s=>s.n==1).length} of the ${S.length} stations hold only one centre.`,top],
+  ['ok',`Only ${ver.length} centres have a verified pension fund stake`,`Public sources confirm a pension investor in ${ver.length} centres (${ver.filter(c=>/Direct/.test(c.pension)).length} direct, ${ver.filter(c=>/Indirect/.test(c.pension)).length} indirect), including ${ver.slice(0,3).map(c=>c.name).join(', ')}. Turn on the dashed ring in the legend to spot them.`,ver[0].s],
+  ['',`${own} centres still have no confirmed owner`,`That is ${Math.round(own/ALLC.length*100)}% of the list. ${nas} centres have no size tier and ${ALLC.filter(c=>TBC(c.postcode)).length} have no postcode yet. Colour the map by "How complete the data is" to see where.`,lowest[0].l.stops.map(id=>S[id]).sort((a,b)=>a.complete-b.complete)[0]],
+  ['',`${lowest[0].l.region} has the thinnest data`,`On average only ${Math.round(lowest[0].p*100)}% of the key fields are confirmed on the ${lowest[0].l.code} line, against ${Math.round(lowest.at(-1).p*100)}% on ${lowest.at(-1).l.region}, the best documented line.`,S[lowest[0].l.stops[0]]],
+  ['ac',`${lg.length} large centres and ${outl.length} outlets`,`Large regional malls and city-centre schemes are spread across ${new Set(lg.map(c=>c.s.id)).size} stations. Outlet and designer outlet centres sit at ${new Set(outl.map(c=>c.s.id)).size} stations, often away from big city centres.`,outl[0].s],
+  ['ac',`${nInter} interchanges join the regions`,`Most lines meet their neighbours where council areas touch; ${links.filter(x=>x.kind=='walk').length} links are out-of-station walks, and a ferry crosses from Northern Ireland to Scotland. Use Plan a journey to cross the country.`,links.find(x=>x.kind=='ferry').a]];
+ $('finds').innerHTML=F.map((f,i)=>`<div class="find ${f[0]}"><b>${esc(f[1])}</b><p>${esc(f[2])}</p><span class="go" data-i="${i}">Show on the map → ${f[3].code}</span></div>`).join('');
+ $('finds').querySelectorAll('.go').forEach(g=>g.onclick=()=>goStation(F[g.dataset.i][3]))})();
+// index
+let itab='st';
+function renderIdx(){const q=$('q').value.trim().toLowerCase();
+ if(itab=='br'){$('ihead').innerHTML='<tr><th>Brand</th><th>Group</th><th>Centre</th><th>Station</th><th>Unit</th><th>Phone</th><th>Website</th></tr>';
+  const rows=ALLB.filter(b=>!q||(b.name+' '+b.group+' '+b.category+' '+b.centre.name+' '+b.centre.town+' '+b.s.name).toLowerCase().includes(q)).slice(0,1500);
+  $('idx').innerHTML=rows.map(b=>`<tr class="cl" data-s="${b.s.id}" data-c="${b.s.centres.indexOf(b.centre)}" data-b="${b.centre.brandData.brands.findIndex(x=>x.name==b.name)}"><td><b>${esc(b.name)}</b></td><td>${esc(b.group)}</td><td>${esc(b.centre.name)}</td><td class="key"><span class="dot" style="background:${b.s.line.color}"></span>${b.s.code}</td><td>${esc([b.unit,b.level].filter(Boolean).join(', '))}</td><td class="key">${esc(b.phone)}</td><td>${b.website?`<a class="lk" href="${esc(b.website)}" target="_blank" rel="noopener">site ↗</a>`:''}</td></tr>`).join('')+(rows.length==1500?'<tr><td colspan="7" class="muted">Showing the first 1,500 — search to narrow down</td></tr>':'');
+  if(!rows.length)$('idx').innerHTML='<tr><td colspan="7" class="muted">No matches</td></tr>';return}
+ if(itab=='st'){$('ihead').innerHTML='<tr><th>Station</th><th>Line</th><th>Centres</th><th>Largest</th><th>Pension</th><th>Data</th></tr>';
+  const rows=S.filter(s=>!q||(s.code+' '+s.la+' '+s.line.region+' '+s.centres.map(c=>c.name+' '+c.town).join(' ')).toLowerCase().includes(q)).sort((a,b)=>a.line.code.localeCompare(b.line.code)||a.idx-b.idx);
+  $('idx').innerHTML=rows.map(s=>`<tr class="cl" data-s="${s.id}"><td class="key">${s.code} &nbsp;<span style="font-family:var(--ui)">${esc(s.name)}</span></td><td><span class="dot" style="background:${s.line.color}"></span>${esc(s.line.region)}</td><td>${s.n} <span class="muted">— ${s.centres.slice(0,3).map(c=>esc(c.name)).join(', ')}${s.n>3?'…':''}</span></td><td>${['—','Small','Small/medium','Medium','Large'][s.sizeRank]}</td><td>${s.verified?'<span class="pill ok">verified</span>':s.noPen?'<span class="pill">none</span>':'<span class="pill am">not verified</span>'}</td><td class="key">${Math.round(s.complete*100)}%</td></tr>`).join('')}
+ else{$('ihead').innerHTML='<tr><th>Station</th><th>Centre</th><th>Town</th><th>Type</th><th>Size</th><th>Owner</th><th>Pension</th><th>Postcode</th></tr>';
+  const rows=ALLC.filter(c=>!q||(c.s.code+' '+c.name+' '+c.town+' '+c.owner+' '+c.postcode+' '+c.type+' '+c.manager).toLowerCase().includes(q));
+  $('idx').innerHTML=rows.map(c=>`<tr class="cl" data-s="${c.s.id}" data-c="${c.s.centres.indexOf(S[c.s.id].centres.find(x=>x.name==c.name))}"><td class="key"><span class="dot" style="background:${c.s.line.color}"></span>${c.s.code}</td><td>${esc(c.name)}</td><td>${esc(c.town)}</td><td>${esc(c.type)}</td><td>${val(c.size)}</td><td>${val(c.owner)}</td><td>${penPill(c.pension)}</td><td class="key">${val(c.postcode)}</td></tr>`).join('')}
+ if(!$('idx').innerHTML)$('idx').innerHTML='<tr><td colspan="8" class="muted">No matches</td></tr>'}
+$('itab').onclick=e=>{const b=e.target.closest('button');if(!b)return;itab=b.dataset.t;[...$('itab').children].forEach(x=>x.classList.toggle('on',x==b));renderIdx()};
+$('q').oninput=renderIdx;$('idx').onclick=e=>{if(e.target.closest('a[href]'))return;const r=e.target.closest('[data-s]');if(!r)return;const s=S[r.dataset.s];
+ if(r.dataset.c!=null){const c=s.centres[+r.dataset.c];goStation(s);setTimeout(()=>openMall(c,{brand:r.dataset.b!=null?c.brandData.brands[+r.dataset.b]:null,noFly:true}),420)}else goStation(s)};renderIdx();
+// gaps page
+(function(){const box=(t,rows,max)=>`<div class="gbox"><h3>${t}</h3>${rows.map(([n,v,c])=>`<div class="brow"><span>${esc(n)}</span><div class="tr"><i style="width:${v/max*100}%;background:${c}"></i></div><b>${v}</b></div>`).join('')}</div>`;
+ const cnt=f=>{const m={};ALLC.forEach(c=>{const k=f(c);m[k]=(m[k]||0)+1});return Object.entries(m).sort((a,b)=>b[1]-a[1])};
+ const N=ALLC.length,col='var(--accent)';
+ const fields=[['Owner',c=>c.owner],['Managing agent',c=>c.manager],['Size tier',c=>c.size],['Postcode',c=>c.postcode],['Pension status',c=>c.pension],['Website',c=>c.website]];
+ let html=box('Confirmed fields (of '+N+' centres)',fields.map(([n,f])=>[n,ALLC.filter(c=>!TBC(f(c))).length,'var(--ok)']),N);
+ html+=box('Pension fund status',cnt(c=>c.pension).map(([k,v])=>[k.replace(' Ownership',''),v,/^Verified/.test(k)?'var(--ok)':/No/.test(k)?'#8A857B':'#D9A21B']),N);
+ html+=box('Size tier',cnt(c=>c.size).map(([k,v])=>[k,v,k=='Not assessed'?'#C9C4B8':col]),N);
+ const lr=L.map(l=>{const cs=ALLC.filter(c=>c.s.line==l);return [l.region,cs.filter(c=>!TBC(c.owner)).length,cs.length,l.color]});
+ html+=`<div class="gbox"><h3>Owner confirmed, by line</h3>${lr.map(([n,v,t,c])=>`<div class="brow"><span>${esc(n)}</span><div class="tr"><i style="width:${v/t*100}%;background:${c}"></i></div><b>${v}/${t}</b></div>`).join('')}</div>`;
+ $('gapgrid').innerHTML=html;
+ $('pens').innerHTML=ALLC.filter(c=>/^Verified/.test(c.pension)).map(c=>`<tr class="cl" data-s="${c.s.id}"><td class="key"><span class="dot" style="background:${c.s.line.color}"></span>${c.s.code}</td><td>${esc(c.name)}</td><td>${esc(c.town)}</td><td>${esc(c.owner)}</td><td>${penPill(c.pension)}</td><td style="font-size:12px;color:var(--muted)">${esc(c.evidence)}</td></tr>`).join('');
+ $('pens').onclick=e=>{const r=e.target.closest('[data-s]');if(r)goStation(S[r.dataset.s])};
+ const ow=cnt(c=>c.owner).filter(([k])=>!TBC(k)).slice(0,9);
+ $('owners').innerHTML=ow.map(([k,v])=>{const cs=ALLC.filter(c=>c.owner==k);return `<div class="find ac"><b>${esc(k)}</b><p>${v} centre${v>1?'s':''}: ${cs.map(c=>esc(c.name)).join(', ')}</p><span class="go" data-s="${cs[0].s.id}">Show on the map → ${cs[0].s.code}</span></div>`}).join('');
+ $('owners').querySelectorAll('.go').forEach(g=>g.onclick=()=>goStation(S[g.dataset.s]))})();
+window.addEventListener('resize',()=>{if(!vp.hidden)fit()});
+placeLabels();fit();(document.fonts?document.fonts.ready:Promise.resolve()).then(placeLabels);
+// ---------- brands scraped from centre websites (brands.json, produced by the scraper)
+let ALLB=[],BRANDS_LOADED=false;
+function brandBlock(c){const d=c.brandData;if(!d)return '';
+ if(!d.brands.length)return `<div class="bnote">Brands: ${esc({needs_url:'needs the centre\'s own website',no_directory_found:'no store list found on the site',blocked_by_robots:'site does not allow scraping',unreachable:'site could not be reached'}[d.status]||d.status)}</div>`;
+ const groups=[...new Set(d.brands.map(b=>b.group))].sort();
+ return `<details class="br"><summary><span>Brands (${d.brands.length})</span><span class="bmeta">${d.directoryUrl?esc(new URL(d.directoryUrl).hostname):''}</span></summary>
+ <div class="bgrp"><button data-g="*" class="on">All</button>${groups.map(g=>`<button data-g="${esc(g)}">${esc(g)} ${d.brands.filter(b=>b.group==g).length}</button>`).join('')}</div>
+ <div class="blist">${[...d.brands].sort((a,b)=>a.name.localeCompare(b.name)).map(b=>`<details class="b" data-g="${esc(b.group)}"><summary><span class="blogo" ${b.logo?`style="background-image:url('${esc(b.logo)}')"`:''}>${esc(b.name[0]||'?')}</span><span>${esc(b.name)}</span><span class="bmeta">${esc(b.group)}</span></summary><div class="bbody">
+ ${b.category&&b.category!=b.group?`<div><span class="ln">Category</span> ${esc(b.category)}</div>`:''}
+ ${b.unit||b.level?`<div><span class="ln">Where</span> ${esc([b.unit,b.level].filter(Boolean).join(', '))}</div>`:''}
+ ${b.hours&&b.hours.length?`<div><span class="ln">Hours</span><br>${b.hours.map(esc).join('<br>')}</div>`:''}
+ ${b.phone?`<div><span class="ln">Phone</span> <a href="tel:${esc(b.phone.replace(/\s/g,''))}">${esc(b.phone)}</a></div>`:''}
+ ${b.email?`<div><span class="ln">Email</span> <a href="mailto:${esc(b.email)}">${esc(b.email)}</a></div>`:''}
+ ${b.description?`<div>${esc(b.description.slice(0,260))}${b.description.length>260?'…':''}</div>`:''}
+ <div>${b.website?`<a href="${esc(b.website)}" target="_blank" rel="noopener">Brand website ↗</a> · `:''}${b.url?`<a href="${esc(b.url)}" target="_blank" rel="noopener">Centre page ↗</a>`:''}${b.socials?Object.entries(b.socials).map(([k,v])=>` · <a href="${esc(v)}" target="_blank" rel="noopener">${esc(k)}</a>`).join(''):''}</div>
+ </div></details>`).join('')}</div></details>`}
+// brands.json comes from the server (live). When the page is opened from disk or static hosting it falls back to brands-data.js.
+function brandsScript(){return new Promise(res=>{if(window.__BRANDS)return res(window.__BRANDS);const s=document.createElement('script');s.src='brands-data.js';s.onload=()=>res(window.__BRANDS||null);s.onerror=()=>res(null);document.head.appendChild(s)})}
+function loadBrands(){const viaFile=location.protocol=='file:';return (viaFile?Promise.resolve(null):fetch('brands.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null)).then(B=>B&&B.centres?B:brandsScript()).then(B=>{if(!B||!B.centres)return;BRANDS_LOADED=true;
+ ALLB=[];S.forEach(s=>{s.brandTried=false;s.centres.forEach(c=>{c.brandData=null})});['statBr1','statBr2','findBrands','gapBr1','gapBr2'].forEach(id=>{const e=$(id);e&&e.remove()});
+ const fi=FAC.findIndex(f=>f[0]=='brands');if(fi>=0)FAC.splice(fi,1);
+ S.forEach(s=>{s.brandCount=0;s.centres.forEach(c=>{const d=B.centres[c.key]||B.centres[c.name];if(!d)return;c.brandData=d;s.brandTried=true;s.brandCount+=d.brands.length;d.brands.forEach(b=>ALLB.push({...b,centre:c,s}))})});
+ const okC=Object.values(B.centres).filter(c=>c.brands.length).length,uniq=new Set(ALLB.map(b=>b.name.toLowerCase().replace(/[^a-z0-9]/g,''))).size;
+ $('stats').insertAdjacentHTML('beforeend',stat(ALLB.length.toLocaleString(),'brand listings').replace('class="stat"','class="stat" id="statBr1"')+stat(uniq.toLocaleString(),'unique brands').replace('class="stat"','class="stat" id="statBr2"'));
+ FAC.push(['brands','Brands scraped',s=>s.brandCount>0]);renderFac();
+ $('cbBrands').hidden=false;$('itabBr').hidden=false;
+ // most common brands
+ const cnt=new Map();ALLB.forEach(b=>{const k=b.name.toLowerCase().replace(/[^a-z0-9]/g,'');if(!cnt.has(k))cnt.set(k,{name:b.name,set:new Set(),items:[]});const x=cnt.get(k);if(!x.set.has(b.centre.name)){x.set.add(b.centre.name);x.items.push(b)}});
+ const top=[...cnt.values()].sort((a,b)=>b.set.size-a.set.size).slice(0,8);
+ const grp={};ALLB.forEach(b=>grp[b.group]=(grp[b.group]||0)+1);const gs=Object.entries(grp).sort((a,b)=>b[1]-a[1]);
+ const biggest=[...S].filter(s=>s.brandCount).sort((a,b)=>b.brandCount-a.brandCount)[0];
+ if(top.length){const card=document.createElement('div');card.className='find ok';card.id='findBrands';card.innerHTML=`<b>${esc(top[0].name)} is the most common brand</b><p>Brand lists collected for ${okC} centres (UK Malls and centre websites): ${ALLB.length.toLocaleString()} listings, ${uniq.toLocaleString()} different brands. Most common: ${top.slice(0,6).map(t=>`${esc(t.name)} (${t.set.size})`).join(', ')}. The biggest line-up is at ${esc(biggest.name)} with ${biggest.brandCount}.</p><span class="go">Show on the map → ${biggest.code}</span>`;card.querySelector('.go').onclick=()=>goStation(biggest);$('finds').prepend(card)}
+ $('gapgrid').insertAdjacentHTML('beforeend',`<div class="gbox" id="gapBr1"><h3>Brands by type (${ALLB.length.toLocaleString()} listings)</h3>${gs.map(([k,v])=>`<div class="brow"><span>${esc(k)}</span><div class="tr"><i style="width:${v/gs[0][1]*100}%;background:var(--accent)"></i></div><b>${v}</b></div>`).join('')}</div>
+  <div class="gbox" id="gapBr2"><h3>Brand data status</h3>${Object.entries(Object.values(B.centres).reduce((m,c)=>(m[c.status]=(m[c.status]||0)+1,m),{})).map(([k,v])=>`<div class="brow"><span>${esc(k.replace(/_/g,' '))}</span><div class="tr"><i style="width:${v/Object.keys(B.centres).length*100}%;background:${k=='ok'?'var(--ok)':'#D9A21B'}"></i></div><b>${v}</b></div>`).join('')}<p class="muted" style="font-size:12px;margin:8px 0 0">Scraped ${esc((B.generatedAt||'').slice(0,10))}</p></div>`);
+ if(brandSel){const x=brandIndex().get(normB(brandSel.name));brandSel=x||null;renderBchip()}applyState();renderIdx();if(selStation)pickStation(selStation,{noScroll:true});if(curMall)renderMall();window.refreshX&&refreshX()})}
+loadBrands();
+// ---------- UK Malls: buttons that drive the server's sync API (hidden on static hosting)
+let UKAPI=false,ukStatus=null,ukPoll=null,ukCand={},ukMsg='';
+const lsGet=k=>{try{return localStorage.getItem(k)||''}catch{return ''}},lsSet=(k,v)=>{try{localStorage.setItem(k,v)}catch{}};
+async function ukCall(path,body){const r=await fetch(path,{method:body===undefined?'GET':'POST',headers:{'content-type':'application/json','x-admin-token':lsGet('ukToken')},body:body===undefined?undefined:JSON.stringify(body)});
+ const j=await r.json().catch(()=>({}));if(r.status==401){needToken=true;renderData();throw new Error('Enter the admin token in the Brand data card first.')}if(!r.ok)throw new Error(j.error||('HTTP '+r.status));return j}
+let needToken=false;
+function fmtDate(s){if(!s)return 'never';const d=new Date(s);return d.toLocaleDateString('en-GB',{day:'numeric',month:'short'})+' '+d.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'})}
+function renderData(){const c=$('dataCard');if(!UKAPI){c.hidden=true;return}c.hidden=false;const s=ukStatus||{};const m=s.matches||{};
+ const pct=s.running&&s.total?Math.round(s.done/s.total*100):0;
+ c.innerHTML=`<h3>Brand data — UK Malls</h3>
+ <div class="dstat">${(s.index&&s.index.rows)?`${s.index.rows} UK Malls centres listed · ${m.linked||0} of ${m.ofCentres||S.length} ours matched${m.suggested?` · <a class="lk" data-rev>${m.suggested} to check</a>`:''} · ${m.none||0} not found<br>${s.fetched||0} centres fetched · ${(s.brands||0).toLocaleString()} brands · last run ${fmtDate(s.lastRun&&s.lastRun.finishedAt)}`:'Not fetched yet. One click reads every centre\'s store list from ukmalls.co.uk (about 7 minutes) and links it to the matching centre on this map.'}</div>
+ ${s.running?`<div class="dbar"><i style="width:${pct}%"></i></div><div class="dstat">${esc(s.phase=='centres'?`${s.done}/${s.total} · ${s.current}`:s.current||s.phase)}</div>`:''}
+ <div class="drow">${s.running?'<button class="btn" data-d="stop">■ Stop</button>':`<button class="btn pri" data-d="all">⟳ Fetch all brands from UK Malls</button><button class="btn" data-d="rematch" title="Reload the UK Malls centre list and match again (keeps your manual choices)">Re-check matches</button>`}</div>
+ ${s.message&&!s.running?`<div class="dstat" style="margin-top:6px">${esc(s.message)}</div>`:''}${ukMsg?`<div class="derr">${esc(ukMsg)}</div>`:''}
+ ${needToken?`<div class="dtok"><input id="ukTok" type="password" placeholder="Admin token (shown when the server starts)" value="${esc(lsGet('ukToken'))}"><button class="btn" data-d="tok">Save</button></div>`:''}`;
+ c.querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>dataAct(b.dataset.d));
+ const rv=c.querySelector('[data-rev]');if(rv)rv.onclick=()=>{const it=ALLC.find(x=>{const cc=x.s.centres.find(y=>y.name==x.name);return cc&&cc.brandData&&cc.brandData.status=='needs_review'});if(it){const cc=it.s.centres.find(y=>y.name==it.name);goStation(it.s);setTimeout(()=>openMall(cc,{noFly:true}),420)}}}
+async function dataAct(a){ukMsg='';try{
+ if(a=='tok'){lsSet('ukToken',$('ukTok').value.trim());await ukCall('/api/admin/check',{});needToken=false;ukMsg='';renderData();return}
+ if(a=='stop')await ukCall('/api/ukmalls/stop',{});
+ if(a=='all')await ukCall('/api/ukmalls/sync',{});
+ if(a=='rematch')await ukCall('/api/ukmalls/sync',{refreshIndex:true,rematch:true});
+ pollUk(true)}catch(e){ukMsg=e.message;renderData()}}
+let lastDone=-1;
+async function pollUk(force){try{const s=await fetch('/api/ukmalls/status',{cache:'no-store'}).then(r=>r.ok?r.json():Promise.reject());UKAPI=true;const was=ukStatus&&ukStatus.running;ukStatus=s;renderData();
+  if(curMall)renderUkStrip();
+  if(s.running){if(s.done-lastDone>=15||lastDone<0){lastDone=s.done;loadBrands()}clearTimeout(ukPoll);ukPoll=setTimeout(pollUk,1500)}
+  else{if(was||force){lastDone=-1;loadBrands()}}}catch{UKAPI=false;renderData()}}
+pollUk();
+function ukStrip(c){return `<div class="ukstrip" id="ukStrip">${ukStripInner(c)}</div>`}
+function renderUkStrip(){const e=$('ukStrip');if(e&&curMall)e.innerHTML=ukStripInner(curMall),wireUk(curMall)}
+function ukStripInner(c){const d=c.brandData,U=d&&d.ukmalls;const busy=ukStatus&&ukStatus.running;
+ const cand=ukCand[c.key];
+ let hd='',act='';
+ if(U&&U.path&&U.status=='linked'){hd=`<b>UK Malls</b> <a href="${esc(U.url)}" target="_blank" rel="noopener">${esc(U.ukName||'page')} ↗</a> <span class="pill ${U.matchSource=='manual'?'ok':U.confidence=='high'?'ok':'am'}">${U.matchSource=='manual'?'confirmed':esc(U.confidence)+' match'}</span>${U.fetchedAt?`<span class="k">fetched ${fmtDate(U.fetchedAt)}</span>`:''}`;
+  act=UKAPI?`<button class="btn" data-u="fetch" ${busy?'disabled':''}>${U.fetchedAt?'⟳ Refresh from UK Malls':'⟳ Fetch from UK Malls'}</button><button class="btn" data-u="find">Wrong match?</button>`:''}
+ else if(U&&U.path&&U.status=='suggested'){hd=`<b>Possible UK Malls match:</b> <a href="${esc(U.url)}" target="_blank" rel="noopener">${esc(U.ukName)} ↗</a> <span class="pill am">check</span>`;
+  act=UKAPI?`<button class="btn pri" data-u="use" data-p="${esc(U.path)}" style="background:var(--ink);color:var(--bg)">✓ Yes, use this</button><button class="btn" data-u="find">Other options</button><button class="btn" data-u="none">Not on UK Malls</button>`:''}
+ else if(d&&d.source&&d.source.includes('ukmalls')||U){hd=`<b>UK Malls:</b> ${U&&U.matchSource=='manual'?'marked as not listed':'no matching page found'}`;act=UKAPI?'<button class="btn" data-u="find">Find on UK Malls</button>':''}
+ else if(UKAPI){hd='<b>UK Malls:</b> not checked yet';act='<button class="btn" data-u="find">Find on UK Malls</button>'}
+ else return '';
+ const list=cand?(cand.error?`<div class="derr">${esc(cand.error)}</div>`:`<div class="dtok" style="margin:0"><input id="ukq" type="search" placeholder="Search UK Malls by name or town…" value="${esc(cand.q||'')}"><button class="btn" data-u="search">Search</button></div><div class="ukc">${cand.items.length?'':'<div><small>No UK Malls centres match.</small></div>'}${cand.items.map(x=>`<div><b>${esc(x.ukName)}</b><button class="btn" data-u="use" data-p="${esc(x.path)}">Use</button><small>${esc(x.address)} · ${x.storeCount} stores · <a href="${esc(x.url)}" target="_blank" rel="noopener">view ↗</a></small></div>`).join('')}</div><div class="act"><button class="btn" data-u="none">None of these — not on UK Malls</button><button class="btn" data-u="close">Close</button></div>`):'';
+ return `<div class="hd">${hd}</div>${act?`<div class="act">${act}</div>`:''}${list}`}
+function wireUk(c){const e=$('ukStrip');if(!e)return;e.querySelectorAll('[data-u]').forEach(b=>b.onclick=async()=>{const a=b.dataset.u;ukMsg='';
+ try{if(a=='close'){delete ukCand[c.key];renderUkStrip();return}
+  if(a=='find'||a=='search'){const q=a=='search'?$('ukq').value.trim():'';const j=await ukCall('/api/ukmalls/candidates?centre='+encodeURIComponent(c.key)+(q?'&q='+encodeURIComponent(q):''));ukCand[c.key]={items:j.candidates,q};renderUkStrip();const i=$('ukq');if(i){i.onkeydown=e=>{if(e.key=='Enter')e.target.parentNode.querySelector('[data-u=search]').click()};if(a=='search')i.focus()}return}
+  if(a=='fetch'){await ukCall('/api/ukmalls/sync',{centre:c.key});b.textContent='Fetching…';b.disabled=true;pollUk(true);return}
+  if(a=='use'){await ukCall('/api/ukmalls/link',{centre:c.key,path:b.dataset.p});delete ukCand[c.key];b.textContent='Linked, fetching…';pollUk(true);setTimeout(()=>pollUk(true),2500);return}
+  if(a=='none'){await ukCall('/api/ukmalls/link',{centre:c.key,path:null});delete ukCand[c.key];await loadBrands();return}
+ }catch(err){ukCand[c.key]={error:err.message};renderUkStrip()}})}
+
+// ---------- Student benefits + Retailers & affiliate APIs (two extra datasets, linked to the map)
+const ROUTE_COL={'Awin':'#E4572E','impact.com':'#6C4AB6','Rakuten Advertising':'#BF0000','CJ Affiliate':'#1B6FB5','Partnerize':'#0E8A7E','Own programme':'#B07D09'};
+const routeColor=r=>ROUTE_COL[r]||'#7A7468';
+const TYPE_COL={'Student platform':'#1B3A6B','SU / university scheme':'#6950A1','Brand scheme':'#E86A10','Freshers channel':'#DC241F','Accommodation':'#00782A','General cashback / card platform':'#0098D4','SU / campus tech vendor':'#9B0056'};
+const STATUS_COL={'Own SU scheme found':'#2F7D4F','University campus scheme found':'#3E8E6A','Platform-only (TOTUM, UNiDAYS or Student Beans)':'#1B6FB5','SUBTV Perks rollout found':'#6950A1','TOTUM distribution found':'#0098D4','SU partner discounts (no own scheme confirmed)':'#B07D09','Searched: no own scheme found':'#8A857B'};
+const stripBrand=s=>String(s||'').replace(/\(.*?\)/g,'').replace(/&\s*partners|\bltd\b|\bplc\b|\buk\b|\.co\.uk|\.com\b|\bonline\b|\bstores?\b$/gi,'');
+const RIDX=new Map();X.retailers.forEach(r=>{[normB(r.n),normB(stripBrand(r.n))].forEach(k=>{if(k&&!RIDX.has(k))RIDX.set(k,r)})});
+function retailerFor(name){return RIDX.get(normB(name))||RIDX.get(normB(stripBrand(name)))||null}
+// brand phrases named in each platform's "retailer / brand network" and benefits text
+const SPH=new Map();
+X.students.forEach((p,i)=>{const txt=(p.net+'\n'+p.ben);p.phr=new Set();
+ txt.split(/[,;:\n•·()\/+]|\band\b|\bincl(?:uding|\.)?\b|\be\.g\.?|\bsuch as\b|\bwith\b/i).forEach(w=>{w=w.replace(/^\s*(named brands?( include)?|brands?( include)?|partners?( include)?|e\.g\.|eg|plus|also|via|from|at)\s+/i,'').trim();
+  if(w.length<2||w.length>40||/^\d/.test(w))return;const k=normB(w);if(k.length<2)return;p.phr.add(k);if(!SPH.has(k))SPH.set(k,new Set());SPH.get(k).add(i)})});
+function studentFor(name){const out=new Set();[normB(name),normB(stripBrand(name))].forEach(k=>{(SPH.get(k)||[]).forEach(i=>out.add(i))});return [...out].sort((a,b)=>X.students[b].sc-X.students[a].sc)}
+function mallsFor(name){const bi=brandIndex();return bi.get(normB(name))||bi.get(normB(stripBrand(name)))||null}
+function platformMallBrands(p){const bi=brandIndex(),out=[];p.phr.forEach(k=>{const x=bi.get(k);if(x)out.push(x)});return out.sort((a,b)=>b.centres.size-a.centres.size)}
+const urls=s=>[...new Set((String(s||'').match(/https?:\/\/[^\s)\]"'<>]+/g)||[]).map(u=>u.replace(/[.,;]+$/,'')))];
+const scoreDots=n=>`<span class="score" title="Score ${n}/5">${[1,2,3,4,5].map(i=>`<i class="${i<=n?'on':''}"></i>`).join('')}</span>`;
+const stName=id=>id==null?'':S[id];
+// universities on the map
+const SU_BY=new Map(),SP_BY=new Map();X.su.forEach((u,i)=>{if(u.st!=null){if(!SU_BY.has(u.st))SU_BY.set(u.st,[]);SU_BY.get(u.st).push(i)}});X.students.forEach((p,i)=>{if(p.st!=null){if(!SP_BY.has(p.st))SP_BY.set(p.st,[]);SP_BY.get(p.st).push(i)}});
+function uniBlock(s){const us=SU_BY.get(s.id)||[],ps=SP_BY.get(s.id)||[];if(!us.length&&!ps.length)return '';
+ return `<div class="k" style="margin-top:10px">🎓 STUDENTS HERE</div><div class="uni">${us.map(i=>`<button data-uni="${i}" title="${esc(X.su[i].cs)}">${esc(X.su[i].n)} SU</button>`).join('')}${ps.map(i=>`<button data-sp="${i}" style="border-color:${TYPE_COL[X.students[i].ty]||'var(--line)'}">${esc(X.students[i].n.split(' (')[0])}</button>`).join('')}</div>`}
+FAC.push(['uni','University / SU',s=>SU_BY.has(s.id)||SP_BY.has(s.id)]);renderFac();
+$('stats').insertAdjacentHTML('beforeend',stat(SU_BY.size,'stations with a university')+stat(X.students.length,'student schemes')+stat(X.retailers.length,'retailers with affiliate routes'));
+// ---------- modals
+const xmodal=$('xmodal'),xm=$('xm');
+function openModal(color,head,body){xm.style.setProperty('--xc',color);xm.innerHTML=`<div class="hd"><div>${head}</div><button class="close" aria-label="Close">✕</button></div><div class="bd">${body}</div>`;xmodal.hidden=false;xm.scrollTop=0;
+ xm.querySelector('.close').onclick=closeModal;xm.querySelectorAll('[data-brand]').forEach(b=>b.onclick=()=>{const x=brandIndex().get(b.dataset.brand);closeModal();if(x){showPage('map');vp.scrollIntoView({behavior:'smooth',block:'center'});setTimeout(()=>setBrand(x),300)}});
+ xm.querySelectorAll('[data-gost]').forEach(b=>b.onclick=()=>{closeModal();goStation(S[+b.dataset.gost])});xm.querySelectorAll('[data-sp]').forEach(b=>b.onclick=()=>openStudent(+b.dataset.sp))}
+function closeModal(){xmodal.hidden=true}
+xmodal.onclick=e=>{if(e.target==xmodal)closeModal()};document.addEventListener('keydown',e=>{if(e.key=='Escape'&&!xmodal.hidden){closeModal();e.stopImmediatePropagation()}},true);
+const sec=(h,v)=>v?`<div><h5>${h}</h5><p>${esc(v).replace(/^Classification:[^\n]*\n?/,'')}</p></div>`:'';
+function brandButtons(list,max=40){return list.length?`<div class="bmall">${list.slice(0,max).map(x=>`<button data-brand="${esc(normB(x.name))}" title="Show the ${x.centres.size} centres with ${esc(x.name)} on the map">${esc(x.name)} · ${x.centres.size}</button>`).join('')}</div>`:''}
+function openStudent(i){const p=X.students[i],mb=platformMallBrands(p),links=urls(p.ev).slice(0,10);const s=p.st!=null?S[p.st]:null;
+ openModal(TYPE_COL[p.ty]||'var(--ink)',`<div class="k">${esc(p.ty)} · ${esc(p.se)} · ${esc(p.na)}</div><h3>${esc(p.n)}</h3><div style="margin-top:4px">${scoreDots(p.sc)} <b>${p.sc}/5</b> <span class="k">${esc(p.cl)}</span></div>`,
+ `<p style="font-size:15px">${esc(p.sum)}</p>
+ <div class="row" style="display:flex;gap:8px;flex-wrap:wrap">${p.url?`<a class="btn" href="${esc(p.url)}" target="_blank" rel="noopener">Website ↗</a>`:''}${s?`<button class="btn" data-gost="${s.id}">🎓 ${esc(p.ins)} on the map · ${s.code}</button>`:p.ins?`<span class="pill">${esc(p.ins)}</span>`:''}</div>
+ ${mb.length?`<div><h5>Brands in this network found in tube-map malls (${mb.length})</h5>${brandButtons(mb)}<p class="k" style="margin-top:4px">Click a brand to light up every centre that has it.</p></div>`:''}
+ ${sec('Who can use it',p.aud)}${sec('How to join',p.acc)}${sec('Benefits & features',p.ben)}${sec('Retailer / brand network',p.net)}${sec('Strengths & weaknesses',p.sw)}${sec('Membership Wallet opportunity',p.mw)}${sec('Score rationale',p.rat)}${sec('Coverage',p.cat)}${sec('Re-check (3 Nov 2026)',p.rc)}
+ ${links.length?`<div><h5>Evidence</h5><p>${links.map(u=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\/(www\.)?/,'').slice(0,70))}</a>`).join('<br>')}</p></div>`:''}`)}
+function openSU(i){const u=X.su[i],s=u.st!=null?S[u.st]:null;const ps=X.students.map((p,j)=>[p,j]).filter(([p])=>p.ins&&u.n.split(' (')[0].toLowerCase()==p.ins.toLowerCase());
+ openModal(STATUS_COL[u.cs]||'var(--ink)',`<div class="k">Students' union · ${esc(u.na)}</div><h3>${esc(u.n)}</h3><div style="margin-top:4px"><span class="rpill" style="background:${STATUS_COL[u.cs]||'#7A7468'}">${esc(u.cs)}</span></div>`,
+ `${sec('What was found',u.ev)}${u.wr&&u.wr!='-'?sec('Recorded in the list as',u.wr):''}${ps.length?`<div><h5>Schemes for this university</h5><div class="bmall">${ps.map(([p,j])=>`<button data-sp="${j}">${esc(p.n.split(' (')[0])}</button>`).join('')}</div></div>`:''}
+ <div style="display:flex;gap:8px;flex-wrap:wrap">${s?`<button class="btn" data-gost="${s.id}">Show on the map · ${s.code} ${esc(s.name)} (${s.n} centre${s.n>1?'s':''})</button>`:''}${u.url?`<a class="btn" href="${esc(u.url)}" target="_blank" rel="noopener">Evidence ↗</a>`:''}</div><p class="k">Checked ${esc(u.dt)}</p>`)}
+function openHist(i){const h=X.hist[i],links=urls(h.ev).slice(0,6);
+ openModal('#8A857B',`<div class="k">Historical, inactive or unverified</div><h3>${esc(h.n)}</h3><div style="margin-top:4px">${scoreDots(h.sc)} <b>${h.sc}/5</b></div>`,
+ `${sec('Who it was for',h.aud)}${sec('How to join',h.acc)}${sec('Benefits & features',h.ben)}${sec('Retailer / brand network',h.net)}${sec('Strengths & weaknesses',h.sw)}${sec('Membership Wallet opportunity',h.mw)}${sec('Score',h.rat)}${links.length?`<div><h5>Evidence</h5><p>${links.map(u=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\/(www\.)?/,'').slice(0,70))}</a>`).join('<br>')}</p></div>`:''}`)}
+function openRetailer(i){const r=X.retailers[i],m=mallsFor(r.n),sp=studentFor(r.n);
+ openModal(routeColor(r.route),`<div class="k">#${esc(r.i)} · ${esc(r.cat)}</div><h3>${esc(r.n)}</h3><div style="margin-top:4px"><span class="rpill" style="background:${routeColor(r.route)}">${esc(r.route)}</span></div>`,
+ `<div style="display:flex;gap:8px;flex-wrap:wrap">${r.url?`<a class="btn" href="${esc(r.url)}" target="_blank" rel="noopener">Website ↗</a>`:''}${r.dev?`<a class="btn" href="${esc(r.dev)}" target="_blank" rel="noopener">${esc(r.lt)} ↗</a>`:''}</div>
+ <div><h5>In tube-map malls</h5>${m?`<p>${m.centres.size} centre${m.centres.size>1?'s':''} at ${m.stations.size} station${m.stations.size>1?'s':''}.</p><div style="margin-top:6px"><button class="btn" data-brand="${esc(normB(m.name))}" style="background:var(--ink);color:var(--bg);border-color:var(--ink)">Show them on the map</button></div>`:'<p class="k">Not found in the brand lists of the mapped centres.</p>'}</div>
+ ${sp.length?`<div><h5>Student deals that name this brand (${sp.length})</h5><div class="bmall">${sp.map(j=>`<button data-sp="${j}">${esc(X.students[j].n.split(' (')[0])}</button>`).join('')}</div></div>`:''}
+ <div><h5>How to get its offers</h5><p>${r.route.startsWith('Direct')?'No public API found: use the Help or Contact page on its website to ask about partnerships.':`Join ${esc(r.route)} as a publisher (free), apply to the ${esc(r.n)} programme, then use the network's publisher API for links, offers and product feeds.`}</p></div>`)}
+// ---------- Student benefits page
+let stuType='*',stuScore=0;
+function renderStudents(){const P=X.students;$('stuN').textContent=P.length;$('stuUpd').textContent=X.meta.studentsUpdated;$('hiN').textContent=X.hist.length;
+ const cnt=f=>P.reduce((m,p)=>(m[f(p)]=(m[f(p)]||0)+1,m),{});
+ $('stuStats').innerHTML=[stat(P.length,'active schemes'),stat(P.filter(p=>p.sc>=4).length,'scored 4–5'),stat(X.su.length,'students\' unions checked'),stat(X.su.filter(u=>u.st!=null).length,'unions placed on the map'),stat(P.filter(p=>platformMallBrands(p).length).length,'schemes naming mall brands')].join('');
+ const tc=cnt(p=>p.ty);$('stuType').innerHTML=`<button data-t="*" class="${stuType=='*'?'on':''}">All types<span>${P.length}</span></button>`+Object.entries(tc).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<button data-t="${esc(k)}" class="${stuType==k?'on':''}" style="${stuType==k?'':`border-color:${TYPE_COL[k]}`}">${esc(k)}<span>${v}</span></button>`).join('');
+ const sc=cnt(p=>p.sc);$('stuScore').innerHTML=`<button data-s="0" class="${!stuScore?'on':''}">Any score</button>`+[5,4,3,2,1].filter(n=>sc[n]).map(n=>`<button data-s="${n}" class="${stuScore==n?'on':''}">${scoreDots(n)} ${n}/5<span>${sc[n]}</span></button>`).join('');
+ const q=$('stuQ').value.trim().toLowerCase(),sort=$('stuSort').value;
+ let list=P.map((p,i)=>({p,i,mb:platformMallBrands(p)})).filter(({p})=>(stuType=='*'||p.ty==stuType)&&(!stuScore||p.sc==stuScore)&&(!q||(p.n+' '+p.ty+' '+p.se+' '+p.ins+' '+p.sum+' '+p.net+' '+p.na).toLowerCase().includes(q)));
+ list.sort(sort=='n'?(a,b)=>a.p.n.localeCompare(b.p.n):sort=='malls'?(a,b)=>b.mb.length-a.mb.length:(a,b)=>b.p.sc-a.p.sc||b.mb.length-a.mb.length);
+ $('stuGrid').innerHTML=list.map(({p,i,mb})=>`<button class="xc" data-sp="${i}" style="--xc:${TYPE_COL[p.ty]||'var(--line)'}"><div class="k">${esc(p.ty)} · ${esc(p.na)}</div><h4>${esc(p.n)}</h4><div class="row">${scoreDots(p.sc)}<span class="k">${p.sc}/5</span>${p.st!=null?`<span class="pill">🎓 ${esc(S[p.st].name)}</span>`:''}${mb.length?`<span class="pill br">${mb.length} mall brand${mb.length>1?'s':''}</span>`:''}</div><p>${esc(p.sum)}</p></button>`).join('')||'<p class="muted">No schemes match.</p>';
+ renderSU();
+ $('hiGrid').innerHTML=X.hist.map((h,i)=>`<button class="xc" data-hi="${i}" style="--xc:#8A857B"><h4>${esc(h.n)}</h4><div class="row">${scoreDots(h.sc)}<span class="k">${h.sc}/5</span></div><p>${esc(h.ben)}</p></button>`).join('')}
+let suFilt='*';
+function renderSU(){const c=X.su.reduce((m,u)=>(m[u.cs]=(m[u.cs]||0)+1,m),{});$('suN').textContent=X.su.length;
+ $('suFilt').innerHTML=`<button data-f="*" class="${suFilt=='*'?'on':''}">All<span>${X.su.length}</span></button>`+Object.entries(c).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<button data-f="${esc(k)}" class="${suFilt==k?'on':''}">${esc(k)}<span>${v}</span></button>`).join('');
+ $('suBody').innerHTML=X.su.map((u,i)=>[u,i]).filter(([u])=>suFilt=='*'||u.cs==suFilt).map(([u,i])=>`<tr class="cl" data-uni="${i}"><td><b>${esc(u.n)}</b></td><td>${esc(u.na)}</td><td><span class="rpill" style="background:${STATUS_COL[u.cs]||'#7A7468'}">${esc(u.cs)}</span></td><td style="font-size:12.5px;color:var(--muted);max-width:420px">${esc(u.ev.slice(0,160))}${u.ev.length>160?'…':''}</td><td>${u.st!=null?`<a class="lk" data-gost="${u.st}"><span class="dot" style="background:${S[u.st].line.color}"></span>${S[u.st].code} ${esc(S[u.st].name)}</a>`:'<span class="muted">—</span>'}</td><td>${u.url?`<a class="lk" href="${esc(u.url)}" target="_blank" rel="noopener">link ↗</a>`:''}</td></tr>`).join('')}
+$('pg-stu').addEventListener('click',e=>{const t=e.target;let b;
+ if(b=t.closest('[data-gost]')){e.stopPropagation();goStation(S[+b.dataset.gost]);return}
+ if(t.closest('a[href]'))return;
+ if(b=t.closest('#stuType [data-t]')){stuType=b.dataset.t;renderStudents();return}
+ if(b=t.closest('#stuScore [data-s]')){stuScore=+b.dataset.s;renderStudents();return}
+ if(b=t.closest('#suFilt [data-f]')){suFilt=b.dataset.f;renderSU();return}
+ if(b=t.closest('[data-sp]')){openStudent(+b.dataset.sp);return}if(b=t.closest('[data-uni]')){openSU(+b.dataset.uni);return}if(b=t.closest('[data-hi]')){openHist(+b.dataset.hi);return}});
+$('stuQ').oninput=renderStudents;$('stuSort').onchange=renderStudents;
+// ---------- Retailers & affiliate APIs page
+let nwCat='*';
+function renderAff(){const R=X.retailers;$('affN').textContent=R.length;$('rtN').textContent=R.length;$('nwN').textContent=X.networks.length;
+ const box=(t,rows,max)=>`<div class="gbox"><h3>${t}</h3>${rows.map(([n,v,c])=>`<div class="brow"><span>${esc(n)}</span><div class="tr"><i style="width:${v/max*100}%;background:${c}"></i></div><b>${v}</b></div>`).join('')}</div>`;
+ const rc=Object.entries(R.reduce((m,r)=>(m[r.route]=(m[r.route]||0)+1,m),{})).sort((a,b)=>b[1]-a[1]);
+ const cc=Object.entries(R.reduce((m,r)=>(m[r.cat]=(m[r.cat]||0)+1,m),{})).sort((a,b)=>b[1]-a[1]);
+ const inM=R.filter(r=>mallsFor(r.n)).length;
+ $('affBars').innerHTML=box('Retailers by affiliate route',rc.map(([k,v])=>[k.replace(' (no public API found)',''),v,routeColor(k)]),rc[0][1])+box('Top categories',cc.slice(0,9).map(([k,v])=>[k,v,'var(--accent)']),cc[0][1])+
+  `<div class="gbox"><h3>Linked to the tube map</h3><div class="brow"><span>Found in mall brand lists</span><div class="tr"><i style="width:${inM/R.length*100}%;background:var(--ok)"></i></div><b>${inM}</b></div><div class="brow"><span>Named by student schemes</span><div class="tr"><i style="width:${R.filter(r=>studentFor(r.n).length).length/R.length*100}%;background:#6950A1"></i></div><b>${R.filter(r=>studentFor(r.n).length).length}</b></div><p class="muted" style="margin-top:8px;font-size:12px;line-height:1.45">${esc(X.affReadme[2]||'')}</p></div>`;
+ const nc=Object.entries(X.networks.reduce((m,n)=>(m[n.cat]=(m[n.cat]||0)+1,m),{})).sort((a,b)=>b[1]-a[1]);
+ $('nwCat').innerHTML=`<button data-c="*" class="${nwCat=='*'?'on':''}">All<span>${X.networks.length}</span></button>`+nc.map(([k,v])=>`<button data-c="${esc(k)}" class="${nwCat==k?'on':''}">${esc(k)}<span>${v}</span></button>`).join('');
+ $('nwGrid').innerHTML=X.networks.filter(n=>nwCat=='*'||n.cat==nwCat).map(n=>{const used=R.filter(r=>r.route&&n.n.toLowerCase().startsWith(r.route.toLowerCase().split(' ')[0])).length;
+  return `<div class="xc" style="cursor:default;--xc:${routeColor(n.n)}"><div class="k">${esc(n.cat)}</div><h4>${esc(n.n)}</h4>${used?`<div class="row"><span class="pill br">${used} retailers use it</span></div>`:''}<p style="-webkit-line-clamp:4">${esc(n.api)}</p><div class="k">${esc(n.req)}</div><div class="row">${n.url?`<a class="lk" href="${esc(n.url)}" target="_blank" rel="noopener">website ↗</a>`:''}${n.dev?` · <a class="lk" href="${esc(n.dev)}" target="_blank" rel="noopener">${esc(n.lt)} ↗</a>`:''}</div></div>`}).join('');
+ if(!$('rtRoute').options.length){$('rtRoute').innerHTML='<option value="">All routes</option>'+rc.map(([k])=>`<option>${esc(k)}</option>`).join('');$('rtCat').innerHTML='<option value="">All categories</option>'+cc.map(([k])=>`<option>${esc(k)}</option>`).join('')}
+ renderRetailers()}
+function renderRetailers(){const q=$('rtQ').value.trim().toLowerCase(),ro=$('rtRoute').value,ca=$('rtCat').value,only=$('rtInMalls').checked;
+ const rows=X.retailers.map((r,i)=>({r,i,m:mallsFor(r.n),sp:studentFor(r.n)})).filter(({r,m})=>(!q||(r.n+' '+r.cat+' '+r.route).toLowerCase().includes(q))&&(!ro||r.route==ro)&&(!ca||r.cat==ca)&&(!only||m));
+ $('rtBody').innerHTML=rows.map(({r,i,m,sp})=>`<tr class="cl" data-rt="${i}"><td class="key">${esc(r.i)}</td><td><b>${esc(r.n)}</b></td><td>${esc(r.cat)}</td><td><span class="rpill" style="background:${routeColor(r.route)}">${esc(r.route.replace(' (no public API found)',''))}</span></td>
+ <td>${m?`<a class="lk" data-brand="${esc(normB(m.name))}" title="Show on the map">${m.centres.size} centre${m.centres.size>1?'s':''} ↗</a>`:'<span class="muted">—</span>'}</td><td>${sp.length?`<span class="pill" style="border-color:#6950A1;color:#6950A1">${sp.length}</span>`:''}</td>
+ <td><a class="lk" href="${esc(r.url)}" target="_blank" rel="noopener">site ↗</a>${r.dev?` · <a class="lk" href="${esc(r.dev)}" target="_blank" rel="noopener">API ↗</a>`:''}</td></tr>`).join('')||'<tr><td colspan="7" class="muted">No matches</td></tr>'}
+$('pg-aff').addEventListener('click',e=>{const t=e.target;let b;
+ if(b=t.closest('[data-brand]')){e.stopPropagation();const x=brandIndex().get(b.dataset.brand);if(x){showPage('map');vp.scrollIntoView({behavior:'smooth',block:'center'});setTimeout(()=>setBrand(x),300)}return}
+ if(t.closest('a[href]'))return;
+ if(b=t.closest('#nwCat [data-c]')){nwCat=b.dataset.c;renderAff();return}
+ if(b=t.closest('[data-rt]'))openRetailer(+b.dataset.rt)});
+['rtQ','rtRoute','rtCat','rtInMalls'].forEach(id=>$(id).addEventListener(id=='rtQ'?'input':'change',renderRetailers));
+window.refreshX=()=>{renderStudents();renderAff()};refreshX();
+</script>
+</body>
+</html>

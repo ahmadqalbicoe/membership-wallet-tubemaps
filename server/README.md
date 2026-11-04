@@ -1,4 +1,4 @@
-# Tube map server: site + UK Malls brands + local database
+# Shopping Malls Tube Map server: site + UK Malls brands + local database
 
 `node server.js` serves the map on port 4003 (`PORT` to change) and adds a brand module that reads ukmalls.co.uk.
 
