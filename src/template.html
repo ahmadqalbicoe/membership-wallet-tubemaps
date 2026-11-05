@@ -325,6 +325,8 @@ footer a{color:var(--accent)}
  <div class="gapgrid" id="gapgrid"></div>
  <section class="more"><h2>Centres with a verified pension fund stake</h2><div class="tbl"><table><thead><tr><th>Station</th><th>Centre</th><th>Town</th><th>Owner</th><th>Status</th><th>Evidence</th></tr></thead><tbody id="pens"></tbody></table></div></section>
  <section class="more"><h2>Owners with the most centres</h2><div class="finds" id="owners"></div></section>
+ <section class="more"><h2>Batch 1 research <span class="k" id="b1n"></span></h2><p class="lede" style="margin-top:0">The first batch of the master list being re-researched centre by centre: owner, managing agent, units, parking, footfall, anchor tenants, loyalty scheme, app, nearest university and management contact, with the centre's own shop directory where one exists.</p>
+  <div class="xchips" id="b1f"></div><div class="tbl"><table><thead><tr><th>Station</th><th>Centre</th><th>Status</th><th>Units</th><th>Footfall</th><th>Loyalty</th><th>App</th><th>Shops listed</th></tr></thead><tbody id="b1"></tbody></table></div></section>
 </div>
 
 <div id="pg-stu" hidden>
@@ -346,7 +348,7 @@ footer a{color:var(--accent)}
   <div class="tbl" style="max-height:640px"><table><thead><tr><th>#</th><th>Retailer / brand</th><th>Category</th><th>Affiliate route</th><th>In malls</th><th>Student deals</th><th>Links</th></tr></thead><tbody id="rtBody"></tbody></table></div></section>
 </div>
 
-<footer>Built from <b>UK Shopping Centres by Local Authority (FINAL)</b>, November 2026: 472 centres across 248 local authorities, about 70% of the c.700 UK centres. Sources include Savills, Knight Frank, NBIM, CPP Investments, UK Malls Directory, company press releases and Wikipedia's list of UK shopping centres. Station positions are schematic: they follow geography loosely, with London and the big cities stretched out so they can be read.</footer>
+<footer>Built from <b>UK Shopping Centres by Local Authority (FINAL)</b> and the <b>Batch 1</b> research update (November 2026): 504 centres across 261 local authorities, about 70% of the c.700 UK centres. Sources include Savills, Knight Frank, NBIM, CPP Investments, UK Malls Directory, company press releases and Wikipedia's list of UK shopping centres. Station positions are schematic: they follow geography loosely, with London and the big cities stretched out so they can be read.</footer>
 </div>
 <div class="xmodal" id="xmodal" hidden><div class="xm" id="xm"></div></div>
 <script>
@@ -478,7 +480,7 @@ function pickStation(s,opts={}){if(curMall&&curMall.s!=s)closeMall();selStation=
  $('detail').innerHTML=`<div class="k" style="color:${s.line.color}">${s.code} · ${esc(s.line.region)} · ${esc(s.nation)}</div><h3>${esc(s.la)}</h3>
  <p><span class="pill">${s.n} centre${s.n>1?'s':''}</span>${s.verified?'<span class="pill ok">pension stake</span>':''}${s.ix?'<span class="pill">interchange</span>':''}<span class="pill ${s.complete<.4?'warn':''}">data ${Math.round(s.complete*100)}% complete</span></p>
  <div class="k" style="margin-top:10px">SHOPPING CENTRES HERE — click one to see its brands</div>
- <div class="mlist">${s.centres.map((c,i)=>`<button class="mrow ${curMall==c?'on':''}" data-m="${i}" style="--lc:${s.line.color}"><b>${esc(c.name)}</b><span class="ar">›</span><span class="t">${esc(c.type)} · ${esc(c.town)}</span><span class="ps">${c.size&&!TBC(c.size)?`<span class="pill">${esc(c.size)}</span>`:''}${/^Verified/.test(c.pension)?'<span class="pill ok">pension</span>':''}${c.brandData?(c.brandData.brands.length?`<span class="pill br">${c.brandData.brands.length} brands</span>`:'<span class="pill am">no brand list</span>'):''}${brandSel&&brandSel.centres.has(c)?`<span class="pill ok">✓ ${esc(brandSel.name)}</span>`:''}</span></button>`).join('')}</div>
+ <div class="mlist">${s.centres.map((c,i)=>`<button class="mrow ${curMall==c?'on':''}" data-m="${i}" style="--lc:${s.line.color}"><b>${esc(c.name)}</b><span class="ar">›</span><span class="t">${esc(c.type)} · ${esc(c.town)}</span><span class="ps">${c.size&&!TBC(c.size)?`<span class="pill">${esc(c.size)}</span>`:''}${/^Verified/.test(c.pension)?'<span class="pill ok">pension</span>':''}${c.batch?'<span class="pill ok">updated</span>':''}${c.isNew?'<span class="pill br">new</span>':''}${c.brandData?(c.brandData.brands.length?`<span class="pill br">${c.brandData.brands.length} brands</span>`:'<span class="pill am">no brand list</span>'):''}${brandSel&&brandSel.centres.has(c)?`<span class="pill ok">✓ ${esc(brandSel.name)}</span>`:''}</span></button>`).join('')}</div>
  <div class="hops" style="margin-top:10px">${adj.map(a=>`<a data-s="${a.id}">${a.idx<s.idx?'◀':'▶'} ${a.code} ${esc(a.name)}</a>`).join(' &nbsp; ')}${ch.length?'<br>'+ch.map(c=>`Change: <a data-s="${c.o.id}"><span style="color:${c.o.line.color}">■</span> ${c.o.code} ${esc(c.o.name)}</a>${c.kind=='ferry'?' (ferry)':''}`).join('<br>'):''}</div>
  ${miss?`<div class="flag">${miss} of ${s.n} centre${s.n>1?'s have':' has'} no confirmed owner yet.</div>`:''}${uniBlock(s)}
 `;
@@ -492,7 +494,7 @@ let keyAuto=0;
 // ---------- mall view: a centre and all its brands
 let curMall=null,mallGroup='*',mallQ='',mallSel=null;
 S.forEach(s=>s.centres.forEach(c=>c.s=s));
-{const n={};S.forEach(s=>s.centres.forEach(c=>n[c.name]=(n[c.name]||0)+1));S.forEach(s=>s.centres.forEach(c=>c.key=n[c.name]>1?`${c.name} (${c.town})`:c.name))}
+{const n={};S.forEach(s=>s.centres.forEach(c=>n[c.name]=(n[c.name]||0)+1));S.forEach(s=>s.centres.forEach(c=>c.key=c.key||(n[c.name]>1?`${c.name} (${c.town})`:c.name)))}
 const BSTATUS={needs_review:['Check the UK Malls match','A possible match was found on UK Malls but the name or town is not a clear fit. Confirm it above to load its brands.'],
  not_fetched:['Brands not fetched yet','This centre is matched to a UK Malls page. Press "Fetch from UK Malls" above, or "Fetch all brands" in the Brand data card.'],
  not_on_ukmalls:['Not found on UK Malls','No matching page was found on UK Malls. Use "Find on UK Malls" above to pick one by hand.'],needs_url:['No brand list yet','The spreadsheet links to a directory or article, not this centre\'s own website. Add its website in the scraper\'s overrides.json and run it again.'],
@@ -508,13 +510,14 @@ function closeMall(){curMall=null;$('mall').classList.remove('open');document.bo
 function renderMall(){const c=curMall;if(!c)return;const s=c.s,d=c.brandData,brands=d?d.brands:[];
  const U=d&&d.ukmalls||null;const facts=[['Postcode',c.postcode],['Size tier',c.size],['Owner',c.owner],['Managing agent',c.manager],['Local authority',s.la]];
  if(U&&U.phone)facts.push(['Phone',U.phone]);if(U&&U.address&&TBC(c.postcode))facts.push(['Address',U.address]);
+ [['Units / shops',c.units],['Car parking spaces',c.parking?Number(c.parking).toLocaleString():''],['Annual footfall',c.footfall?Number(c.footfall).toLocaleString()+(c.footfallYear?` (${c.footfallYear})`:''):''],['Loyalty scheme',c.loyalty],['App / digital',c.app],['Nearest university',c.university],['Management contact',c.contact]].forEach(([k,v])=>{if(v)facts.push([k,v])});
  const m=$('mall');m.style.setProperty('--lc',s.line.color);
  m.innerHTML=`<div class="mh"><div class="bar"></div><div class="crumb"><a data-act="line">${s.line.code} ${esc(s.line.region)}</a>›<a data-act="station">${s.code} ${esc(s.name)}</a>›<span>${esc(c.name)}</span></div>
-  <h3>${esc(c.name)}</h3><div class="t">${esc(c.type)} · ${esc(c.town)} ${penPill(c.pension)}${c.website&&c.website!='None'?` · <a class="lk" href="${esc(c.website)}" target="_blank" rel="noopener">website ↗</a>`:''}</div>
+  <h3>${esc(c.name)}</h3><div class="t">${esc(c.type)} · ${esc(c.town)} ${penPill(c.pension)}${c.batch?`<span class="pill ok">updated ${esc(X.batch.date)}</span>`:''}${c.isNew?'<span class="pill br">new in master list</span>':''}${c.website&&c.website!='None'?` · <a class="lk" href="${esc(c.website)}" target="_blank" rel="noopener">website ↗</a>`:''}</div>
   <div class="mx">${s.n>1?`<button data-act="prev" title="Previous centre at this station" aria-label="Previous centre">‹</button><button data-act="next" title="Next centre at this station" aria-label="Next centre">›</button>`:''}<button data-act="close" title="Close (Esc)" aria-label="Close">✕</button></div></div>
-  <div class="mfacts">${facts.map(([k,v])=>`<div><span>${k}</span>${val(v)}</div>`).join('')}${U&&U.hours&&U.hours.length?`<div style="grid-column:1/-1"><span>Opening hours (UK Malls)</span>${U.hours.map(h=>esc(h.replace(/:\s/,' '))).join(' · ')}</div>`:''}</div>
+  <div class="mfacts">${facts.map(([k,v])=>`<div><span>${k}</span>${val(v)}</div>`).join('')}${U&&U.hours&&U.hours.length?`<div style="grid-column:1/-1"><span>Opening hours (UK Malls)</span>${U.hours.map(h=>esc(h.replace(/:\s/,' '))).join(' · ')}</div>`:''}${c.anchors?`<div style="grid-column:1/-1"><span>Anchor tenants</span>${esc(c.anchors)}</div>`:''}${c.notes?`<div style="grid-column:1/-1"><span>Research notes (${esc(X.batch.name)})</span>${esc(c.notes)}</div>`:''}${c.sources?`<div style="grid-column:1/-1"><span>Sources</span>${urls(c.sources).slice(0,6).map(u=>`<a class="lk" href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\/(www\.)?/,'').slice(0,48))}</a>`).join(' · ')}</div>`:''}</div>
   ${ukStrip(c)}
-  <div class="mbody">${brands.length?`<div class="mtools"><h4>Brands <span class="k">${brands.length}</span></h4><input type="search" id="mq" placeholder="Search brands…" value="${esc(mallQ)}"></div><div class="bchips" id="mchips"></div><div class="bgrid" id="mgrid"></div>`
+  <div class="mbody">${brands.length?`<div class="mtools"><h4>Brands <span class="k">${brands.length}</span></h4>${d&&d.official?`<span class="k" style="flex-basis:100%;order:3">${brands.length-d.official.added} from UK Malls${d.official.confirmed?` (${d.official.confirmed} confirmed ✓ on the centre's own directory)`:''} · ${d.official.added} more from the centre's own directory, ${esc(d.official.date)}</span>`:''}<input type="search" id="mq" placeholder="Search brands…" value="${esc(mallQ)}"></div><div class="bchips" id="mchips"></div><div class="bgrid" id="mgrid"></div>`
    :`<div class="empty">${d?`<b>${esc((BSTATUS[d.status]||['No brands found'])[0])}</b>${esc((BSTATUS[d.status]||['',d.note||''])[1])}`:BRANDS_LOADED?'<b>Not scraped yet</b>This centre was not part of the last scraper run.':'<b>Brands not loaded yet</b>Run the brand scraper and publish its brands.json next to this page; every centre with a website will then list its brands here.'}</div>`}</div>`;
  m.querySelectorAll('[data-act]').forEach(b=>b.onclick=()=>{const a=b.dataset.act,i=s.centres.indexOf(c);
   if(a=='close')closeMall();else if(a=='station'){closeMall();pickStation(s,{noScroll:true})}else if(a=='line'){closeMall();pickLine(s.line,true)}
@@ -527,7 +530,7 @@ function drawBrands(){const brands=curMall.brandData.brands,q=mallQ.trim().toLow
  $('mchips').onclick=e=>{const b=e.target.closest('button');if(!b)return;mallGroup=b.dataset.g;drawBrands()};
  const list=[...brands].filter(b=>(mallGroup=='*'||b.group==mallGroup)&&(!q||(b.name+' '+b.category+' '+b.group+' '+b.unit).toLowerCase().includes(q))).sort((a,b)=>a.name.localeCompare(b.name));
  let html='';list.forEach((b,i)=>{const on=mallSel&&mallSel.name==b.name;
-  html+=`<button class="bc ${on?'on':''}" data-i="${brands.indexOf(b)}"><span class="lg">${esc((b.name||'?').slice(0,2))}${b.logo?`<img src="${esc(b.logo)}" alt="" loading="lazy" onerror="this.remove()">`:''}</span><b>${esc(b.name)}</b><small>${esc([b.group!='Other'?b.group:b.category,b.unit].filter(Boolean).join(' · ')||'—')}</small></button>`;
+  html+=`<button class="bc ${on?'on':''}" data-i="${brands.indexOf(b)}"><span class="lg">${esc((b.name||'?').slice(0,2))}${b.logo?`<img src="${esc(b.logo)}" alt="" loading="lazy" onerror="this.remove()">`:''}</span><b>${esc(b.name)}${b.confirmed?' <span title="Also listed on the centre\'s own directory" style="color:var(--ok)">✓</span>':''}${b.source=='official'?' <span title="From the centre\'s own directory" style="color:var(--accent);font-size:10px">●</span>':''}</b><small>${esc([b.group!='Other'?b.group:b.category,b.unit].filter(Boolean).join(' · ')||'—')}</small></button>`;
   if(on)html+=brandDetail(b)});
  $('mgrid').innerHTML=html||'<div class="empty" style="grid-column:1/-1">No brands match.</div>';
  $('mgrid').querySelectorAll('.bc').forEach(x=>x.onclick=()=>{const b=brands[+x.dataset.i];mallSel=mallSel&&mallSel.name==b.name?null:b;drawBrands();const det=$('mgrid').querySelector('.bdet');det&&det.scrollIntoView({block:'nearest',behavior:'smooth'})});
@@ -536,10 +539,10 @@ function brandDetail(b){const row=(k,v)=>v?`<div class="row"><span>${k}</span><d
  return `<div class="bdet"><div style="display:flex;justify-content:space-between;gap:8px"><h5>${esc(b.name)}</h5><button class="btn" data-x style="padding:2px 9px">✕</button></div>
  ${row('Type',esc([b.group,b.category&&b.category!=b.group?b.category:''].filter(Boolean).join(' · ')))}${row('Where',esc([b.unit,b.level].filter(Boolean).join(', ')))}
  ${row('Hours',(b.hours||[]).map(esc).join('<br>'))}${row('Phone',b.phone?`<a href="tel:${esc(b.phone.replace(/\s/g,''))}">${esc(b.phone)}</a>`:'')}${row('Email',b.email?`<a href="mailto:${esc(b.email)}">${esc(b.email)}</a>`:'')}
- ${row('About',esc((b.description||'').slice(0,400)))}
+ ${row('Source',b.source=='official'?`Centre's own directory (${esc(X.batch.name)}, ${esc(X.batch.date)})`:b.source=='ukmalls'?'UK Malls'+(b.confirmed?' · ✓ also on the centre\'s own directory':''):esc(b.source||''))}${row('About',esc((b.description||'').slice(0,400)))}
  ${row('Affiliate',ret?`<span class="rpill" style="background:${routeColor(ret.route)}">${esc(ret.route)}</span> ${esc(ret.cat)} · <a href="${esc(ret.url)}" target="_blank" rel="noopener">site ↗</a>${ret.dev?` · <a href="${esc(ret.dev)}" target="_blank" rel="noopener">${esc(ret.lt)} ↗</a>`:''}`:'')}
  ${row('Student deals',sp.length?sp.slice(0,6).map(i=>`<a class="lk" data-sp="${i}">${esc(X.students[i].n.split(' (')[0])}</a>`).join(' · ')+(sp.length>6?` +${sp.length-6}`:''):'')}
- ${row('Links',[b.website?`<a href="${esc(b.website)}" target="_blank" rel="noopener">Brand website ↗</a>`:'',b.url?`<a href="${esc(b.url)}" target="_blank" rel="noopener">${b.source=='ukmalls'?'Page on UK Malls':'Page on centre site'} ↗</a>`:'',...Object.entries(b.socials||{}).map(([k,v])=>`<a href="${esc(v)}" target="_blank" rel="noopener">${esc(k)}</a>`)].filter(Boolean).join(' · '))}</div>`}
+ ${row('Links',[b.website?`<a href="${esc(b.website)}" target="_blank" rel="noopener">Brand website ↗</a>`:'',b.url?`<a href="${esc(b.url)}" target="_blank" rel="noopener">${b.source=='ukmalls'?'Page on UK Malls':'Page on the centre\'s site'} ↗</a>`:'',...Object.entries(b.socials||{}).map(([k,v])=>`<a href="${esc(v)}" target="_blank" rel="noopener">${esc(k)}</a>`)].filter(Boolean).join(' · '))}</div>`}
 // ---------- orientation: region names, line badges, hover areas
 const ga=$('ga'),gh=$('gh'),gb=$('gb');
 L.forEach(l=>{const st=l.stops.map(id=>S[id]);const cx=st.reduce((a,s)=>a+s.px,0)/st.length,cy=st.reduce((a,s)=>a+s.py,0)/st.length;
@@ -703,7 +706,7 @@ $('q').oninput=renderIdx;$('idx').onclick=e=>{if(e.target.closest('a[href]'))ret
  $('pens').innerHTML=ALLC.filter(c=>/^Verified/.test(c.pension)).map(c=>`<tr class="cl" data-s="${c.s.id}"><td class="key"><span class="dot" style="background:${c.s.line.color}"></span>${c.s.code}</td><td>${esc(c.name)}</td><td>${esc(c.town)}</td><td>${esc(c.owner)}</td><td>${penPill(c.pension)}</td><td style="font-size:12px;color:var(--muted)">${esc(c.evidence)}</td></tr>`).join('');
  $('pens').onclick=e=>{const r=e.target.closest('[data-s]');if(r)goStation(S[r.dataset.s])};
  const ow=cnt(c=>c.owner).filter(([k])=>!TBC(k)).slice(0,9);
- $('owners').innerHTML=ow.map(([k,v])=>{const cs=ALLC.filter(c=>c.owner==k);return `<div class="find ac"><b>${esc(k)}</b><p>${v} centre${v>1?'s':''}: ${cs.map(c=>esc(c.name)).join(', ')}</p><span class="go" data-s="${cs[0].s.id}">Show on the map → ${cs[0].s.code}</span></div>`}).join('');
+ $('owners').innerHTML=ow.map(([k,v])=>{const cs=ALLC.filter(c=>c.owner==k);return `<div class="find ac"><b>${esc(k)}</b><p>${v} centre${v>1?'s':''}: ${cs.slice(0,12).map(c=>esc(c.name)).join(', ')}${cs.length>12?` and ${cs.length-12} more`:''}</p><span class="go" data-s="${cs[0].s.id}">Show on the map → ${cs[0].s.code}</span></div>`}).join('');
  $('owners').querySelectorAll('.go').forEach(g=>g.onclick=()=>goStation(S[g.dataset.s]))})();
 window.addEventListener('resize',()=>{if(!vp.hidden)fit()});
 placeLabels();fit();(document.fonts?document.fonts.ready:Promise.resolve()).then(placeLabels);
@@ -723,12 +726,21 @@ function brandBlock(c){const d=c.brandData;if(!d)return '';
  ${b.description?`<div>${esc(b.description.slice(0,260))}${b.description.length>260?'…':''}</div>`:''}
  <div>${b.website?`<a href="${esc(b.website)}" target="_blank" rel="noopener">Brand website ↗</a> · `:''}${b.url?`<a href="${esc(b.url)}" target="_blank" rel="noopener">Centre page ↗</a>`:''}${b.socials?Object.entries(b.socials).map(([k,v])=>` · <a href="${esc(v)}" target="_blank" rel="noopener">${esc(k)}</a>`).join(''):''}</div>
  </div></details>`).join('')}</div></details>`}
+// Official retailer lists from the Batch 1 research are shown alongside the synced UK Malls lists.
+// The synced records are never changed: official-only shops are added, shared ones get a "confirmed" tick.
+const OFF_GROUP={'Food & drink':'Food & drink','Health & beauty':'Health & beauty','Fashion':'Fashion','Services':'Services','Books & gifts':'Books, music & gifts','Electronics':'Technology','Jewellery':'Jewellery & watches','Footwear':'Fashion','Home':'Home','Grocery':'Supermarket & convenience','Sports':'Sports & outdoor','Leisure':'Leisure','Department store':'Department store','Other':'Other'};
+function withOfficial(c,d){const off=(X.batchRetail||{})[c.key];if(!off||!off.length)return d||null;
+ const nb=s=>String(s||'').toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]/g,'');const offSet=new Set(off.map(o=>nb(o[0])));
+ const base=d&&d.brands?d.brands:[];const have=new Set(base.map(b=>nb(b.name)));
+ const brands=base.map(b=>offSet.has(nb(b.name))?{...b,confirmed:true}:b);
+ const added=off.filter(o=>!have.has(nb(o[0]))).map(o=>({name:o[0],group:OFF_GROUP[o[1]]||'Other',category:o[1],url:o[2],source:'official'}));
+ return {...(d||{source:'official'}),status:'ok',brands:[...brands,...added],official:{count:off.length,added:added.length,confirmed:off.length-added.length,date:X.batch.date}}}
 // brands.json comes from the server (live). When the page is opened from disk or static hosting it falls back to brands-data.js.
 function brandsScript(){return new Promise(res=>{if(window.__BRANDS)return res(window.__BRANDS);const s=document.createElement('script');s.src='brands-data.js';s.onload=()=>res(window.__BRANDS||null);s.onerror=()=>res(null);document.head.appendChild(s)})}
 function loadBrands(){const viaFile=location.protocol=='file:';return (viaFile?Promise.resolve(null):fetch('brands.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null)).then(B=>B&&B.centres?B:brandsScript()).then(B=>{if(!B||!B.centres)return;BRANDS_LOADED=true;
  ALLB=[];S.forEach(s=>{s.brandTried=false;s.centres.forEach(c=>{c.brandData=null})});['statBr1','statBr2','findBrands','gapBr1','gapBr2'].forEach(id=>{const e=$(id);e&&e.remove()});
  const fi=FAC.findIndex(f=>f[0]=='brands');if(fi>=0)FAC.splice(fi,1);
- S.forEach(s=>{s.brandCount=0;s.centres.forEach(c=>{const d=B.centres[c.key]||B.centres[c.name];if(!d)return;c.brandData=d;s.brandTried=true;s.brandCount+=d.brands.length;d.brands.forEach(b=>ALLB.push({...b,centre:c,s}))})});
+ S.forEach(s=>{s.brandCount=0;s.centres.forEach(c=>{const d=withOfficial(c,B.centres[c.key]||(c.key==c.name?null:null));if(!d)return;c.brandData=d;s.brandTried=true;s.brandCount+=d.brands.length;d.brands.forEach(b=>ALLB.push({...b,centre:c,s}))})});
  const okC=Object.values(B.centres).filter(c=>c.brands.length).length,uniq=new Set(ALLB.map(b=>b.name.toLowerCase().replace(/[^a-z0-9]/g,''))).size;
  $('stats').insertAdjacentHTML('beforeend',stat(ALLB.length.toLocaleString(),'brand listings').replace('class="stat"','class="stat" id="statBr1"')+stat(uniq.toLocaleString(),'unique brands').replace('class="stat"','class="stat" id="statBr2"'));
  FAC.push(['brands','Brands scraped',s=>s.brandCount>0]);renderFac();
@@ -817,8 +829,8 @@ const stName=id=>id==null?'':S[id];
 const SU_BY=new Map(),SP_BY=new Map();X.su.forEach((u,i)=>{if(u.st!=null){if(!SU_BY.has(u.st))SU_BY.set(u.st,[]);SU_BY.get(u.st).push(i)}});X.students.forEach((p,i)=>{if(p.st!=null){if(!SP_BY.has(p.st))SP_BY.set(p.st,[]);SP_BY.get(p.st).push(i)}});
 function uniBlock(s){const us=SU_BY.get(s.id)||[],ps=SP_BY.get(s.id)||[];if(!us.length&&!ps.length)return '';
  return `<div class="k" style="margin-top:10px">🎓 STUDENTS HERE</div><div class="uni">${us.map(i=>`<button data-uni="${i}" title="${esc(X.su[i].cs)}">${esc(X.su[i].n)} SU</button>`).join('')}${ps.map(i=>`<button data-sp="${i}" style="border-color:${TYPE_COL[X.students[i].ty]||'var(--line)'}">${esc(X.students[i].n.split(' (')[0])}</button>`).join('')}</div>`}
-FAC.push(['uni','University / SU',s=>SU_BY.has(s.id)||SP_BY.has(s.id)]);renderFac();
-$('stats').insertAdjacentHTML('beforeend',stat(SU_BY.size,'stations with a university')+stat(X.students.length,'student schemes')+stat(X.retailers.length,'retailers with affiliate routes'));
+FAC.push(['uni','University / SU',s=>SU_BY.has(s.id)||SP_BY.has(s.id)]);FAC.push(['batch','Updated ('+X.batch.name+')',s=>s.centres.some(c=>c.batch)]);FAC.push(['new','New centres',s=>s.centres.some(c=>c.isNew)]);renderFac();
+$('stats').insertAdjacentHTML('beforeend',stat(ALLC.filter(c=>c.batch).length,'centres updated ('+X.batch.name+')')+stat(ALLC.filter(c=>c.isNew).length,'new centres')+stat(SU_BY.size,'stations with a university')+stat(X.students.length,'student schemes')+stat(X.retailers.length,'retailers with affiliate routes'));
 // ---------- modals
 const xmodal=$('xmodal'),xm=$('xm');
 function openModal(color,head,body){xm.style.setProperty('--xc',color);xm.innerHTML=`<div class="hd"><div>${head}</div><button class="close" aria-label="Close">✕</button></div><div class="bd">${body}</div>`;xmodal.hidden=false;xm.scrollTop=0;
@@ -900,6 +912,17 @@ $('pg-aff').addEventListener('click',e=>{const t=e.target;let b;
  if(b=t.closest('[data-rt]'))openRetailer(+b.dataset.rt)});
 ['rtQ','rtRoute','rtCat','rtInMalls'].forEach(id=>$(id).addEventListener(id=='rtQ'?'input':'change',renderRetailers));
 window.refreshX=()=>{renderStudents();renderAff()};refreshX();
+
+// ---------- Batch 1 research table (Ownership and data gaps page)
+let b1f='*';
+function renderB1(){const keys=new Set(X.batch.keys);const list=ALLC.filter(c=>keys.has(c.key));const st=c=>c.batch?(c.isNew?'new + researched':'researched'):(c.isNew?'new, not yet researched':'not yet researched');
+ const cnt=list.reduce((m,c)=>(m[st(c)]=(m[st(c)]||0)+1,m),{});$('b1n').textContent=`${list.filter(c=>c.batch).length} of ${list.length} researched`;
+ $('b1f').innerHTML=`<button data-f="*" class="${b1f=='*'?'on':''}">All<span>${list.length}</span></button>`+Object.entries(cnt).map(([k,v])=>`<button data-f="${esc(k)}" class="${b1f==k?'on':''}">${esc(k)}<span>${v}</span></button>`).join('');
+ $('b1').innerHTML=list.filter(c=>b1f=='*'||st(c)==b1f).map(c=>{const off=(X.batchRetail||{})[c.key];
+  return `<tr class="cl" data-key="${esc(c.key)}"><td class="key"><span class="dot" style="background:${c.s.line.color}"></span>${c.s.code}</td><td><b>${esc(c.name)}</b><br><span class="muted" style="font-size:12px">${esc(c.town)}</span></td><td><span class="pill ${c.batch?'ok':'am'}">${esc(st(c))}</span></td><td>${esc(c.units||'')}</td><td>${c.footfall?Number(c.footfall).toLocaleString()+(c.footfallYear?` (${esc(c.footfallYear)})`:''):''}</td><td>${esc(c.loyalty||'')}</td><td>${esc(c.app||'')}</td><td>${off?off.length:''}</td></tr>`}).join('')}
+$('b1f').onclick=e=>{const b=e.target.closest('[data-f]');if(b){b1f=b.dataset.f;renderB1()}};
+$('b1').onclick=e=>{const r=e.target.closest('[data-key]');if(!r)return;const c=ALLC.find(x=>x.key==r.dataset.key);const s=c.s,cc=s.centres.find(x=>x.key==c.key);goStation(s);setTimeout(()=>openMall(cc,{noFly:true}),420)};
+renderB1();
 </script>
 </body>
 </html>
