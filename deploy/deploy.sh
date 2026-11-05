@@ -13,5 +13,5 @@ scp "$ROOT"/server/lib/*.js "$T:$DIR/server/lib/"
 if [ "${SEED_DB:-}" = "1" ] || [ "$(ssh "$T" "test -f $DIR/server/data/db.json && echo yes || echo no")" = "no" ]; then
   [ -f "$ROOT/server/data/db.json" ] && scp "$ROOT/server/data/db.json" "$T:$DIR/server/data/db.json"
 fi
-ssh "$T" "cd $DIR/server && (command -v pm2 >/dev/null || npm i -g pm2) && PORT=$PORT pm2 startOrReload ecosystem.config.cjs --update-env && pm2 save && (command -v ufw >/dev/null && ufw allow $PORT/tcp >/dev/null || true); sleep 2; echo; echo 'Admin token for the Fetch brands buttons:'; cat data/admin-token.txt"
+ssh "$T" "cd $DIR/server && (command -v pm2 >/dev/null || npm i -g pm2) && PORT=$PORT pm2 startOrReload ecosystem.config.cjs --update-env && pm2 save && (command -v ufw >/dev/null && ufw allow $PORT/tcp >/dev/null || true)"
 echo "Done: http://$SERVER:$PORT"

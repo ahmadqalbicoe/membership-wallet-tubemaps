@@ -18,5 +18,5 @@ if ($SeedDb -or ($hasDb.Trim() -eq "no")) {
   if (Test-Path "$root\server\data\db.json") { Write-Host "Uploading the brand database ..."; scp "$root\server\data\db.json" "${target}:$Dir/server/data/db.json" }
 }
 Write-Host "Starting on port $Port ..."
-ssh $target "cd $Dir/server && (command -v pm2 >/dev/null || npm i -g pm2) && PORT=$Port pm2 startOrReload ecosystem.config.cjs --update-env && pm2 save && (command -v ufw >/dev/null && ufw allow $Port/tcp >/dev/null || true); sleep 2; echo; echo Admin token for the Fetch brands buttons:; cat data/admin-token.txt"
+ssh $target "cd $Dir/server && (command -v pm2 >/dev/null || npm i -g pm2) && PORT=$Port pm2 startOrReload ecosystem.config.cjs --update-env && pm2 save && (command -v ufw >/dev/null && ufw allow $Port/tcp >/dev/null || true)"
 Write-Host "Done: http://${Server}:$Port"

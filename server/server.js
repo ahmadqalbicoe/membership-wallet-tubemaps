@@ -9,10 +9,9 @@ const ROOT = path.resolve(process.env.SITE_DIR || path.join(__dirname, '..', 'si
 const DATA = path.resolve(process.env.DATA_DIR || path.join(__dirname, 'data'));
 const PORT = +process.env.PORT || 4003, HOST = process.env.HOST || '0.0.0.0';
 
-// Admin token protects the buttons that start scraping. Set ADMIN_TOKEN, or one is created in data/admin-token.txt.
+// The sync buttons work without a token. To lock them again, start the server with ADMIN_TOKEN=... (optional).
 fs.mkdirSync(DATA, { recursive: true });
-const tokenFile = path.join(DATA, 'admin-token.txt');
-const ADMIN_TOKEN = process.env.ADMIN_TOKEN || (fs.existsSync(tokenFile) ? fs.readFileSync(tokenFile, 'utf8').trim() : (() => { const t = crypto.randomBytes(12).toString('hex'); fs.writeFileSync(tokenFile, t + '\n', { mode: 0o600 }); return t; })());
+const ADMIN_TOKEN = process.env.ADMIN_TOKEN || '';
 
 const centres = JSON.parse(fs.readFileSync(path.join(__dirname, 'centres.json'), 'utf8'));
 const db = new JsonDB(path.join(DATA, 'db.json'));
@@ -38,7 +37,7 @@ function brandsBody() {
 const TYPES = { '.html': 'text/html; charset=utf-8', '.json': 'application/json; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.png': 'image/png', '.ico': 'image/x-icon', '.csv': 'text/csv; charset=utf-8' };
 const send = (res, code, body, type = 'application/json; charset=utf-8', extra = {}) => { res.writeHead(code, { 'content-type': type, 'cache-control': 'no-store', 'x-content-type-options': 'nosniff', ...extra }); res.end(typeof body === 'string' || Buffer.isBuffer(body) ? body : JSON.stringify(body)); };
 const readBody = req => new Promise((ok, bad) => { let s = ''; req.on('data', c => { s += c; if (s.length > 1e5) { bad(new Error('too large')); req.destroy(); } }); req.on('end', () => { try { ok(s ? JSON.parse(s) : {}); } catch { bad(new Error('bad JSON')); } }); });
-const authed = req => { const t = String(req.headers['x-admin-token'] || ''); return t.length === ADMIN_TOKEN.length && crypto.timingSafeEqual(Buffer.from(t), Buffer.from(ADMIN_TOKEN)); };
+const authed = req => { if (!ADMIN_TOKEN) return true; const t = String(req.headers['x-admin-token'] || ''); return t.length === ADMIN_TOKEN.length && crypto.timingSafeEqual(Buffer.from(t), Buffer.from(ADMIN_TOKEN)); };
 
 async function api(req, res, url) {
   const p = url.pathname;
@@ -90,5 +89,5 @@ http.createServer(async (req, res) => {
 }).listen(PORT, HOST, () => {
   if (!fs.existsSync(path.join(ROOT, 'brands-data.js'))) writeStatic();
   console.log(`Shopping Malls Tube Map on http://${HOST}:${PORT}  (site: ${ROOT}, data: ${DATA})`);
-  console.log(`Admin token for the "Fetch brands" buttons: ${process.env.ADMIN_TOKEN ? '(from ADMIN_TOKEN)' : ADMIN_TOKEN + '  (saved in ' + tokenFile + ')'}`);
+  console.log(ADMIN_TOKEN ? 'Sync buttons need the ADMIN_TOKEN.' : 'Sync buttons are open (no token).');
 });

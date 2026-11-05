@@ -758,9 +758,9 @@ loadBrands();
 // ---------- UK Malls: buttons that drive the server's sync API (hidden on static hosting)
 let UKAPI=false,ukStatus=null,ukPoll=null,ukCand={},ukMsg='';
 const lsGet=k=>{try{return localStorage.getItem(k)||''}catch{return ''}},lsSet=(k,v)=>{try{localStorage.setItem(k,v)}catch{}};
-async function ukCall(path,body){const r=await fetch(path,{method:body===undefined?'GET':'POST',headers:{'content-type':'application/json','x-admin-token':lsGet('ukToken')},body:body===undefined?undefined:JSON.stringify(body)});
- const j=await r.json().catch(()=>({}));if(r.status==401){needToken=true;renderData();throw new Error('Enter the admin token in the Brand data card first.')}if(!r.ok)throw new Error(j.error||('HTTP '+r.status));return j}
-let needToken=false;
+async function ukCall(path,body){const r=await fetch(path,{method:body===undefined?'GET':'POST',headers:{'content-type':'application/json'},body:body===undefined?undefined:JSON.stringify(body)});
+ const j=await r.json().catch(()=>({}));if(r.status==401){throw new Error('This server has ADMIN_TOKEN set, so syncing is locked.')}if(!r.ok)throw new Error(j.error||('HTTP '+r.status));return j}
+
 function fmtDate(s){if(!s)return 'never';const d=new Date(s);return d.toLocaleDateString('en-GB',{day:'numeric',month:'short'})+' '+d.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'})}
 function renderData(){const c=$('dataCard');if(!UKAPI){c.hidden=true;return}c.hidden=false;const s=ukStatus||{};const m=s.matches||{};
  const pct=s.running&&s.total?Math.round(s.done/s.total*100):0;
@@ -768,12 +768,10 @@ function renderData(){const c=$('dataCard');if(!UKAPI){c.hidden=true;return}c.hi
  <div class="dstat">${(s.index&&s.index.rows)?`${s.index.rows} UK Malls centres listed · ${m.linked||0} of ${m.ofCentres||S.length} ours matched${m.suggested?` · <a class="lk" data-rev>${m.suggested} to check</a>`:''} · ${m.none||0} not found<br>${s.fetched||0} centres fetched · ${(s.brands||0).toLocaleString()} brands · last run ${fmtDate(s.lastRun&&s.lastRun.finishedAt)}`:'Not fetched yet. One click reads every centre\'s store list from ukmalls.co.uk (about 7 minutes) and links it to the matching centre on this map.'}</div>
  ${s.running?`<div class="dbar"><i style="width:${pct}%"></i></div><div class="dstat">${esc(s.phase=='centres'?`${s.done}/${s.total} · ${s.current}`:s.current||s.phase)}</div>`:''}
  <div class="drow">${s.running?'<button class="btn" data-d="stop">■ Stop</button>':`<button class="btn pri" data-d="all">⟳ Fetch all brands from UK Malls</button><button class="btn" data-d="rematch" title="Reload the UK Malls centre list and match again (keeps your manual choices)">Re-check matches</button>`}</div>
- ${s.message&&!s.running?`<div class="dstat" style="margin-top:6px">${esc(s.message)}</div>`:''}${ukMsg?`<div class="derr">${esc(ukMsg)}</div>`:''}
- ${needToken?`<div class="dtok"><input id="ukTok" type="password" placeholder="Admin token (shown when the server starts)" value="${esc(lsGet('ukToken'))}"><button class="btn" data-d="tok">Save</button></div>`:''}`;
+ ${s.message&&!s.running?`<div class="dstat" style="margin-top:6px">${esc(s.message)}</div>`:''}${ukMsg?`<div class="derr">${esc(ukMsg)}</div>`:''}`;
  c.querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>dataAct(b.dataset.d));
  const rv=c.querySelector('[data-rev]');if(rv)rv.onclick=()=>{const it=ALLC.find(x=>{const cc=x.s.centres.find(y=>y.name==x.name);return cc&&cc.brandData&&cc.brandData.status=='needs_review'});if(it){const cc=it.s.centres.find(y=>y.name==it.name);goStation(it.s);setTimeout(()=>openMall(cc,{noFly:true}),420)}}}
 async function dataAct(a){ukMsg='';try{
- if(a=='tok'){lsSet('ukToken',$('ukTok').value.trim());await ukCall('/api/admin/check',{});needToken=false;ukMsg='';renderData();return}
  if(a=='stop')await ukCall('/api/ukmalls/stop',{});
  if(a=='all')await ukCall('/api/ukmalls/sync',{});
  if(a=='rematch')await ukCall('/api/ukmalls/sync',{refreshIndex:true,rematch:true});

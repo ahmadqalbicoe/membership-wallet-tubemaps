@@ -18,17 +18,14 @@ What the script does:
 - uploads `server/data/db.json` (the brand database) **only the first time**, so brands you fetch on the server later are never overwritten. Use `-SeedDb` / `SEED_DB=1` to replace it on purpose.
 - starts the app on port 4003 with pm2 (`pm2 logs uk-shopping-tube-map` shows the log)
 - opens port 4003 if the server uses `ufw`
-- prints the **admin token**
 
-## The admin token
+## Sync buttons
 
-The "Fetch all brands from UK Malls", "Refresh", "Yes, use this" and "Not on UK Malls" buttons change the database, so they need the token. The map asks for it the first time you press one, and the browser remembers it.
-
-The token is created on first start in `server/data/admin-token.txt`. You can use your own instead: set `ADMIN_TOKEN=...` in `ecosystem.config.cjs` (`env`).
+The "Fetch all brands from UK Malls", "Refresh", "Yes, use this" and "Not on UK Malls" buttons work for anyone who opens the map, with no token. To lock them again, set `ADMIN_TOKEN=...` in `ecosystem.config.cjs` (`env`); the buttons then answer that syncing is locked.
 
 ## Updating
 
-Run the deploy script again. Your database and token stay as they are.
+Run the deploy script again. Your database stays as it is.
 
 ## Running it on your own computer
 

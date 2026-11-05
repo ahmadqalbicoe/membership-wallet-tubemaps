@@ -33,11 +33,11 @@ Back it up by copying the file. Delete it to start over.
 | GET | `/brands.json` | – | brands for the map |
 | GET | `/api/ukmalls/status` | – | progress, counts, last run |
 | GET | `/api/ukmalls/candidates?centre=…&q=…` | – | closest UK Malls centres / text search |
-| POST | `/api/ukmalls/sync` `{}` / `{centre}` / `{refreshIndex, rematch, force}` | ✓ | start a sync |
-| POST | `/api/ukmalls/stop` | ✓ | stop after the current centre |
-| POST | `/api/ukmalls/link` `{centre, path}` / `{centre, path:null}` | ✓ | confirm a match / mark not on UK Malls |
+| POST | `/api/ukmalls/sync` `{}` / `{centre}` / `{refreshIndex, rematch, force}` | – | start a sync |
+| POST | `/api/ukmalls/stop` | – | stop after the current centre |
+| POST | `/api/ukmalls/link` `{centre, path}` / `{centre, path:null}` | – | confirm a match / mark not on UK Malls |
 
-The token goes in the `x-admin-token` header (see `data/admin-token.txt`, or set `ADMIN_TOKEN`).
+No token is needed by default. If you start the server with `ADMIN_TOKEN=...`, the POST routes require it in the `x-admin-token` header.
 
 ## Files
 
