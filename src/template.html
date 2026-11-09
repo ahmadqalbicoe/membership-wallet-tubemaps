@@ -255,6 +255,17 @@ details.b>summary::-webkit-details-marker{display:none}
 .xdet summary{cursor:pointer;list-style:none}.xdet summary::-webkit-details-marker{display:none}.xdet summary:after{content:' ▸';color:var(--muted);font-size:18px}.xdet[open] summary:after{content:' ▾'}
 td .lk{white-space:nowrap}
 .uni{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}.uni button{font:12px var(--ui);border:1px solid var(--line);background:var(--soft);color:var(--ink);border-radius:999px;padding:2px 9px;cursor:pointer}
+/* offer data sources */
+.roadmap{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}
+.phase{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 14px;border-top:5px solid var(--pc);position:relative}
+.phase .k{font:700 11px var(--mono);color:var(--pc);letter-spacing:.04em}.phase h4{margin:2px 0 4px;font-size:15px}.phase p{margin:0 0 8px;font-size:13px;color:var(--muted)}
+.cmx{min-width:1100px}.cmx th.cap{writing-mode:vertical-rl;transform:rotate(180deg);height:118px;padding:6px 4px;font:500 11px var(--ui);color:var(--muted);cursor:pointer;white-space:nowrap;text-align:left;vertical-align:bottom}
+.cmx th.cap.need{color:var(--ink);font-weight:700;background:color-mix(in srgb,#F2C230 35%,var(--paper))}
+.cmx td.c{text-align:center;padding:4px;font-size:15px;width:30px}.cmx td.c2{color:var(--ok)}.cmx td.c1{color:#D9A21B}.cmx td.c0{color:var(--line)}
+.cmx td.c.need{background:color-mix(in srgb,#F2C230 14%,transparent)}
+.cmx tfoot td{font:500 11px var(--mono);color:var(--muted);text-align:center;border-top:1px solid var(--line)}
+.cov{display:flex;align-items:center;gap:6px;font:500 11.5px var(--mono)}.cov i{display:block;height:7px;border-radius:4px;background:var(--accent)}
+.spill{display:inline-block;font:600 11px var(--ui);border-radius:999px;padding:2px 8px;color:#fff;white-space:nowrap}
 footer{margin-top:30px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:12px}
 footer a{color:var(--accent)}
 @media (max-width:640px){.vp .hint{display:none}.vp,.alt{height:64vh;min-height:420px}.brand{align-items:flex-start}.disc{width:44px;height:44px;font-size:13px}}
@@ -267,7 +278,7 @@ footer a{color:var(--accent)}
  <p class="sub">Every UK shopping centre, mall and outlet in the longlist, drawn as a metro network, with the brands inside them, the student benefit schemes around them and the retailers' affiliate routes. Each <b>line is a region</b> of the UK and each <b>station is a local authority</b>; the bigger the station, the more centres it holds. Lines meet at interchanges where regions border each other, and a ferry joins Northern Ireland to Scotland. Click a station to see its centres, owners, managing agents and pension fund status, or plan a route across the country.</p></div></div>
  <div class="stats" id="stats"></div>
 </header>
-<nav class="ptabs" id="ptabs"><button data-pg="map" class="on">Shopping Malls Tube Map</button><button data-pg="gaps">Ownership and data gaps<span class="n" id="gapN"></span></button><button data-pg="stu">Student benefits<span class="n" id="stuN"></span></button><button data-pg="aff">Retailers &amp; affiliate APIs<span class="n" id="affN"></span></button></nav>
+<nav class="ptabs" id="ptabs"><button data-pg="map" class="on">Shopping Malls Tube Map</button><button data-pg="gaps">Ownership and data gaps<span class="n" id="gapN"></span></button><button data-pg="stu">Student benefits<span class="n" id="stuN"></span></button><button data-pg="aff">Retailers &amp; affiliate APIs<span class="n" id="affN"></span></button><button data-pg="ofs">Offer data sources<span class="n" id="ofsN"></span></button></nav>
 
 <div id="pg-map">
 <div class="band"><h2>Follow a line — click to select, Esc to clear</h2><div class="roundels" id="jrny"></div></div>
@@ -346,6 +357,17 @@ footer a{color:var(--accent)}
  <section class="more"><h2>Retailers &amp; brands <span class="k" id="rtN"></span></h2>
   <div class="xbar"><input type="search" id="rtQ" placeholder="Search retailers, categories…"><select id="rtRoute"></select><select id="rtCat"></select><label class="ctl"><input type="checkbox" id="rtInMalls"> Only brands found in malls</label></div>
   <div class="tbl" style="max-height:640px"><table><thead><tr><th>#</th><th>Retailer / brand</th><th>Category</th><th>Affiliate route</th><th>In malls</th><th>Student deals</th><th>Links</th></tr></thead><tbody id="rtBody"></tbody></table></div></section>
+</div>
+
+<div id="pg-ofs" hidden>
+ <p class="lede" id="ofsPurpose"></p>
+ <section class="more" style="margin-top:14px"><h2>Key findings</h2><div class="finds" id="ofsFind"></div></section>
+ <section class="more"><h2>Recommended plan</h2><div class="roadmap" id="ofsPlan"></div></section>
+ <section class="more"><h2>What each source provides <span class="k" id="ofsCnt"></span></h2>
+  <p class="lede" style="margin-top:0">Pick what Membership Wallet needs and the matrix keeps only the sources that give it. <b>●</b> provided · <b>◐</b> limited or conditional · <b>·</b> not provided. Click a source for the full assessment.</p>
+  <div class="xchips" id="ofsNeed"></div><div class="xchips" id="ofsSuit"></div>
+  <div class="tbl" style="max-height:none"><table class="cmx"><thead id="ofsHead"></thead><tbody id="ofsBody"></tbody><tfoot id="ofsFoot"></tfoot></table></div></section>
+ <section class="more"><h2>Notes, assumptions and caveats</h2><div class="finds" id="ofsNotes"></div></section>
 </div>
 
 <footer>Built from <b>UK Shopping Centres by Local Authority (FINAL)</b> and the <b>Batch 1</b> research update (November 2026): 504 centres across 261 local authorities, about 70% of the c.700 UK centres. Sources include Savills, Knight Frank, NBIM, CPP Investments, UK Malls Directory, company press releases and Wikipedia's list of UK shopping centres. Station positions are schematic: they follow geography loosely, with London and the big cities stretched out so they can be read.</footer>
@@ -656,7 +678,7 @@ function renderStack(){if($('alt').hidden&&$('stk').innerHTML)return;const facF=
  $('stk').innerHTML=L.map(l=>`<div class="c" style="border-top-color:${l.color};${selLine&&selLine!=l?'opacity:.35':''}"><h4>${l.code} · ${esc(l.region)}</h4><div class="k">${l.stops.length} stations · ${l.stops.reduce((a,id)=>a+S[id].n,0)} centres</div><ol>${l.stops.map(id=>{const s=S[id];return `<li data-s="${s.id}" class="${s.n>=3?'m':''} ${facF(s)?'':'dimm'}">${esc(s.name)} <span class="k">${s.n}</span></li>`}).join('')}</ol></div>`).join('');
  $('stk').querySelectorAll('[data-s]').forEach(li=>li.onclick=()=>pickStation(S[li.dataset.s]))}
 // page tabs
-function showPage(pg){[...$('ptabs').children].forEach(x=>x.classList.toggle('on',x.dataset.pg==pg));['map','gaps','stu','aff'].forEach(k=>$('pg-'+k).hidden=k!=pg);if(pg=='map')setTimeout(fit,20)}
+function showPage(pg){[...$('ptabs').children].forEach(x=>x.classList.toggle('on',x.dataset.pg==pg));['map','gaps','stu','aff','ofs'].forEach(k=>$('pg-'+k).hidden=k!=pg);if(pg=='map')setTimeout(fit,20)}
 $('ptabs').onclick=e=>{const b=e.target.closest('button');if(b)showPage(b.dataset.pg)};
 function goStation(s){showPage('map');
  if(!$('alt').hidden)$('views').children[0].click();vp.scrollIntoView({behavior:'smooth',block:'center'});setTimeout(()=>{pickStation(s,{noScroll:true});flyTo(s,2.4)},350)}
@@ -833,7 +855,7 @@ $('stats').insertAdjacentHTML('beforeend',stat(ALLC.filter(c=>c.batch).length,'c
 const xmodal=$('xmodal'),xm=$('xm');
 function openModal(color,head,body){xm.style.setProperty('--xc',color);xm.innerHTML=`<div class="hd"><div>${head}</div><button class="close" aria-label="Close">✕</button></div><div class="bd">${body}</div>`;xmodal.hidden=false;xm.scrollTop=0;
  xm.querySelector('.close').onclick=closeModal;xm.querySelectorAll('[data-brand]').forEach(b=>b.onclick=()=>{const x=brandIndex().get(b.dataset.brand);closeModal();if(x){showPage('map');vp.scrollIntoView({behavior:'smooth',block:'center'});setTimeout(()=>setBrand(x),300)}});
- xm.querySelectorAll('[data-gost]').forEach(b=>b.onclick=()=>{closeModal();goStation(S[+b.dataset.gost])});xm.querySelectorAll('[data-sp]').forEach(b=>b.onclick=()=>openStudent(+b.dataset.sp))}
+ xm.querySelectorAll('[data-gost]').forEach(b=>b.onclick=()=>{closeModal();goStation(S[+b.dataset.gost])});xm.querySelectorAll('[data-srcn]').forEach(b=>b.onclick=()=>openSource(+b.dataset.srcn));xm.querySelectorAll('[data-sp]').forEach(b=>b.onclick=()=>openStudent(+b.dataset.sp))}
 function closeModal(){xmodal.hidden=true}
 xmodal.onclick=e=>{if(e.target==xmodal)closeModal()};document.addEventListener('keydown',e=>{if(e.key=='Escape'&&!xmodal.hidden){closeModal();e.stopImmediatePropagation()}},true);
 const sec=(h,v)=>v?`<div><h5>${h}</h5><p>${esc(v).replace(/^Classification:[^\n]*\n?/,'')}</p></div>`:'';
@@ -857,7 +879,7 @@ function openRetailer(i){const r=X.retailers[i],m=mallsFor(r.n),sp=studentFor(r.
  `<div style="display:flex;gap:8px;flex-wrap:wrap">${r.url?`<a class="btn" href="${esc(r.url)}" target="_blank" rel="noopener">Website ↗</a>`:''}${r.dev?`<a class="btn" href="${esc(r.dev)}" target="_blank" rel="noopener">${esc(r.lt)} ↗</a>`:''}</div>
  <div><h5>In tube-map malls</h5>${m?`<p>${m.centres.size} centre${m.centres.size>1?'s':''} at ${m.stations.size} station${m.stations.size>1?'s':''}.</p><div style="margin-top:6px"><button class="btn" data-brand="${esc(normB(m.name))}" style="background:var(--ink);color:var(--bg);border-color:var(--ink)">Show them on the map</button></div>`:'<p class="k">Not found in the brand lists of the mapped centres.</p>'}</div>
  ${sp.length?`<div><h5>Student deals that name this brand (${sp.length})</h5><div class="bmall">${sp.map(j=>`<button data-sp="${j}">${esc(X.students[j].n.split(' (')[0])}</button>`).join('')}</div></div>`:''}
- <div><h5>How to get its offers</h5><p>${r.route.startsWith('Direct')?'No public API found: use the Help or Contact page on its website to ask about partnerships.':`Join ${esc(r.route)} as a publisher (free), apply to the ${esc(r.n)} programme, then use the network's publisher API for links, offers and product feeds.`}</p></div>`)}
+ ${(()=>{const s=sourceForRoute(r.route);return s?`<div><h5>Assessment of this route</h5><p>${spill(s.suit)} <span class="pill">${esc(s.phase)}</span> ${esc(s.best)}</p><div style="margin-top:6px"><button class="btn" data-srcn="${OF.sources.indexOf(s)}">Full assessment of ${esc(s.n)}</button></div></div>`:''})()}<div><h5>How to get its offers</h5><p>${r.route.startsWith('Direct')?'No public API found: use the Help or Contact page on its website to ask about partnerships.':`Join ${esc(r.route)} as a publisher (free), apply to the ${esc(r.n)} programme, then use the network's publisher API for links, offers and product feeds.`}</p></div>`)}
 // ---------- Student benefits page
 let stuType='*',stuScore=0;
 function renderStudents(){const P=X.students;$('stuN').textContent=P.length;$('stuUpd').textContent=X.meta.studentsUpdated;$('hiN').textContent=X.hist.length;
@@ -895,7 +917,8 @@ function renderAff(){const R=X.retailers;$('affN').textContent=R.length;$('rtN')
  const nc=Object.entries(X.networks.reduce((m,n)=>(m[n.cat]=(m[n.cat]||0)+1,m),{})).sort((a,b)=>b[1]-a[1]);
  $('nwCat').innerHTML=`<button data-c="*" class="${nwCat=='*'?'on':''}">All<span>${X.networks.length}</span></button>`+nc.map(([k,v])=>`<button data-c="${esc(k)}" class="${nwCat==k?'on':''}">${esc(k)}<span>${v}</span></button>`).join('');
  $('nwGrid').innerHTML=X.networks.filter(n=>nwCat=='*'||n.cat==nwCat).map(n=>{const used=R.filter(r=>r.route&&n.n.toLowerCase().startsWith(r.route.toLowerCase().split(' ')[0])).length;
-  return `<div class="xc" style="cursor:default;--xc:${routeColor(n.n)}"><div class="k">${esc(n.cat)}</div><h4>${esc(n.n)}</h4>${used?`<div class="row"><span class="pill br">${used} retailers use it</span></div>`:''}<p style="-webkit-line-clamp:4">${esc(n.api)}</p><div class="k">${esc(n.req)}</div><div class="row">${n.url?`<a class="lk" href="${esc(n.url)}" target="_blank" rel="noopener">website ↗</a>`:''}${n.dev?` · <a class="lk" href="${esc(n.dev)}" target="_blank" rel="noopener">${esc(n.lt)} ↗</a>`:''}</div></div>`}).join('');
+  const asx=OF.sources.findIndex(s=>s.n.toLowerCase().split(' (')[0]==n.n.toLowerCase()||s.n.toLowerCase().startsWith(n.n.toLowerCase().split(' ')[0]+' ')||s.n.toLowerCase()==n.n.toLowerCase().split(' ')[0]);
+  return `<div class="xc" style="cursor:default;--xc:${routeColor(n.n)}"><div class="k">${esc(n.cat)}</div><h4>${esc(n.n)}</h4><div class="row">${used?`<span class="pill br">${used} retailers use it</span>`:''}${asx>=0?`<a class="lk" data-srcn="${asx}" style="cursor:pointer">${spill(OF.sources[asx].suit)} ${esc(OF.sources[asx].phase)} ↗</a>`:''}</div><p style="-webkit-line-clamp:4">${esc(n.api)}</p><div class="k">${esc(n.req)}</div><div class="row">${n.url?`<a class="lk" href="${esc(n.url)}" target="_blank" rel="noopener">website ↗</a>`:''}${n.dev?` · <a class="lk" href="${esc(n.dev)}" target="_blank" rel="noopener">${esc(n.lt)} ↗</a>`:''}</div></div>`}).join('');
  if(!$('rtRoute').options.length){$('rtRoute').innerHTML='<option value="">All routes</option>'+rc.map(([k])=>`<option>${esc(k)}</option>`).join('');$('rtCat').innerHTML='<option value="">All categories</option>'+cc.map(([k])=>`<option>${esc(k)}</option>`).join('')}
  renderRetailers()}
 function renderRetailers(){const q=$('rtQ').value.trim().toLowerCase(),ro=$('rtRoute').value,ca=$('rtCat').value,only=$('rtInMalls').checked;
@@ -907,9 +930,10 @@ $('pg-aff').addEventListener('click',e=>{const t=e.target;let b;
  if(b=t.closest('[data-brand]')){e.stopPropagation();const x=brandIndex().get(b.dataset.brand);if(x){showPage('map');vp.scrollIntoView({behavior:'smooth',block:'center'});setTimeout(()=>setBrand(x),300)}return}
  if(t.closest('a[href]'))return;
  if(b=t.closest('#nwCat [data-c]')){nwCat=b.dataset.c;renderAff();return}
+ if(b=t.closest('[data-srcn]')){openSource(+b.dataset.srcn);return}
  if(b=t.closest('[data-rt]'))openRetailer(+b.dataset.rt)});
 ['rtQ','rtRoute','rtCat','rtInMalls'].forEach(id=>$(id).addEventListener(id=='rtQ'?'input':'change',renderRetailers));
-window.refreshX=()=>{renderStudents();renderAff()};refreshX();
+window.refreshX=()=>{renderStudents();renderAff()};setTimeout(refreshX,0);
 
 // ---------- Batch 1 research table (Ownership and data gaps page)
 let b1f='*';
@@ -921,6 +945,43 @@ function renderB1(){const keys=new Set(X.batch.keys);const list=ALLC.filter(c=>k
 $('b1f').onclick=e=>{const b=e.target.closest('[data-f]');if(b){b1f=b.dataset.f;renderB1()}};
 $('b1').onclick=e=>{const r=e.target.closest('[data-key]');if(!r)return;const c=ALLC.find(x=>x.key==r.dataset.key);const s=c.s,cc=s.centres.find(x=>x.key==c.key);goStation(s);setTimeout(()=>openMall(cc,{noFly:true}),420)};
 renderB1();
+
+// ---------- Offer data sources (28 sources assessed for Membership Wallet)
+const OF=X.offers,SUIT_COL={'Recommended':'#2F7D4F','Consider':'#1B6FB5','Later':'#B07D09','Not suitable':'#8A857B'};
+const PH_COL={'Phase 1':'#2F7D4F','Phase 2':'#1B6FB5','Phase 3':'#6950A1','Ongoing':'#E86A10'};
+const capMark=v=>v==2?'●':v==1?'◐':'·';const coverage=s=>(s.cap.filter(v=>v==2).length+.5*s.cap.filter(v=>v==1).length)/OF.caps.length;
+const srcByName=n=>OF.sources.find(s=>s.n==n);
+function sourceForRoute(route){const n=OF.routeToSource[route];return n?srcByName(n):null}
+function retailersOn(s){return X.retailers.filter(r=>OF.routeToSource[r.route]==s.n)}
+const spill=v=>`<span class="spill" style="background:${SUIT_COL[v]||'#7A7468'}">${esc(v)}</span>`;
+let ofsNeed=new Set(),ofsSuit='*',ofsSort=-1;
+function openSource(i){const s=OF.sources[i],rs=retailersOn(s),inM=rs.filter(r=>mallsFor(r.n));
+ openModal(SUIT_COL[s.suit],`<div class="k">#${esc(s.i)} · ${esc(s.cat)} · UK relevance ${esc(s.uk)}</div><h3>${esc(s.n)}</h3><div style="margin-top:4px">${spill(s.suit)} <span class="pill">${esc(s.phase)}</span> <span class="k">${esc(s.ver)}</span></div>`,
+ `<p style="font-size:15px">${esc(s.what)}</p><div style="display:flex;gap:8px;flex-wrap:wrap">${s.url?`<a class="btn" href="${esc(s.url)}" target="_blank" rel="noopener">Website ↗</a>`:''}${rs.length?`<button class="btn" data-route="${esc(s.n)}">${rs.length} retailers in the directory use it${inM.length?` · ${inM.length} found in malls`:''}</button>`:''}</div>
+ <div><h5>Coverage ${Math.round(coverage(s)*100)}%</h5><div class="bmall">${OF.caps.map((c,j)=>`<span class="pill" style="${s.cap[j]==2?'border-color:var(--ok);color:var(--ok)':s.cap[j]==1?'border-color:#D9A21B;color:#B07D09':'opacity:.45'}">${capMark(s.cap[j])} ${esc(c)}</span>`).join('')}</div></div>
+ ${sec('Best use for Membership Wallet',s.best)}${sec('Retailer details you get',s.ret)}${sec('Offer & deal details you get',s.off)}${sec('What you don\'t get',s.not)}${sec('API / access method',s.api)}${sec('How to get access',s.how)}
+ <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px">${sec('Cost to us',s.cost)}${sec('How we earn',s.earn)}${sec('Approval time (indicative)',s.time)}</div>`);
+ const b=xm.querySelector('[data-route]');if(b)b.onclick=()=>{closeModal();showPage('aff');const r=Object.entries(OF.routeToSource).find(([,v])=>v==s.n);if(r){$('rtRoute').value=r[0];renderRetailers();$('rtBody').scrollIntoView({behavior:'smooth',block:'start'})}}}
+function renderOffers(){$('ofsN').textContent=OF.sources.length;$('ofsPurpose').innerHTML=`<b>${esc(OF.title)}</b> · assessment for Membership Wallet, prepared ${esc(OF.prepared)}. ${esc(OF.purpose)}`;
+ $('ofsFind').innerHTML=OF.findings.map(([h,d])=>`<div class="find ac"><b>${esc(h)}</b><p>${esc(d)}</p></div>`).join('');
+ $('ofsPlan').innerHTML=OF.plan.map(([h,d])=>{const ph=(h.match(/^(Phase \d|Ongoing)/)||['Ongoing'])[0];const ss=OF.sources.map((s,i)=>[s,i]).filter(([s])=>s.phase.startsWith(ph)&&s.suit!='Not suitable');
+  return `<div class="phase" style="--pc:${PH_COL[ph]}"><div class="k">${esc(ph.toUpperCase())}</div><h4>${esc(h.replace(/^(Phase \d|Ongoing):\s*/,''))}</h4><p>${esc(d)}</p><div class="bmall">${ss.map(([s,i])=>`<button data-src="${i}" style="${s.suit=='Recommended'?'background:var(--ok);color:#fff;border-color:var(--ok)':''}">${esc(s.n.replace(/ \(.*\)/,''))}</button>`).join('')}</div></div>`}).join('');
+ $('ofsNeed').innerHTML='<span class="k" style="align-self:center;margin-right:4px">NEED:</span>'+OF.caps.map((c,j)=>`<button data-need="${j}" class="${ofsNeed.has(j)?'on':''}">${esc(c)}<span>${OF.sources.filter(s=>s.cap[j]==2).length}</span></button>`).join('')+(ofsNeed.size?'<button data-need="clear">clear</button>':'');
+ const sc=OF.sources.reduce((m,s)=>(m[s.suit]=(m[s.suit]||0)+1,m),{});
+ $('ofsSuit').innerHTML=`<button data-suit="*" class="${ofsSuit=='*'?'on':''}">All<span>${OF.sources.length}</span></button>`+['Recommended','Consider','Later','Not suitable'].map(k=>`<button data-suit="${k}" class="${ofsSuit==k?'on':''}" title="${esc(OF.suit[k]||'')}" style="${ofsSuit==k?'':`border-color:${SUIT_COL[k]}`}">${k}<span>${sc[k]||0}</span></button>`).join('');
+ let rows=OF.sources.map((s,i)=>({s,i,cov:coverage(s)})).filter(({s})=>(ofsSuit=='*'||s.suit==ofsSuit)&&[...ofsNeed].every(j=>s.cap[j]>0));
+ rows.sort(ofsSort==-1?(a,b)=>b.cov-a.cov:(a,b)=>b.s.cap[ofsSort]-a.s.cap[ofsSort]||b.cov-a.cov);
+ $('ofsCnt').textContent=`${rows.length} of ${OF.sources.length} sources`;
+ $('ofsHead').innerHTML=`<tr><th>#</th><th>Source</th><th>Suitability</th><th>Phase</th>${OF.caps.map((c,j)=>`<th class="cap ${ofsNeed.has(j)?'need':''}" data-sort="${j}" title="Sort by ${esc(c)}">${esc(c)}</th>`).join('')}<th data-sort="-1" style="cursor:pointer">Coverage ▾</th></tr>`;
+ $('ofsBody').innerHTML=rows.map(({s,i,cov})=>`<tr class="cl" data-src="${i}"><td class="key">${esc(s.i)}</td><td><b>${esc(s.n)}</b><br><span class="muted" style="font-size:11.5px">${esc(s.cat)}</span></td><td>${spill(s.suit)}</td><td class="key">${esc(s.phase)}</td>${s.cap.map((v,j)=>`<td class="c c${v} ${ofsNeed.has(j)?'need':''}" title="${esc(OF.caps[j])}: ${['No','Partly','Yes'][v]}">${capMark(v)}</td>`).join('')}<td><div class="cov"><i style="width:${Math.round(cov*60)}px"></i>${Math.round(cov*100)}%</div></td></tr>`).join('')||`<tr><td colspan="${OF.caps.length+5}" class="muted">No single source provides all of these: combine sources (see the plan above).</td></tr>`;
+ $('ofsFoot').innerHTML=`<tr><td></td><td style="text-align:left">Sources giving it fully</td><td></td><td></td>${OF.caps.map((c,j)=>`<td>${OF.sources.filter(s=>s.cap[j]==2).length}</td>`).join('')}<td></td></tr>`;
+ $('ofsNotes').innerHTML=OF.notes.filter(n=>n[0]!='Editing').map(([h,d])=>`<div class="find"><b>${esc(h)}</b><p>${esc(d)}</p></div>`).join('')}
+$('pg-ofs').addEventListener('click',e=>{const t=e.target;let b;
+ if(b=t.closest('[data-need]')){const v=b.dataset.need;if(v=='clear')ofsNeed.clear();else{const j=+v;ofsNeed.has(j)?ofsNeed.delete(j):ofsNeed.add(j)}renderOffers();return}
+ if(b=t.closest('[data-suit]')){ofsSuit=b.dataset.suit;renderOffers();return}
+ if(b=t.closest('[data-sort]')){ofsSort=+b.dataset.sort;renderOffers();return}
+ if(b=t.closest('[data-src]'))openSource(+b.dataset.src)});
+renderOffers();
 </script>
 </body>
 </html>

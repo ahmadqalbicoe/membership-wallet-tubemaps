@@ -10,6 +10,7 @@
 - **Ownership and data gaps:** owners, pension fund stakes, missing data.
 - **Student benefits:** 230 student schemes (Student Beans, UNiDAYS, TOTUM, SU and university schemes, brand offers, Freshers channels), scored 1–5 for Membership Wallet, plus the census of 133 students' unions. Unions are placed on the map, and the brands a scheme names link to the malls that have them.
 - **Retailers & affiliate APIs:** 92 affiliate networks, banks and loyalty platforms, and 682 retailers with their affiliate route (Awin, impact.com, Rakuten, CJ, Partnerize…). Each retailer shows how many mapped centres stock it and which student schemes name it.
+- **Offer data sources:** 28 sources for UK retailer details and offers (affiliate networks, card-linked offers, gift cards, location data, Companies House), with a filterable capability matrix, a phased plan, and links to the retailers that use each route. From `UK_Retailer_Offer_Data_Sources.xlsx`.
 
 ## Folders
 
