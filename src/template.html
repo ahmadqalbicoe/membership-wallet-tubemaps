@@ -278,7 +278,7 @@ footer a{color:var(--accent)}
  <p class="sub">Every UK shopping centre, mall and outlet in the longlist, drawn as a metro network, with the brands inside them, the student benefit schemes around them and the retailers' affiliate routes. Each <b>line is a region</b> of the UK and each <b>station is a local authority</b>; the bigger the station, the more centres it holds. Lines meet at interchanges where regions border each other, and a ferry joins Northern Ireland to Scotland. Click a station to see its centres, owners, managing agents and pension fund status, or plan a route across the country.</p></div></div>
  <div class="stats" id="stats"></div>
 </header>
-<nav class="ptabs" id="ptabs"><button data-pg="map" class="on">Shopping Malls Tube Map</button><button data-pg="gaps">Ownership and data gaps<span class="n" id="gapN"></span></button><button data-pg="stu">Student benefits<span class="n" id="stuN"></span></button><button data-pg="aff">Retailers &amp; affiliate APIs<span class="n" id="affN"></span></button><button data-pg="ofs">Offer data sources<span class="n" id="ofsN"></span></button></nav>
+<nav class="ptabs" id="ptabs"><button data-pg="map" class="on">Shopping Malls Tube Map<span class="n" id="mapN"></span></button><button data-pg="gaps">Ownership and data gaps<span class="n" id="gapN"></span></button><button data-pg="stu">Student benefits<span class="n" id="stuN"></span></button><button data-pg="aff">Retailers &amp; affiliate APIs<span class="n" id="affN"></span></button><button data-pg="ofs">Offer data sources<span class="n" id="ofsN"></span></button></nav>
 
 <div id="pg-map">
 <div class="band"><h2>Follow a line — click to select, Esc to clear</h2><div class="roundels" id="jrny"></div></div>
@@ -397,7 +397,7 @@ const nInter=D.interchanges.length;
 const stat=(n,t)=>`<span class="stat"><b>${n}</b> ${t}</span>`;
 $('stats').innerHTML=[stat(L.length,'lines'),stat(S.length,'stations'),stat(ALLC.length,'centres'),stat(nInter,'interchanges'),stat(ALLC.filter(c=>c.size=='Large').length,'large centres'),
  stat(ALLC.filter(c=>/^Verified/.test(c.pension)).length,'pension verified'),stat(ALLC.filter(c=>!TBC(c.owner)).length,'owner confirmed'),stat(ALLC.filter(c=>TBC(c.owner)).length,'owner to confirm'),stat(ALLC.filter(c=>TBC(c.postcode)).length,'postcode to confirm')].join('');
-$('gapN').textContent=ALLC.filter(c=>TBC(c.owner)).length;
+$('mapN').textContent=ALLC.length;$('mapN').parentNode.title=ALLC.length+' centres at '+D.stations.length+' stations';$('gapN').textContent=ALLC.filter(c=>TBC(c.owner)).length;
 // ---------- render map
 function route(a,b,flip){const dx=b.px-a.px,dy=b.py-a.py,ax=Math.abs(dx),ay=Math.abs(dy),sx=Math.sign(dx),sy=Math.sign(dy),d=Math.min(ax,ay),p=[[a.px,a.py]];
  if(ax>ay){const st=(ax-d)/2;if(flip)p.push([a.px+sx*(ax-d),a.py]);else{p.push([a.px+sx*st,a.py]);p.push([a.px+sx*(st+d),b.py])}}
